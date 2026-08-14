@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crédito por modalidade — Painel Analítico</title>
+  <link rel="stylesheet" href="css/estilo.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="conteiner">
+      <p class="sobrelinha">Banco Central do Brasil · SGS — Dados Abertos</p>
+      <h1>Crédito por modalidade</h1>
+      <p class="subtitulo" id="descricao-fonte">Saldo, taxa média de juros e spread das operações de crédito.</p>
+      <p class="meta-info" id="meta-info">Carregando…</p>
+      <nav class="nav-paineis" aria-label="Painéis do projeto">
+        <a href="https://gfvdata-web.github.io/fonte-meios-pagamento/">Meios de pagamento</a>
+        <a href="https://gfvdata-web.github.io/fonte-arrecadacao-federal/">Arrecadação federal</a>
+        <a href="index.html" aria-current="page">Crédito por modalidade</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="conteiner">
+    <!-- Controles -->
+    <section class="controles" aria-label="Seleção de segmento e métrica">
+      <span class="controles-rotulo">Segmento:</span>
+      <div class="alternador" id="alt-segmento" role="tablist">
+        <button class="alt-btn ativo" data-segmento="PF" role="tab">Pessoas físicas</button>
+        <button class="alt-btn" data-segmento="PJ" role="tab">Pessoas jurídicas</button>
+      </div>
+      <span class="controles-rotulo">Métrica:</span>
+      <div class="alternador" id="alt-metrica" role="tablist">
+        <button class="alt-btn ativo" data-metrica="saldo" role="tab">Saldo (R$)</button>
+        <button class="alt-btn" data-metrica="taxa" role="tab">Taxa de juros (% a.a.)</button>
+      </div>
+    </section>
+
+    <!-- KPIs -->
+    <section class="kpis" id="kpis" aria-label="Indicadores-chave"></section>
+
+    <!-- Gráficos -->
+    <section class="graficos">
+      <article class="cartao grafico-grande">
+        <h2>Evolução mensal</h2>
+        <p class="cartao-desc" id="titulo-evolucao">Por modalidade ao longo do tempo.</p>
+        <div class="canvas-wrap"><canvas id="gEvolucao"></canvas></div>
+      </article>
+      <article class="cartao">
+        <h2>Participação no saldo</h2>
+        <p class="cartao-desc" id="titulo-participacao">Fatia de cada modalidade no saldo do segmento.</p>
+        <div class="canvas-wrap"><canvas id="gParticipacao"></canvas></div>
+      </article>
+    </section>
+
+    <!-- Custo por modalidade -->
+    <section class="cartao">
+      <h2>Custo do crédito por modalidade</h2>
+      <p class="cartao-desc" id="titulo-taxas">Taxa média de juros no mês de referência.</p>
+      <div class="canvas-wrap canvas-alto"><canvas id="gTaxas"></canvas></div>
+    </section>
+
+    <!-- Juros e spread -->
+    <section class="cartao">
+      <h2>Taxa média e spread do segmento</h2>
+      <p class="cartao-desc" id="titulo-spread">Séries agregadas publicadas pelo BCB.</p>
+      <div class="canvas-wrap"><canvas id="gSpread"></canvas></div>
+    </section>
+
+    <!-- Ranking / métricas -->
+    <section class="cartao">
+      <div class="cartao-cabecalho">
+        <div class="cartao-titulo">
+          <h2>Ranking e métricas por modalidade</h2>
+          <p class="cartao-desc" id="desc-ranking">Saldo, participação, crescimento e custo.</p>
+        </div>
+        <div class="filtro-periodo" role="group" aria-label="Filtro de período do ranking">
+          <label class="filtro-campo">De
+            <select id="ranking-inicio" class="sel-mes" aria-label="Mês inicial do ranking"></select>
+          </label>
+          <label class="filtro-campo">Até
+            <select id="ranking-fim" class="sel-mes" aria-label="Mês final do ranking"></select>
+          </label>
+        </div>
+      </div>
+      <div class="tabela-wrap">
+        <table class="tabela" id="tabela-ranking">
+          <thead>
+            <tr>
+              <th>Modalidade</th>
+              <th class="num">Saldo (mês final)</th>
+              <th class="num">Part. no segmento</th>
+              <th class="num">Var. saldo no período</th>
+              <th class="num">CAGR a.a.</th>
+              <th class="num">Taxa (mês final)</th>
+              <th class="num">Var. taxa no período</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Estatística descritiva -->
+    <section class="cartao">
+      <div class="cartao-cabecalho">
+        <div class="cartao-titulo">
+          <h2>Estatística descritiva</h2>
+          <p class="cartao-desc" id="titulo-estatistica">Sobre a série mensal de cada modalidade.</p>
+        </div>
+        <div class="filtro-periodo" role="group" aria-label="Filtro de período da estatística">
+          <label class="filtro-campo">De
+            <select id="est-inicio" class="sel-mes" aria-label="Mês inicial da estatística"></select>
+          </label>
+          <label class="filtro-campo">Até
+            <select id="est-fim" class="sel-mes" aria-label="Mês final da estatística"></select>
+          </label>
+        </div>
+      </div>
+      <div class="tabela-wrap">
+        <table class="tabela" id="tabela-estatistica">
+          <thead>
+            <tr>
+              <th>Modalidade</th>
+              <th class="num">Média</th>
+              <th class="num">Mediana</th>
+              <th class="num">Desvio-padrão</th>
+              <th class="num">Coef. variação</th>
+              <th class="num">Mínimo</th>
+              <th class="num">Máximo</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="conteiner">
+      <p id="rodape-fonte"></p>
+      <p class="rodape-obs">Unidades: saldo em R$ milhões; taxa de juros em % ao ano; spread em pontos
+        percentuais ao ano. Dados nacionais — o SGS não publica crédito por modalidade com recorte por UF.
+        Projeto de estudo — dados abertos do Banco Central do Brasil.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

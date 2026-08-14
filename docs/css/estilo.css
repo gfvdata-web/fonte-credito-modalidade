@@ -1,0 +1,165 @@
+/* ===== Painéis de dados financeiros abertos — Etapa 6 =====
+   Folha compartilhada por todas as páginas (index.html, arrecadacao-federal.html). */
+:root {
+  --bg: #f4f6fb;
+  --superficie: #ffffff;
+  --borda: #e2e8f0;
+  --texto: #0f172a;
+  --texto-suave: #64748b;
+  --acento: #2563eb;
+  --acento-suave: #dbeafe;
+  --positivo: #059669;
+  --negativo: #dc2626;
+  --sombra: 0 1px 3px rgba(15, 23, 42, .08), 0 8px 24px rgba(15, 23, 42, .04);
+  --raio: 14px;
+
+  /* Paleta categórica das formas de pagamento */
+  --c-pix: #0ea5a4;
+  --c-ted: #2563eb;
+  --c-boleto: #f59e0b;
+  --c-cheque: #8b5cf6;
+  --c-tec: #ec4899;
+  --c-doc: #94a3b8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1120;
+    --superficie: #131c31;
+    --borda: #24304a;
+    --texto: #e8edf7;
+    --texto-suave: #93a1bd;
+    --acento: #60a5fa;
+    --acento-suave: #1e3a5f;
+    --sombra: 0 1px 3px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--texto);
+  line-height: 1.5;
+}
+
+.conteiner { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+/* Cabeçalho */
+.cabecalho {
+  background: linear-gradient(135deg, var(--acento), #1e40af);
+  color: #fff;
+  padding: 40px 0 32px;
+}
+.cabecalho .sobrelinha {
+  text-transform: uppercase; letter-spacing: .08em; font-size: .78rem;
+  opacity: .85; margin: 0 0 6px;
+}
+.cabecalho h1 { margin: 0; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; }
+.cabecalho .subtitulo { margin: 8px 0 0; opacity: .92; max-width: 60ch; }
+.cabecalho .meta-info { margin: 14px 0 0; font-size: .82rem; opacity: .8; }
+
+/* Navegação entre os painéis */
+.nav-paineis { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+.nav-paineis a {
+  color: #fff; text-decoration: none; font-size: .85rem; font-weight: 600;
+  padding: 6px 14px; border-radius: 999px;
+  background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .28);
+  transition: background .15s ease;
+}
+.nav-paineis a:hover { background: rgba(255, 255, 255, .26); }
+.nav-paineis a[aria-current="page"] { background: #fff; color: var(--acento); border-color: #fff; }
+
+main { padding: 24px 0 48px; }
+
+/* Controles */
+.controles { display: flex; align-items: center; gap: 12px; margin: 8px 0 20px; flex-wrap: wrap; }
+.controles + .controles { margin-top: -8px; }
+.controles-rotulo { color: var(--texto-suave); font-size: .9rem; font-weight: 500; }
+.alternador {
+  display: inline-flex; background: var(--superficie);
+  border: 1px solid var(--borda); border-radius: 999px; padding: 4px; box-shadow: var(--sombra);
+}
+.alt-btn {
+  border: 0; background: transparent; color: var(--texto-suave);
+  padding: 7px 16px; border-radius: 999px; cursor: pointer; font-size: .9rem; font-weight: 600;
+  transition: all .15s ease;
+}
+.alt-btn.ativo { background: var(--acento); color: #fff; }
+
+/* KPIs */
+.kpis {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px; margin-bottom: 24px;
+}
+.kpi {
+  background: var(--superficie); border: 1px solid var(--borda);
+  border-radius: var(--raio); padding: 18px 20px; box-shadow: var(--sombra);
+}
+.kpi .rotulo { font-size: .8rem; color: var(--texto-suave); margin: 0 0 6px; }
+.kpi .valor { font-size: 1.55rem; font-weight: 700; margin: 0; letter-spacing: -.02em; }
+.kpi .apoio { font-size: .78rem; color: var(--texto-suave); margin: 4px 0 0; }
+.kpi .apoio.pos { color: var(--positivo); }
+.kpi .apoio.neg { color: var(--negativo); }
+
+/* Cartões e gráficos */
+.cartao {
+  background: var(--superficie); border: 1px solid var(--borda);
+  border-radius: var(--raio); padding: 22px; box-shadow: var(--sombra); margin-bottom: 24px;
+}
+.cartao h2 { margin: 0; font-size: 1.05rem; }
+.cartao-desc { margin: 4px 0 16px; color: var(--texto-suave); font-size: .86rem; }
+
+/* Cabeçalho de cartão com filtro de período */
+.cartao-cabecalho {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 16px; flex-wrap: wrap; margin-bottom: 16px;
+}
+.cartao-titulo { min-width: 0; flex: 1 1 260px; }
+.cartao-cabecalho .cartao-desc { margin: 4px 0 0; }
+.filtro-periodo { display: flex; gap: 10px; flex-shrink: 0; }
+.filtro-campo {
+  display: flex; flex-direction: column; gap: 4px;
+  font-size: .7rem; font-weight: 600; color: var(--texto-suave);
+  text-transform: uppercase; letter-spacing: .04em;
+}
+.sel-mes {
+  font: inherit; font-size: .85rem; font-weight: 500;
+  text-transform: none; letter-spacing: normal;
+  color: var(--texto); background: var(--bg);
+  border: 1px solid var(--borda); border-radius: 8px;
+  padding: 6px 10px; cursor: pointer; min-width: 92px;
+}
+.sel-mes:hover { border-color: var(--acento); }
+.sel-mes:focus-visible { outline: 2px solid var(--acento); outline-offset: 1px; }
+.graficos {
+  display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-bottom: 24px;
+}
+.graficos .cartao { margin-bottom: 0; }
+.canvas-wrap { position: relative; height: 340px; }
+.grafico-grande .canvas-wrap { height: 360px; }
+/* Barras horizontais com muitas categorias (ex.: taxa por modalidade de crédito). */
+.canvas-alto { height: 480px; }
+
+/* Tabelas */
+.tabela-wrap { overflow-x: auto; }
+.tabela { width: 100%; border-collapse: collapse; font-size: .88rem; min-width: 560px; }
+.tabela th, .tabela td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--borda); }
+.tabela th { color: var(--texto-suave); font-weight: 600; font-size: .78rem; text-transform: uppercase; letter-spacing: .03em; }
+.tabela td.num, .tabela th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.tabela tbody tr:hover { background: var(--acento-suave); }
+.pilula { display: inline-flex; align-items: center; gap: 7px; font-weight: 600; }
+.ponto { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.pos { color: var(--positivo); }
+.neg { color: var(--negativo); }
+.nulo { color: var(--texto-suave); }
+
+/* Rodapé */
+.rodape { border-top: 1px solid var(--borda); padding: 24px 0; color: var(--texto-suave); font-size: .82rem; }
+.rodape p { margin: 4px 0; }
+
+@media (max-width: 760px) {
+  .graficos { grid-template-columns: 1fr; }
+}
