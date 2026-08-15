@@ -5,6 +5,7 @@ taxa média de juros e spread das operações de crédito do Sistema Financeiro 
 modalidade e por segmento (PF/PJ), de mar/2011 em diante.
 
 **Painel publicado:** https://gfvdata-web.github.io/fonte-credito-modalidade/
+**Explorar os dados (Etapa E):** https://gfvdata-web.github.io/fonte-credito-modalidade/explorar.html
 
 > 📄 Organização do repositório e etapas do pipeline: **[CONTEXTO.md](CONTEXTO.md)**
 > 📚 Dicionário de dados da fonte: **[catalogo/fonte.md](catalogo/fonte.md)**
@@ -34,6 +35,11 @@ Para ver o dashboard localmente:
 python -m http.server 8000 --directory docs
 ```
 
+> **Etapa E.** `python run_pipeline.py --sem-perfil` pula a perfilagem.
+> `docs/dados/notas_credito_modalidade.json` é **escrito à mão** e nenhum script o sobrescreve:
+> é onde ficam as armadilhas, os comparativos, o contexto externo pesquisado e a pauta
+> de visualizações que alimentam a página `explorar.html`.
+
 ## Estrutura
 
 | Pasta | Etapa | Papel |
@@ -42,8 +48,10 @@ python -m http.server 8000 --directory docs
 | `src/coleta/` | 2 | Coleta das 61 séries do SGS → `dados/brutos/` |
 | `src/tratamento/` | 3 | Tidy → `dados/processados/` |
 | `src/analise/` | 4 | Estatística, métricas e resíduo por segmento |
+| `src/perfil/` | E | Perfil das tabelas → `docs/dados/perfil_*.json` |
 | `src/publicacao/` | 5 | JSON → `docs/dados/` |
-| `docs/` | 6 | Dashboard (site publicado) |
+| `docs/index.html` | 6 | Dashboard (site publicado) |
+| `docs/explorar.html` | E | Perfil das tabelas + pauta analítica |
 | `prompts/` | — | Prompt de abertura de sessão desta fonte |
 
 ## Licença dos dados

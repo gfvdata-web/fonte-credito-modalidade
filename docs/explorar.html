@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crédito por modalidade — Explorar os dados</title>
+  <link rel="stylesheet" href="css/estilo.css" />
+</head>
+<body data-slug="credito_modalidade">
+  <header class="cabecalho">
+    <div class="conteiner">
+      <p class="sobrelinha">Banco Central do Brasil · SGS — Dados Abertos · Etapa E</p>
+      <h1>Explorar os dados</h1>
+      <p class="subtitulo">As tabelas desta fonte como elas são — colunas, chaves, joins,
+        cobertura e amostra — e a pauta analítica que discutimos antes de construir o painel.</p>
+      <p class="meta-info" id="meta-info">Carregando…</p>
+      <nav class="nav-paineis" aria-label="Painéis do projeto">
+        <a href="index.html">Painel</a>
+        <a href="explorar.html" aria-current="page">Explorar dados</a>
+        <span class="nav-sep"></span>
+        <a href="https://gfvdata-web.github.io/fonte-meios-pagamento/">Meios de pagamento</a>
+        <a href="https://gfvdata-web.github.io/fonte-arrecadacao-federal/">Arrecadação federal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="conteiner">
+    <div id="erro" hidden></div>
+
+    <section class="kpis" id="resumo" aria-label="Resumo da fonte"></section>
+
+    <section class="cartao" id="sec-mapa" hidden>
+      <h2>Mapa das tabelas</h2>
+      <p class="cartao-desc">As três camadas da fonte e os joins entre elas — medidos, não declarados.</p>
+      <div class="mapa-tabelas" id="mapa"></div>
+      <div class="tabela-wrap">
+        <table class="tabela" id="tabela-relacionamentos">
+          <thead>
+            <tr>
+              <th>De</th><th>Para</th><th>Cardinalidade</th>
+              <th class="num">Cobertura</th><th class="num">Órfãos</th><th>Para que serve</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="cartao" id="sec-cobertura" hidden>
+      <h2>Cobertura temporal</h2>
+      <p class="cartao-desc" id="cobertura-desc"></p>
+      <div class="barra-cobertura" id="barra-cobertura"></div>
+      <div class="cobertura-extremos"><span id="cob-inicio"></span><span id="cob-fim"></span></div>
+    </section>
+
+    <section id="sec-tabelas">
+      <h2 style="margin:28px 0 14px;font-size:1.05rem;">Tabelas</h2>
+      <div id="tabelas"></div>
+    </section>
+
+    <section class="cartao" id="sec-armadilhas" hidden>
+      <h2>Armadilhas do dado</h2>
+      <p class="cartao-desc">O que faz uma análise ingênua errar nesta fonte.</p>
+      <div class="grade-cartoes" id="armadilhas"></div>
+    </section>
+
+    <section class="cartao" id="sec-comparativos" hidden>
+      <h2>Comparativos possíveis</h2>
+      <p class="cartao-desc">Cada um com a hipótese declarada — para o gráfico poder confirmá-la ou desmenti-la.</p>
+      <div class="grade-cartoes" id="comparativos"></div>
+    </section>
+
+    <section class="cartao" id="sec-contexto" hidden>
+      <h2>Contexto externo</h2>
+      <p class="cartao-desc">Fatos pesquisados fora do dado, com origem e data de consulta.</p>
+      <div class="grade-cartoes" id="contexto"></div>
+    </section>
+
+    <section class="cartao" id="sec-cruzamentos" hidden>
+      <h2>Cruzamento com as outras fontes</h2>
+      <p class="cartao-desc">Chave comum <span class="mono">ano_mes</span> — e o cuidado que cada junção exige.</p>
+      <div class="grade-cartoes" id="cruzamentos"></div>
+    </section>
+
+    <section class="cartao" id="sec-pauta" hidden>
+      <div class="cartao-cabecalho">
+        <div class="cartao-titulo">
+          <h2>Pauta de visualizações</h2>
+          <p class="cartao-desc">O backlog do painel definitivo. O que estiver aprovado vira especificação.</p>
+        </div>
+        <div class="alternador" id="filtro-pauta" role="tablist" aria-label="Filtrar por status">
+          <button class="alt-btn ativo" data-status="todos" role="tab">Todos</button>
+          <button class="alt-btn" data-status="proposto" role="tab">Proposto</button>
+          <button class="alt-btn" data-status="aprovado" role="tab">Aprovado</button>
+          <button class="alt-btn" data-status="descartado" role="tab">Descartado</button>
+          <button class="alt-btn" data-status="no_painel" role="tab">No painel</button>
+        </div>
+      </div>
+      <div class="tabela-wrap">
+        <table class="tabela" id="tabela-pauta">
+          <thead>
+            <tr>
+              <th>#</th><th>Visualização</th><th>Gráfico proposto</th>
+              <th>Prioridade</th><th>Esforço</th><th>Status</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div id="pauta-justificativas"></div>
+    </section>
+
+    <section class="cartao" id="sec-perguntas" hidden>
+      <h2>Perguntas em aberto</h2>
+      <p class="cartao-desc">O que a pesquisa não resolveu — e que não virou afirmação por isso.</p>
+      <ul class="lista-simples" id="perguntas"></ul>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="conteiner">
+      <p id="rodape-perfil"></p>
+      <p class="rodape-obs">Etapa E do projeto <em>Dados Financeiros Abertos (Brasil)</em>.
+        O perfil das tabelas é gerado pelo pipeline a cada rodada; as notas são escritas à mão e
+        nenhum script as sobrescreve. Unidades: saldo em R$ milhões; taxa de juros em % ao ano; spread em pontos percentuais ao ano.</p>
+    </div>
+  </footer>
+
+  <script src="js/explorar.js"></script>
+</body>
+</html>

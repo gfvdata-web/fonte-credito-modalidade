@@ -57,11 +57,16 @@ fonte-credito-modalidade/
 │   ├── coleta/credito_modalidade.py       # Etapa 2 (uma requisição por série)
 │   ├── tratamento/credito_modalidade.py   # Etapa 3
 │   ├── analise/credito_modalidade.py      # Etapa 4
+│   ├── perfil/credito_modalidade.py       # Etapa E (+ perfil/nucleo.py)
 │   └── publicacao/credito_modalidade.py   # Etapa 5
 ├── dados/
 │   ├── brutos/                 # respostas cruas do SGS (regeneráveis; fora do git)
 │   └── processados/            # CSV tidy
-├── docs/                       # Etapa 6 — site publicado
+├── docs/                       # Etapas 6 e E — site publicado
+│   ├── explorar.html                   # Etapa E — perfil + pauta analitica
+│   ├── js/explorar.js
+│   ├── dados/perfil_credito_modalidade.json  # Etapa E (gerado)
+│   ├── dados/notas_credito_modalidade.json   # Etapa E (a mao, nunca sobrescrito)
 │   ├── index.html
 │   ├── css/estilo.css
 │   ├── js/app.js
@@ -89,6 +94,7 @@ fonte-credito-modalidade/
 | 2 | Ingestão / coleta | `src/coleta/` | 61 chamadas ao SGS → JSON bruto | ✅ |
 | 3 | Tratamento & modelagem | `src/tratamento/` | JSON bruto → CSV tidy | ✅ |
 | 4 | Análise estatística | `src/analise/` | CSV tidy → métricas (+ resíduo) | ✅ |
+| E | Exploração & pauta | `src/perfil/`, `docs/explorar.html` | bruto + tidy + auxiliares → perfil + pauta | ✅ |
 | 5 | Publicação de dados | `src/publicacao/` | tidy + métricas → JSON do front | ✅ |
 | 6 | Dashboard | `docs/` | JSON → site interativo | ✅ |
 | 7 | Documentação & deploy | `README.md`, GitHub Pages | — → site no ar | 🟡 |
@@ -122,3 +128,14 @@ duas (`segmento` + `modalidade_credito`).
 - [ ] Etapa 4: sazonalidade, médias móveis, correlação entre saldo e taxa.
 - [ ] Etapa 6: comparação lado a lado PF × PJ na mesma modalidade.
 - [ ] Etapa 7: automação de atualização agendada e melhorias de acessibilidade.
+
+## Etapa E — exploração
+
+Roda depois da Etapa 3 e antes da 4. Perfila quatro tabelas: o bruto (as 61 series do SGS
+empilhadas), o tidy, o catalogo dos 61 codigos e a matriz de cobertura segmento x modalidade.
+Segue a regra da especificacao para fontes multi-serie: perfilar as 61 series individualmente
+nao acrescentaria nada (todas tem a mesma forma), entao o que se perfila e o **inventario**.
+
+Especificacao completa no repositorio `controle-global`, em
+`prompts/modelo-pagina-exploracao.md`. **A Etapa E so adiciona:** a unica alteracao em arquivo
+existente foi o link "Explorar dados" na navegacao do `index.html`.

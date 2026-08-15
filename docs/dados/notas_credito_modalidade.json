@@ -1,0 +1,217 @@
+{
+  "meta": {
+    "slug": "credito_modalidade",
+    "atualizado_em": "2026-08-15"
+  },
+
+  "leitura": [
+    {
+      "tabela_id": "bruto",
+      "texto": "11.224 linhas que parecem uma tabela só, mas são 61 respostas separadas do SGS empilhadas — a API não tem consulta multi-série. O detalhe que importa: a resposta crua do SGS traz apenas `data` e `valor`. As colunas `segmento`, `modalidade` e `medida` são anotação da Etapa 2 a partir do mapa em `src/config.py`. Ou seja, a inteligência que transforma 61 séries anônimas numa tabela analisável está no nosso código, não na origem — se o mapa estiver errado, o dado fica silenciosamente errado. Além disso, `valor` chega como texto, e a unidade muda por linha: somar a coluna inteira não significa nada."
+    },
+    {
+      "tabela_id": "tidy",
+      "texto": "5.336 linhas = 184 meses × 29 combinações de segmento e modalidade, chave tripla validada, sem lacunas em 15 anos. Os 89,7% de nulos em `spread_pp` não são falha: o BCB só publica spread para os três agregados. A distinção mais importante da tabela não está nos nulos, e sim nas unidades: `saldo` é estoque no fim do mês, `taxa_juros_aa` é preço médio das concessões daquele mês. São grandezas de natureza diferente na mesma linha."
+    },
+    {
+      "tabela_id": "aux_series",
+      "texto": "Os 61 códigos, todos com os mesmos 184 meses de mar/2011 a jun/2026 — por isso as colunas de cobertura aparecem como constantes. Isso é uma validação, não um defeito: nenhuma série começa depois nem foi descontinuada no caminho, então comparações entre modalidades não têm viés de janela."
+    },
+    {
+      "tabela_id": "aux_modalidades",
+      "texto": "29 combinações: 10 modalidades em PF, 16 em PJ e os 3 agregados. `tem_saldo` e `tem_taxa` são 'sim' em todas — é o `tem_spread` que separa as 3 linhas Total das outras 26. Esta tabela existe para que essa assimetria seja visível antes de alguém tentar plotar spread por modalidade e obter um gráfico vazio."
+    }
+  ],
+
+  "armadilhas": [
+    {
+      "titulo": "Spread não existe por modalidade",
+      "texto": "O BCB publica spread apenas para os agregados: Total, PF e PJ. 26 das 29 combinações têm `spread_pp` nulo em todos os 184 meses. Isso é ausência com significado, não dado faltante, e a diferença é prática: preencher com zero, interpolar ou tirar média ignorando nulos produz números inventados. Qualquer visualização de spread só pode existir no nível dos três agregados.",
+      "impacto": "alto"
+    },
+    {
+      "titulo": "Estoque e fluxo na mesma linha",
+      "texto": "`saldo` é a posição da carteira no último dia do mês — estoque. `taxa_juros_aa` é a taxa média das operações concedidas naquele mês — fluxo. Somar saldos de meses consecutivos dá um número sem significado (conta o mesmo empréstimo várias vezes). E a taxa de um mês não descreve o custo da carteira existente, e sim o preço do dinheiro novo.",
+      "impacto": "alto"
+    },
+    {
+      "titulo": "Média de taxas sem ponderação é inútil",
+      "texto": "Em jun/2026 as taxas PF vão de 10,64% a.a. no crédito rural a 442,44% a.a. no cartão rotativo — uma amplitude de 41×. E a maior carteira PF é justamente a mais barata: financiamento imobiliário, R$ 1,4 trilhão a 11,22%. A média simples das dez modalidades PF dá algo perto de 100% a.a.; a média ponderada pelo saldo, que é a taxa que o segmento de fato paga, é 39,44%. Toda agregação de taxa precisa ser ponderada por saldo.",
+      "impacto": "alto"
+    },
+    {
+      "titulo": "Nacional, e não por UF — já verificado",
+      "texto": "O SGS não publica crédito por UF por modalidade. Existe crédito por estado apenas por porte de empresa (microempresa, pequeno porte, MEI), que é um recorte diferente e não se cruza com este. Registrado para ninguém reinvestigar: esta fonte é e continuará nacional.",
+      "impacto": "baixo"
+    }
+  ],
+
+  "comparativos": [
+    {
+      "id": "C1",
+      "titulo": "PF paga 3,5 vezes o spread de PJ",
+      "pergunta": "Por que o mesmo sistema financeiro cobra tão diferente de pessoa física e jurídica?",
+      "colunas": ["ano_mes", "segmento", "modalidade_credito", "saldo", "taxa_juros_aa", "spread_pp"],
+      "o_que_esperar": "Medido em jun/2026: spread de 28,59 p.p. em PF contra 8,08 p.p. em PJ, com taxas de 39,44% e 20,80% a.a. A hipótese é que a diferença não seja só risco, mas composição de carteira: PJ concentra capital de giro e BNDES, PF carrega rotativo e cheque especial. Decompor o spread agregado pela mistura de modalidades testa isso — se a diferença sumir ao controlar por composição, é mix; se persistir, é preço."
+    },
+    {
+      "id": "C2",
+      "titulo": "O spread não segue a Selic",
+      "pergunta": "Quando a Selic cai, o spread cai junto?",
+      "colunas": ["ano_mes", "segmento", "taxa_juros_aa", "spread_pp"],
+      "o_que_esperar": "Medido: em mar/2021, com Selic no piso histórico, a taxa total era 19,76% e o spread 14,86 p.p. Em jun/2026, com Selic em dois dígitos, a taxa é 33,44% e o spread 21,99 p.p. O spread — que por definição já desconta o custo de captação — subiu 7 pontos junto com a Selic, quando a teoria diria que ele é indiferente a ela. Esse é o gráfico mais interessante da fonte: se o spread acompanha a Selic, ele está capturando risco de crédito procíclico, não só custo."
+    },
+    {
+      "id": "C3",
+      "titulo": "O rotativo é outro produto",
+      "pergunta": "Faz sentido o cartão rotativo estar na mesma escala das outras modalidades?",
+      "colunas": ["ano_mes", "segmento", "modalidade_credito", "taxa_juros_aa", "saldo"],
+      "o_que_esperar": "442,44% a.a. em jun/2026, contra pico de 497,73% em dez/2016. Com R$ 92 bilhões, é 2% da carteira PF mas domina qualquer eixo em que apareça. A pergunta de desenho é se ele merece um painel próprio ou uma escala log — e a pergunta analítica é se o teto de juros do rotativo, em vigor desde 2024, produziu inflexão visível na série."
+    },
+    {
+      "id": "C4",
+      "titulo": "Para onde foi o crédito em 15 anos",
+      "pergunta": "A carteira quadruplicou de R$ 1,76 tri para R$ 7,36 tri — em que modalidades?",
+      "colunas": ["ano_mes", "segmento", "modalidade_credito", "saldo"],
+      "o_que_esperar": "Crescimento nominal de 4,2× entre mar/2011 e jun/2026, sem deflação disponível nesta fonte. Candidatos a ganho de participação: consignado e imobiliário em PF (as duas maiores carteiras hoje, R$ 786 bi e R$ 1,40 tri). Vale conferir se o crescimento é real ou se some ao deflacionar pelo IPCA — o pipeline de `arrecadacao_federal` já tem esse código pronto."
+    }
+  ],
+
+  "contexto_externo": [
+    {
+      "titulo": "Selic em queda ao longo de 2026",
+      "resumo": "O Copom reduziu a Selic em 0,25 ponto em abril de 2026, para 14,5% ao ano, seguindo um ciclo de cortes consecutivos ao longo do ano. A ata condicionou o tamanho e a duração do ciclo à evolução da inflação.",
+      "numero": "14,5% a.a. (abr/2026)",
+      "fonte": "Agência Brasil (EBC)",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-04/banco-central-reduz-juros-basicos-para-145-ao-ano",
+      "consultado_em": "2026-08-15",
+      "por_que_importa": "É a referência que permite ler a série de spread. Sem saber onde estava a Selic em cada ponto, a curva de taxa não distingue custo de captação de margem do banco — e é exatamente essa separação que o comparativo C2 investiga."
+    },
+    {
+      "titulo": "O SGS não publica crédito por UF por modalidade",
+      "resumo": "Verificação feita na origem: o SGS oferece crédito por estado apenas por porte de empresa (microempresa, pequeno porte e MEI), um recorte que não se cruza com o de modalidade.",
+      "numero": null,
+      "fonte": "Banco Central do Brasil — Portal de Dados Abertos (SGS)",
+      "url": "https://dadosabertos.bcb.gov.br/dataset/20539-saldo-da-carteira-de-credito---total",
+      "consultado_em": "2026-08-15",
+      "por_que_importa": "Fecha a porta para uma expectativa natural (mapa por estado) e evita reinvestigação. Está registrado também no catálogo global do projeto."
+    },
+    {
+      "titulo": "Pix Automático mira a cobrança recorrente desde out/2025",
+      "resumo": "O Banco Central tornou obrigatória a oferta do Pix Automático em outubro de 2025, permitindo cobranças recorrentes com autorização única do pagador.",
+      "numero": "out/2025",
+      "fonte": "Agência Brasil (EBC)",
+      "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2025-06/banco-central-anuncia-o-pix-automatico",
+      "consultado_em": "2026-08-15",
+      "por_que_importa": "Meio de pagamento e crédito estão convergindo: quanto mais barato e automático o débito à vista, menor a demanda por rotativo e parcelado de cartão. É a ponte concreta entre esta fonte e `meios_pagamento_mensal`."
+    }
+  ],
+
+  "cruzamentos": [
+    {
+      "com_fonte": "meios_pagamento_mensal",
+      "chave": "ano_mes",
+      "pergunta": "O saldo de cartão de crédito rotativo e parcelado reage ao avanço do Pix? E o boleto — perde espaço para o Pix Automático ao mesmo tempo em que o parcelado cresce?",
+      "cuidado": "Crédito é estoque e meios de pagamento é fluxo mensal — compare taxas de variação, nunca níveis. Os períodos também diferem: crédito começa em mar/2011."
+    },
+    {
+      "com_fonte": "arrecadacao_federal",
+      "chave": "ano_mes",
+      "pergunta": "A arrecadação de IRPJ e CSLL de entidades financeiras acompanha o spread? A fonte de arrecadação isola exatamente essa abertura na hierarquia de tributos.",
+      "cuidado": "A arrecadação termina em dez/2025 e esta vai até jun/2026 — recorte o período comum. E o lucro tributado tem defasagem em relação ao spread que o gerou: espere correlação com lag."
+    }
+  ],
+
+  "pauta": [
+    {
+      "id": "V1",
+      "titulo": "Taxa e spread contra a Selic",
+      "pergunta": "O spread se move com a Selic ou é independente dela?",
+      "tabela": "tidy",
+      "colunas": ["ano_mes", "segmento", "taxa_juros_aa", "spread_pp"],
+      "tipo_grafico": "linhas sobrepostas — taxa, spread e Selic no mesmo eixo (% a.a.)",
+      "por_que_esse_tipo": "As três grandezas estão na mesma unidade, então dividem o eixo sem truque; e a leitura desejada é a distância vertical entre elas ao longo do tempo, que só um gráfico sobreposto entrega. Exige acrescentar a Selic (SGS 432 ou 4189) ao pipeline — a única série externa que falta.",
+      "status": "proposto",
+      "prioridade": "alta",
+      "esforco": "medio",
+      "comentario": "",
+      "decidido_em": null
+    },
+    {
+      "id": "V2",
+      "titulo": "Dispersão de taxas dentro do segmento",
+      "pergunta": "Quanto varia o preço do crédito entre modalidades do mesmo segmento?",
+      "tabela": "tidy",
+      "colunas": ["segmento", "modalidade_credito", "taxa_juros_aa", "saldo"],
+      "tipo_grafico": "barras horizontais em escala log, tamanho da barra = taxa, cor ou largura = saldo",
+      "por_que_esse_tipo": "De 10,64% a 442,44% não cabe em escala linear sem esmagar dez das onze barras. Log resolve a amplitude, e trazer o saldo junto impede a leitura errada de que rotativo e imobiliário pesam igual na conta do consumidor.",
+      "status": "proposto",
+      "prioridade": "alta",
+      "esforco": "baixo",
+      "comentario": "",
+      "decidido_em": null
+    },
+    {
+      "id": "V3",
+      "titulo": "Taxa média ponderada x média simples",
+      "pergunta": "Qual o tamanho do erro de não ponderar pelo saldo?",
+      "tabela": "tidy",
+      "colunas": ["ano_mes", "segmento", "modalidade_credito", "saldo", "taxa_juros_aa"],
+      "tipo_grafico": "duas linhas no tempo, com a diferença sombreada entre elas",
+      "por_que_esse_tipo": "Torna uma armadilha metodológica em conteúdo visível. A área sombreada é literalmente o erro que se comete ao tirar média simples, e o leitor entende a regra sem precisar ler a nota de rodapé.",
+      "status": "proposto",
+      "prioridade": "media",
+      "esforco": "medio",
+      "comentario": "",
+      "decidido_em": null
+    },
+    {
+      "id": "V4",
+      "titulo": "Composição da carteira em 15 anos",
+      "pergunta": "Quais modalidades ganharam e perderam participação desde 2011?",
+      "tabela": "tidy",
+      "colunas": ["ano_mes", "segmento", "modalidade_credito", "saldo"],
+      "tipo_grafico": "área empilhada 100% por segmento, com alternador PF/PJ",
+      "por_que_esse_tipo": "A pergunta é sobre fatia, e o alternador evita empilhar 26 modalidades de segmentos diferentes num gráfico só, o que seria ilegível. Reaproveita o componente `.alternador` que já existe no CSS.",
+      "status": "proposto",
+      "prioridade": "alta",
+      "esforco": "medio",
+      "comentario": "",
+      "decidido_em": null
+    },
+    {
+      "id": "V5",
+      "titulo": "Painel do rotativo",
+      "pergunta": "A modalidade mais cara do sistema tem comportamento próprio — qual?",
+      "tabela": "tidy",
+      "colunas": ["ano_mes", "segmento", "modalidade_credito", "taxa_juros_aa", "saldo"],
+      "tipo_grafico": "cartão dedicado: linha da taxa desde 2011 com o pico de dez/2016 anotado, e o saldo em barras no fundo",
+      "por_que_esse_tipo": "Isolar o rotativo resolve o problema de escala em todos os outros gráficos e, de quebra, dá o número mais impactante da fonte um lugar onde ele pode ser explicado em vez de só chocar.",
+      "status": "proposto",
+      "prioridade": "media",
+      "esforco": "baixo",
+      "comentario": "",
+      "decidido_em": null
+    },
+    {
+      "id": "V6",
+      "titulo": "Matriz de cobertura das medidas",
+      "pergunta": "O que existe para cada combinação de segmento e modalidade?",
+      "tabela": "aux_modalidades",
+      "colunas": ["segmento", "modalidade_credito", "tem_saldo", "tem_taxa", "tem_spread"],
+      "tipo_grafico": "matriz 29 × 3 com marcação de presença",
+      "por_que_esse_tipo": "É o antídoto para o gráfico vazio. Antes de o usuário escolher spread e não ver nada, a matriz mostra onde há dado. Custa quase nada porque a tabela já é gerada pelo perfil.",
+      "status": "proposto",
+      "prioridade": "baixa",
+      "esforco": "baixo",
+      "comentario": "",
+      "decidido_em": null
+    }
+  ],
+
+  "perguntas_abertas": [
+    "O teto de juros do rotativo passou a valer em 2024. A série mostra inflexão nessa data ou o teto foi absorvido por migração para o parcelado? Não pesquisei a regulamentação exata nem a data de vigência — precisa ser confirmado antes de anotar a data em qualquer gráfico.",
+    "A taxa média das concessões é ponderada pelo volume concedido dentro de cada modalidade, ou é média simples das instituições? A metodologia muda a interpretação de C1 e não está clara na página do SGS.",
+    "Vale acrescentar a Selic (SGS 432/4189) a este repositório como série auxiliar, ou o correto é criar uma fonte `sgs_macro` separada e cruzar? A primeira opção é mais rápida; a segunda evita que cada fonte baixe a sua cópia da Selic."
+  ]
+}
