@@ -308,3 +308,17 @@ main { padding: 24px 0 48px; }
   border-radius: 0 8px 8px 0; padding: 14px 16px; background: var(--superficie);
   font-size: .88rem;
 }
+
+/* ---------- Switch temporário v1/v2 (ver docs/index-v2.html) ---------- */
+.switch-versao {
+  position: fixed; top: 14px; left: 14px; z-index: 50;
+  background: #0f172a; color: #fff; text-decoration: none;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-size: .78rem; font-weight: 600; letter-spacing: .01em;
+  padding: 8px 14px; border-radius: 999px; box-shadow: 0 4px 14px rgba(0,0,0,.25);
+  transition: transform .15s ease, background .15s ease;
+}
+.switch-versao:hover { background: #1e293b; transform: translateY(-1px); }
+@media (max-width: 760px) {
+  .switch-versao { top: auto; bottom: 14px; left: 14px; font-size: .72rem; padding: 7px 12px; }
+}
