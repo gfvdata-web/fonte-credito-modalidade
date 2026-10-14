@@ -144,7 +144,10 @@ class TestDescartarMudancasCosmeticas(unittest.TestCase):
                                    *args], check=True, capture_output=True, text=True)
 
         cwd = os.getcwd()
-        with tempfile.TemporaryDirectory(prefix="cm-git-") as tmp:
+        # Dentro do pre-commit o git exporta GIT_INDEX_FILE/GIT_DIR; sem limpá-los, o repo
+        # descartável escreveria no índice do repo real.
+        env_limpo = {k: v for k, v in os.environ.items() if not k.startswith("GIT_")}
+        with mock.patch.dict(os.environ, env_limpo, clear=True),                 tempfile.TemporaryDirectory(prefix="cm-git-") as tmp:
             os.chdir(tmp)
             try:
                 git("init", "-q")
