@@ -1,0 +1,312 @@
+[
+  {
+    "data": "2013-04",
+    "titulo": "Selic sobe a 7,5% e inicia ciclo de alta",
+    "descricao": "Em 17/04/2013 o Copom elevou a Selic de 7,25% para 7,5% a.a., a primeira alta desde 2011; a decisão não foi unânime (6 votos a 2). O ciclo levaria a taxa a 10,75% em fev/2014.",
+    "segmentos": [
+      "PF",
+      "PJ"
+    ],
+    "modalidades": [
+      "Total"
+    ],
+    "fonte": "https://cooperativismodecredito.coop.br/2013/04/inflacao-faz-copom-elevar-selic-a-75-primeira-alta-desde-2011/"
+  },
+  {
+    "data": "2014-04",
+    "titulo": "Início da recessão de 2014–2016",
+    "descricao": "Segundo o Codace/FGV, a recessão durou 33 meses, de abril de 2014 a dezembro de 2016 (pico em mar/2014, vale em dez/2016), a mais longa da história econômica nacional.",
+    "segmentos": [
+      "PF",
+      "PJ"
+    ],
+    "modalidades": [
+      "Total"
+    ],
+    "fonte": "https://blogdoibre.fgv.br/posts/chegou-ao-fim-quarta-pior-recessao-brasileira-dos-ultimos-150-anos"
+  },
+  {
+    "data": "2016-10",
+    "titulo": "Copom inicia cortes da Selic",
+    "descricao": "Em 19/10/2016 o Copom reduziu a Selic de 14,25% para 14% a.a., o primeiro corte em mais de 4 anos; a sequência chegou a 10 reduções.",
+    "segmentos": [
+      "PF",
+      "PJ"
+    ],
+    "modalidades": [
+      "Total"
+    ],
+    "fonte": "https://exame.com/economia/copom-corta-selic-pela-1a-vez-desde-2012-de-1425-para-14"
+  },
+  {
+    "data": "2017-04",
+    "titulo": "Rotativo do cartão limitado a 30 dias",
+    "descricao": "A Resolução CMN 4.549 passou a valer em 03/04/2017: o rotativo só pode ser usado até o vencimento da fatura seguinte, depois o saldo deve ser parcelado ou quitado. A taxa média do rotativo caiu para 422,5% a.a. em abril.",
+    "segmentos": [
+      "PF",
+      "PJ"
+    ],
+    "modalidades": [
+      "Cartão de crédito rotativo",
+      "Cartão de crédito parcelado"
+    ],
+    "fonte": "https://okai.com.br/noticia/2017-04-04/a-partir-desta-semana-rotativo-do-cartao-de-credito-so-pode-ser-usado-por-ate-30-dias"
+  },
+  {
+    "data": "2018-01",
+    "titulo": "TLP substitui a TJLP no BNDES",
+    "descricao": "A Lei 13.483/2017 criou a Taxa de Longo Prazo (IPCA mais taxa prefixada), aplicável aos financiamentos contratados a partir de 01/01/2018, com convergência gradual em cinco anos.",
+    "segmentos": [
+      "PJ"
+    ],
+    "modalidades": [
+      "Financiamento com recursos do BNDES"
+    ],
+    "fonte": "https://exame.com/economia/temer-sanciona-lei-que-cria-tlp-para-bndes-sem-vetos"
+  },
+  {
+    "data": "2019-07",
+    "titulo": "Cadastro positivo passa a ser automático",
+    "descricao": "A Lei Complementar 166/2019 tornou compulsória a inclusão de pessoas físicas e jurídicas no cadastro positivo; o regime entrou em vigor em 09/07/2019, com direito de saída.",
+    "segmentos": [
+      "PF",
+      "PJ"
+    ],
+    "modalidades": [
+      "Total"
+    ],
+    "fonte": "https://www.moneytimes.com.br/cadastro-positivo-compulsorio-entra-em-vigor-nesta-terca-feira/"
+  },
+  {
+    "data": "2020-01",
+    "titulo": "Teto de 8% ao mês no cheque especial",
+    "descricao": "Desde 06/01/2020 os bancos não podem cobrar mais de 8% ao mês (151,8% a.a.) no cheque especial; em nov/2019 a taxa média era 12,4% ao mês.",
+    "segmentos": [
+      "PF",
+      "PJ"
+    ],
+    "modalidades": [
+      "Cheque especial"
+    ],
+    "fonte": "https://www.agazeta.com.br/economia/cheque-especial-tem-teto-de-8-e-bancos-adiam-cobranca-de-taxa-0120"
+  },
+  {
+    "data": "2020-05",
+    "titulo": "Pronampe é criado",
+    "descricao": "A Lei 13.999, de 18/05/2020, instituiu o Pronampe para micro e pequenas empresas na pandemia, com crédito de até 30% da receita bruta de 2019, garantia do FGO e juros de Selic mais 1,25%.",
+    "segmentos": [
+      "PJ"
+    ],
+    "modalidades": [
+      "Capital de giro"
+    ],
+    "fonte": "https://legis.senado.leg.br/norma/32183563/publicacao/32184120"
+  },
+  {
+    "data": "2020-08",
+    "titulo": "Selic cai a 2% ao ano",
+    "descricao": "Em 05/08/2020 o Copom reduziu a Selic de 2,25% para 2% a.a., menor nível da série, no nono corte seguido, em meio à pandemia.",
+    "segmentos": [
+      "PF",
+      "PJ"
+    ],
+    "modalidades": [
+      "Total"
+    ],
+    "fonte": "https://diariodonordeste.verdesmares.com.br/negocios/copom-reduz-selic-de-225-para-2-ao-ano-no-menor-patamar-da-historia-1.2974198"
+  },
+  {
+    "data": "2021-03",
+    "titulo": "Selic volta a subir (2,75%)",
+    "descricao": "Em 17/03/2021 o Copom elevou a Selic de 2% para 2,75% a.a., iniciando novo ciclo de alta; em set/2021 a taxa já estava em 6,25%.",
+    "segmentos": [
+      "PF",
+      "PJ"
+    ],
+    "modalidades": [
+      "Total"
+    ],
+    "fonte": "https://cooperativismodecredito.coop.br/2021/03/copom-eleva-taxa-basica-de-juros-de-2-para-275-ao-ano/"
+  },
+  {
+    "data": "2021-07",
+    "titulo": "Lei do Superendividamento",
+    "descricao": "A Lei 14.181, sancionada em 01/07/2021, alterou o Código de Defesa do Consumidor para prevenir e tratar o superendividamento e proteger o mínimo existencial, inclusive de idosos.",
+    "segmentos": [
+      "PF"
+    ],
+    "modalidades": [
+      "Crédito pessoal não consignado",
+      "Crédito pessoal consignado",
+      "Cartão de crédito rotativo",
+      "Cartão de crédito parcelado"
+    ],
+    "fonte": "https://www.conjur.com.br/2021-jul-02/lei-superendividamento-sancionada-vetos-entra-vigor//?print=1"
+  },
+  {
+    "data": "2022-08",
+    "titulo": "Selic chega a 13,75% e ciclo de alta termina",
+    "descricao": "Em 03/08/2022 o Copom subiu a Selic de 13,25% para 13,75% a.a., a 12ª alta seguida; em set/2022 a taxa foi mantida, encerrando o ciclo iniciado em mar/2021.",
+    "segmentos": [
+      "PF",
+      "PJ"
+    ],
+    "modalidades": [
+      "Total"
+    ],
+    "fonte": "https://www.tnh1.com.br/noticia/nid/em-12a-alta-seguida-bc-sobe-juros-a-1375-ao-ano-maior-nivel-desde-2017/"
+  },
+  {
+    "data": "2023-03",
+    "titulo": "CNPS reduz teto do consignado INSS",
+    "descricao": "Resolução do CNPS de mar/2023 fixou o teto do consignado do INSS em 1,70% ao mês (2,62% no cartão consignado), abaixo dos 2,14% anteriores.",
+    "segmentos": [
+      "PF"
+    ],
+    "modalidades": [
+      "Crédito pessoal consignado"
+    ],
+    "fonte": "https://static.poder360.com.br/2023/03/resolucao-cnps-consignado-inss.pdf"
+  },
+  {
+    "data": "2023-08",
+    "titulo": "Copom começa a cortar a Selic",
+    "descricao": "Em ago/2023 o Copom reduziu a Selic em 0,5 p.p., de 13,75% para 13,25% a.a., o primeiro corte em três anos, encerrando ciclo de alta de 30 meses.",
+    "segmentos": [
+      "PF",
+      "PJ"
+    ],
+    "modalidades": [
+      "Total"
+    ],
+    "fonte": "https://brasil61.com/n/ata-do-copom-sinaliza-corte-de-0-50-ponto-percentual-em-proximas-reunioes-do-comite-bras239179"
+  },
+  {
+    "data": "2024-01",
+    "titulo": "Teto de 100% nos juros do rotativo e parcelado",
+    "descricao": "A Lei 14.690/2023 (Desenrola Brasil) limitou juros e encargos do rotativo e do parcelamento da fatura a 100% do valor original da dívida, regra válida a partir de jan/2024; em out/2023 a taxa média do rotativo era 441,10% a.a.",
+    "segmentos": [
+      "PF"
+    ],
+    "modalidades": [
+      "Cartão de crédito rotativo",
+      "Cartão de crédito parcelado"
+    ],
+    "fonte": "https://okai.com.br/noticia/2024-01-12/limite-dos-juros-do-cartao-entra-em-vigor"
+  },
+  {
+    "data": "2024-09",
+    "titulo": "Selic volta a subir (10,75%)",
+    "descricao": "Em 18/09/2024 o Copom elevou a Selic em 0,25 p.p., de 10,50% para 10,75% a.a., a primeira alta em mais de dois anos, em decisão unânime.",
+    "segmentos": [
+      "PF",
+      "PJ"
+    ],
+    "modalidades": [
+      "Total"
+    ],
+    "fonte": "https://www.bcb.gov.br/controleinflacao/historicotaxasjuros"
+  },
+  {
+    "data": "2025-01",
+    "titulo": "CNPS eleva teto do consignado INSS a 1,80%",
+    "descricao": "O CNPS aumentou o teto de juros do consignado do INSS de 1,66% para 1,80% ao mês, após a alta da Selic, seguindo metodologia aprovada em out/2023.",
+    "segmentos": [
+      "PF"
+    ],
+    "modalidades": [
+      "Crédito pessoal consignado"
+    ],
+    "fonte": "https://www.infomoney.com.br/?p=2724919"
+  },
+  {
+    "data": "2025-03",
+    "titulo": "Consignado privado (CLT) via eSocial",
+    "descricao": "Em 12/03/2025 o governo lançou o Programa Crédito do Trabalhador, que usa dados do eSocial e desconto em folha; a oferta começou a partir de 21/03/2025, inicialmente por bancos oficiais e privados.",
+    "segmentos": [
+      "PF"
+    ],
+    "modalidades": [
+      "Crédito pessoal consignado"
+    ],
+    "fonte": "https://www.opovo.com.br/noticias/economia/2025/03/12/saiba-como-vai-funcionar-o-credito-consignado-clt.html"
+  },
+  {
+    "data": "2025-06",
+    "titulo": "Selic chega a 15% ao ano",
+    "descricao": "Em 18/06/2025 o Copom elevou a Selic em 0,25 p.p., de 14,75% para 15% a.a., a sétima alta seguida e o maior nível desde 2006.",
+    "segmentos": [
+      "PF",
+      "PJ"
+    ],
+    "modalidades": [
+      "Total"
+    ],
+    "fonte": "https://agenciabrasil.ebc.com.br/economia/noticia/2025-06/copom-eleva-juros-basicos-da-economia-para-15-ao-ano"
+  },
+  {
+    "data": "2025-07",
+    "titulo": "Plano Safra 2025/2026",
+    "descricao": "O governo lançou em 01/07/2025 o Plano Safra com R$ 516,2 bilhões para a agricultura empresarial, com juros de 10% a.a. (Pronamp) e 14% a.a. (demais produtores) no custeio.",
+    "segmentos": [
+      "PF",
+      "PJ"
+    ],
+    "modalidades": [
+      "Crédito rural"
+    ],
+    "fonte": "https://www.diariodepernambuco.com.br/economia/2025/07/7793250-governo-lanca-plano-safra-de-rs-5162-bilhoes-para-agronegocio.html"
+  },
+  {
+    "data": "2025-10",
+    "titulo": "Novo modelo do crédito imobiliário",
+    "descricao": "O CMN elevou o teto do SFH de R$ 1,5 milhão para R$ 2,25 milhões e mudou as regras de direcionamento da poupança e dos compulsórios; o BC estimou R$ 111 bilhões em financiamentos no primeiro ano.",
+    "segmentos": [
+      "PF",
+      "PJ"
+    ],
+    "modalidades": [
+      "Financiamento imobiliário"
+    ],
+    "fonte": "https://www.poder360.com.br/poder-economia/saiba-como-funcionara-o-novo-credito-imobiliario-para-classe-media/"
+  },
+  {
+    "data": "2026-03",
+    "titulo": "Copom retoma cortes: Selic a 14,75%",
+    "descricao": "Em 18/03/2026 o Copom reduziu a Selic de 15% para 14,75% a.a., a primeira redução em quase dois anos, após cinco reuniões de manutenção em 15%.",
+    "segmentos": [
+      "PF",
+      "PJ"
+    ],
+    "modalidades": [
+      "Total"
+    ],
+    "fonte": "https://www.metropoles.com/brasil/copom-decide-reduzir-selic-a-1475-ao-ano"
+  },
+  {
+    "data": "2026-04",
+    "titulo": "Selic reduzida a 14,5%",
+    "descricao": "Em 29/04/2026 o Copom reduziu a Selic de 14,75% para 14,50% a.a., por unanimidade, citando incerteza externa ligada ao conflito no Oriente Médio.",
+    "segmentos": [
+      "PF",
+      "PJ"
+    ],
+    "modalidades": [
+      "Total"
+    ],
+    "fonte": "https://www.bcb.gov.br/controleinflacao/historicotaxasjuros"
+  },
+  {
+    "data": "2026-08",
+    "titulo": "Selic a 14% no quarto corte seguido",
+    "descricao": "Em 05/08/2026 o Copom reduziu a Selic de 14,25% para 14% a.a., o quarto corte consecutivo de 0,25 p.p. no ano.",
+    "segmentos": [
+      "PF",
+      "PJ"
+    ],
+    "modalidades": [
+      "Total"
+    ],
+    "fonte": "https://www.bcb.gov.br/controleinflacao/historicotaxasjuros"
+  }
+]

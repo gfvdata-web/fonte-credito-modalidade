@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Claude · Crédito por modalidade no Brasil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/estilo-v2.css" />
+  <script>try{var t=localStorage.getItem("tema-v2");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+  <script data-goatcounter="https://gfvdata.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+  <div class="tema-switch-v2" id="tema-switch-v2" role="group" aria-label="Tema da página">
+    <button type="button" class="tema-switch-v2__btn" data-tema="light" aria-pressed="false">
+      <span aria-hidden="true">☀️</span><span class="tema-switch-v2__label">Claro</span>
+    </button>
+    <button type="button" class="tema-switch-v2__btn" data-tema="dark" aria-pressed="false">
+      <span aria-hidden="true">🌙</span><span class="tema-switch-v2__label">Escuro</span>
+    </button>
+  </div>
+
+  <header class="cabecalho-v2">
+    <div class="conteiner">
+      <p class="sobrelinha">Dados Abertos · Banco Central do Brasil</p>
+      <h1>Pergunte ao Claude</h1>
+      <p class="subtitulo">Uma skill que ensina o Claude a analisar a série oficial de crédito por modalidade do jeito certo.</p>
+      <nav class="nav-paineis" aria-label="Painéis do projeto">
+        <a href="index.html">Painel</a>
+        <a href="skill.html" aria-current="page">Skill Claude</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="conteiner">
+
+    <section class="narrativa narrativa-abertura">
+      <p>O painel foi construído com a ajuda do Claude. A mesma preparação está empacotada numa <strong>skill</strong>: com ela, o Claude baixa a série atualizada do Banco Central, evita as armadilhas da fonte (unidades, spread, estoque contra fluxo) e situa os números nos marcos históricos.</p>
+    </section>
+
+    <article class="cartao-v2 cartao-ia">
+      <p class="rotulo-secao">Em três passos</p>
+      <h2>Como usar</h2>
+
+      <ol class="passos-skill">
+        <li>
+          <h3>Baixe o pacote</h3>
+          <p>Um arquivo .zip com as instruções, referências (armadilhas, eventos, achados) e um script de carga. Não contém dados: as 61 séries do SGS são baixadas na hora, sempre atualizadas.</p>
+          <a class="botao-download" href="skill/credito-modalidade-bcb.zip" download>Baixar a skill (.zip, 17 KB)</a>
+        </li>
+        <li>
+          <h3>Instale no Claude</h3>
+          <p><strong>No claude.ai:</strong> vá em <em>Configurações → Capacidades → Skills</em> e envie o zip, sem descompactar. A execução de código precisa estar ativada.</p>
+          <p><strong>No Claude Code:</strong> descompacte o zip e coloque a pasta <code>credito-modalidade-bcb</code> em <code>~/.claude/skills/</code>.</p>
+        </li>
+        <li>
+          <h3>Pergunte</h3>
+          <p>Não precisa chamar a skill pelo nome. O Claude a usa sozinho quando o assunto é juros, spread, saldo ou crescimento do crédito por modalidade (cartão, consignado, financiamento, capital de giro). Alguns exemplos:</p>
+          <ul class="exemplos-skill">
+            <li>"Quanto custou o juro do rotativo do cartão nos últimos cinco anos?"</li>
+            <li>"Compare a taxa do consignado com a do crédito pessoal não consignado."</li>
+            <li>"Qual a participação das pessoas jurídicas no saldo total de crédito e como mudou desde 2011?"</li>
+            <li>"Faça um gráfico do spread de PF e PJ e marque os ciclos da Selic."</li>
+          </ul>
+        </li>
+      </ol>
+    </article>
+
+    <article class="cartao-v2">
+      <p class="rotulo-secao">O que vem no pacote</p>
+      <h2>Por que usar a skill em vez de só o CSV</h2>
+      <ul class="passos-ia">
+        <li><strong>Unidades:</strong> saldo em R$ milhões e taxa e spread em % ao ano. Sem esse cuidado, os números saem fora de escala.</li>
+        <li><strong>Spread só nos agregados:</strong> por modalidade ele não é publicado. Nulo não é zero e não se preenche.</li>
+        <li><strong>Estoque contra fluxo:</strong> o saldo é a posição no fim do mês e a taxa é a das operações novas. Saldos de meses diferentes não se somam, e taxas se agregam ponderadas pelo saldo.</li>
+        <li><strong>Inflação:</strong> os valores são nominais. A skill deflaciona pelo IPCA quando a comparação atravessa anos.</li>
+        <li><strong>Marcos históricos:</strong> ciclos da Selic, limite do rotativo, recessões e outros, para situar cada mudança na série.</li>
+      </ul>
+      <p class="legenda-nota">Prefere outra ferramenta? Os dados tratados estão em <a href="dados/credito_modalidade.csv" download>credito_modalidade.csv</a> (saldo em R$ milhões, taxa e spread em % ao ano, nominal).</p>
+    </article>
+
+  </main>
+
+  <footer class="rodape-v2">
+    <div class="conteiner">
+      <p>Fonte: Banco Central do Brasil — SGS, crédito por modalidade (dados abertos).</p>
+      <p class="rodape-obs">Projeto de estudo. A skill é distribuída como está, sem garantias; confira os números na fonte oficial.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var raiz = document.documentElement;
+      var midia = window.matchMedia("(prefers-color-scheme: dark)");
+      function efetivo() {
+        var attr = raiz.getAttribute("data-theme");
+        return attr === "dark" || attr === "light" ? attr : (midia.matches ? "dark" : "light");
+      }
+      function sincronizar() {
+        var tema = efetivo();
+        document.querySelectorAll("#tema-switch-v2 .tema-switch-v2__btn").forEach(function (botao) {
+          var ativo = botao.dataset.tema === tema;
+          botao.classList.toggle("tema-switch-v2__btn--ativo", ativo);
+          botao.setAttribute("aria-pressed", ativo ? "true" : "false");
+        });
+      }
+      document.querySelectorAll("#tema-switch-v2 .tema-switch-v2__btn").forEach(function (botao) {
+        botao.addEventListener("click", function () {
+          raiz.setAttribute("data-theme", botao.dataset.tema);
+          try { localStorage.setItem("tema-v2", botao.dataset.tema); } catch (e) { /* storage bloqueado */ }
+          sincronizar();
+        });
+      });
+      midia.addEventListener("change", function () { if (!raiz.getAttribute("data-theme")) sincronizar(); });
+      sincronizar();
+    })();
+  </script>
+</body>
+</html>

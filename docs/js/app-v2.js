@@ -1,15 +1,15 @@
-/* ===== Crédito por modalidade — v2 (experimental) =====
-   Consome o mesmo dados/credito_modalidade.json da v1, mas com layout,
-   narrativa e gráficos próprios. Nada aqui é compartilhado com js/app.js.
+/* ===== Crédito por modalidade — painel =====
+   Consome dados/credito_modalidade.json (Etapa 5) e eventos_credito_modalidade.json.
+   Substituiu o painel original (v1), que segue apenas no histórico do git.
 
-   Cuidado que a v1 e as notas da fonte (dados/notas_credito_modalidade.json,
+   Cuidado que as notas da fonte (dados/notas_credito_modalidade.json,
    armadilha "Estoque e fluxo na mesma linha") já documentam: saldo é estoque
    (posição de fim de mês), não flui. Nunca somar saldo de meses diferentes —
    por isso toda agregação por período aqui usa o valor do último mês do
    bucket (saldo) ou a média simples (taxa), nunca soma. */
 
 const ARQUIVO_DADOS = "dados/credito_modalidade.json";
-const ARQUIVO_NOTAS = "dados/notas_credito_modalidade.json";
+const ARQUIVO_EVENTOS = "dados/eventos_credito_modalidade.json";
 
 const SERIE_VAR = ["--s1", "--s2", "--s3", "--s4", "--s5"];
 const N_TOP = 5;
@@ -21,7 +21,9 @@ const PERIODOS = [
 ];
 
 let dados = null;
-let contextoExterno = [];
+if (window["chartjs-plugin-annotation"]) Chart.register(window["chartjs-plugin-annotation"]);
+
+let eventos = [];
 let graficoParticipacao = null;
 let graficoEvolucao = null;
 
@@ -31,7 +33,9 @@ let evoMetrica = "taxa";      // "taxa" | "saldo"
 let evoPeriodo = "5a";
 let focoModalidade = null;
 
-// ---------- Formatação (mesmas convenções da v1, ver js/app.js) ----------
+// ---------- Formatação ----------
+/** Escapa texto vindo do JSON antes de entrar em innerHTML. */
+const esc = (t) => String(t ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const nf = (casas = 1) => new Intl.NumberFormat("pt-BR", { minimumFractionDigits: casas, maximumFractionDigits: casas });
 const MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
 const fmtMesAno = (anoMes) => { const [a, m] = anoMes.split("-"); return `${MESES[Number(m) - 1]}/${a}`; };
@@ -219,7 +223,7 @@ function agregarParticipacaoPorPeriodo(i0, i1, itens, granularidade) {
 function renderCabecalho() {
   const meta = dados.meta;
   document.getElementById("rodape-fonte-v2").textContent =
-    `Fonte: ${meta.fonte}. Atualizado em ${new Date(meta.gerado_em).toLocaleDateString("pt-BR")}.`;
+    `Fonte: ${meta.fonte}. Dados até ${fmtMesAno(meta.periodo.fim)}; atualizado em ${new Date(meta.gerado_em).toLocaleDateString("pt-BR")}.`;
 }
 
 // ---------- Narrativa ----------
@@ -384,7 +388,8 @@ function renderGraficoEvolucao() {
   const itens = listaEvolucao(segmento);
   const [i0, i1] = periodoParaIndices(evoPeriodo);
   const campo = evoMetrica;
-  const labelsPeriodo = dados.labels.slice(i0, i1 + 1).map(fmtMesAno);
+  const labelsPeriodoRaw = dados.labels.slice(i0, i1 + 1);
+  const labelsPeriodo = labelsPeriodoRaw.map(fmtMesAno);
 
   document.getElementById("desc-evolucao").textContent =
     `Série mensal de ${rotuloMetrica(evoMetrica)} por modalidade (${rotuloSegmento(segmento).toLowerCase()}), `
@@ -418,6 +423,7 @@ function renderGraficoEvolucao() {
       plugins: {
         legend: { labels: { color: cssVar("--texto"), usePointStyle: true, boxWidth: 8, font: { family: "IBM Plex Sans" } } },
         tooltip: { callbacks: { label: (i) => `${i.dataset.label}: ${fmtCampo(campo, i.parsed.y)}` } },
+        annotation: { annotations: construirAnotacoesEventos(labelsPeriodoRaw) },
       },
       scales: {
         x: { ticks: { color: cssVar("--texto-suave"), maxTicksLimit: 12, autoSkip: true }, grid: { display: false } },
@@ -428,6 +434,7 @@ function renderGraficoEvolucao() {
 
   renderTabelaEvolucao(i0, i1, campo, itens);
   renderNarrativaFechamento(i0, i1, itens);
+  renderNarrativaEventos(labelsPeriodoRaw);
 }
 
 /** Tabela-resumo por ano (média — nunca soma, saldo e taxa são "fotos" mensais, não fluxos). */
@@ -455,17 +462,54 @@ function renderTabelaEvolucao(i0, i1, campo, itens) {
   `).join("");
 }
 
-// ---------- Contexto externo (fixo, ver dados/notas_credito_modalidade.json) ----------
-function renderContextoExterno() {
-  const alvo = document.getElementById("contexto-externo");
-  if (!contextoExterno.length) { alvo.innerHTML = ""; return; }
-  const titulo = `<p class="eventos-titulo">O que também estava em jogo</p>`;
-  alvo.innerHTML = titulo + contextoExterno.map((e) => `
+// ---------- Eventos (dados/eventos_credito_modalidade.json) ----------
+/** Eventos do segmento atual que tocam a modalidade em foco (ou o Total) e caem na janela visível, em ordem de data. */
+function eventosEmFoco(labelsPeriodoRaw) {
+  return eventos
+    .filter((e) => e.segmentos.includes(segmento)
+      && (e.modalidades.includes(focoModalidade) || e.modalidades.includes("Total"))
+      && labelsPeriodoRaw.includes(e.data))
+    .sort((a, b) => a.data.localeCompare(b.data));
+}
+
+/** Rótulo curto para a linha vertical (o título completo aparece na lista abaixo). */
+const rotuloCurto = (t, max = 28) => (t.length > max ? `${t.slice(0, max - 1).trimEnd()}…` : t);
+
+/** Linhas verticais tracejadas nos meses com evento catalogado. */
+function construirAnotacoesEventos(labelsPeriodoRaw) {
+  const anotacoes = {};
+  eventosEmFoco(labelsPeriodoRaw).forEach((e, idx) => {
+    const posicao = labelsPeriodoRaw.indexOf(e.data);
+    anotacoes[`evento${idx}`] = {
+      type: "line", xMin: posicao, xMax: posicao,
+      borderColor: "rgba(20,24,26,.4)", borderWidth: 1, borderDash: [4, 4],
+      label: {
+        display: true, content: rotuloCurto(e.titulo), position: "end", rotation: 0,
+        yAdjust: 10 + (idx % 3) * 16,
+        backgroundColor: "rgba(20,24,26,.85)", color: "#fff",
+        font: { size: 9, family: "IBM Plex Sans" }, padding: 4,
+      },
+    };
+  });
+  return anotacoes;
+}
+
+/** Lista, abaixo do gráfico, os eventos que podem explicar a trajetória da modalidade em foco. */
+function renderNarrativaEventos(labelsPeriodoRaw) {
+  const relevantes = eventosEmFoco(labelsPeriodoRaw);
+  const alvo = document.getElementById("eventos-linha-tempo");
+  const titulo = `<p class="eventos-titulo">O que pode explicar a trajetória de ${esc(focoModalidade)}</p>`;
+  if (!relevantes.length) {
+    alvo.innerHTML = titulo
+      + `<p class="eventos-vazio">Nenhum evento catalogado nesta janela de tempo para ${esc(focoModalidade)} — amplie o período para ver o contexto.</p>`;
+    return;
+  }
+  alvo.innerHTML = titulo + relevantes.map((e) => `
     <div class="evento-item">
-      <div class="evento-data">${e.numero || ""}</div>
+      <div class="evento-data">${fmtMesAno(e.data)}</div>
       <div class="evento-corpo">
-        <h4>${e.titulo}</h4>
-        <p>${e.resumo} <a href="${e.url}" target="_blank" rel="noopener">Fonte ↗</a></p>
+        <h4>${esc(e.titulo)}</h4>
+        <p>${esc(e.descricao)} <a href="${esc(e.fonte)}" target="_blank" rel="noopener">Fonte ↗</a></p>
       </div>
     </div>`).join("");
 }
@@ -615,14 +659,14 @@ async function iniciar() {
   }
 
   try {
-    const respNotas = await fetch(ARQUIVO_NOTAS);
-    contextoExterno = respNotas.ok ? (await respNotas.json()).contexto_externo || [] : [];
+    const respEventos = await fetch(ARQUIVO_EVENTOS);
+    eventos = respEventos.ok ? await respEventos.json() : [];
   } catch (erro) {
-    contextoExterno = [];
-    console.warn("Contexto externo não carregado:", erro);
+    eventos = [];
+    console.warn("Eventos não carregados:", erro);
   }
 
-  focoModalidade = "Cartão de crédito rotativo"; // maior contraste de taxa — ver kpis.totais.mais_cara
+  focoModalidade = "Cartão de crédito rotativo"; // se não estiver entre as pílulas do segmento, montarPilulasModalidade cai na primeira
 
   renderCabecalho();
   renderNarrativaAbertura();
@@ -630,7 +674,6 @@ async function iniciar() {
   montarPilulasModalidade();
   renderGraficoParticipacao();
   renderGraficoEvolucao();
-  renderContextoExterno();
 }
 
 iniciar();

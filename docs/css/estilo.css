@@ -193,9 +193,9 @@ main { padding: 24px 0 48px; }
 .selo-descartado{ color: #b91c1c; border-color: #fca5a5; background: #fef2f2; }
 .selo-no_painel { color: #7c3aed; border-color: #c4b5fd; background: #f5f3ff; }
 
-.selo-alto  { color: #b91c1c; border-color: #fca5a5; background: #fef2f2; }
-.selo-medio { color: #b45309; border-color: #fcd34d; background: #fffbeb; }
-.selo-baixo { color: #475569; border-color: #cbd5e1; background: #f8fafc; }
+.selo-alto, .selo-alta   { color: #b91c1c; border-color: #fca5a5; background: #fef2f2; }
+.selo-medio, .selo-media { color: #b45309; border-color: #fcd34d; background: #fffbeb; }
+.selo-baixo, .selo-baixa { color: #475569; border-color: #cbd5e1; background: #f8fafc; }
 
 @media (prefers-color-scheme: dark) {
   .selo-medida       { color: #93c5fd; border-color: #1e40af; background: #172554; }
@@ -210,9 +210,9 @@ main { padding: 24px 0 48px; }
   .selo-aprovado     { color: #6ee7b7; border-color: #065f46; background: #052e26; }
   .selo-descartado   { color: #fca5a5; border-color: #991b1b; background: #2c0b0b; }
   .selo-no_painel    { color: #c4b5fd; border-color: #5b21b6; background: #2e1065; }
-  .selo-alto         { color: #fca5a5; border-color: #991b1b; background: #2c0b0b; }
-  .selo-medio        { color: #fcd34d; border-color: #92400e; background: #2c1a05; }
-  .selo-baixo        { color: #cbd5e1; border-color: #334155; background: #1e293b; }
+  .selo-alto, .selo-alta { color: #fca5a5; border-color: #991b1b; background: #2c0b0b; }
+  .selo-medio, .selo-media { color: #fcd34d; border-color: #92400e; background: #2c1a05; }
+  .selo-baixo, .selo-baixa { color: #cbd5e1; border-color: #334155; background: #1e293b; }
 }
 
 /* Mapa das tabelas ------------------------------------------------------ */
@@ -307,18 +307,4 @@ main { padding: 24px 0 48px; }
   border: 1px solid var(--borda); border-left: 3px solid var(--negativo);
   border-radius: 0 8px 8px 0; padding: 14px 16px; background: var(--superficie);
   font-size: .88rem;
-}
-
-/* ---------- Switch temporário v1/v2 (ver docs/index-v2.html) ---------- */
-.switch-versao {
-  position: fixed; top: 14px; left: 14px; z-index: 50;
-  background: #0f172a; color: #fff; text-decoration: none;
-  font-family: "IBM Plex Sans", system-ui, sans-serif;
-  font-size: .78rem; font-weight: 600; letter-spacing: .01em;
-  padding: 8px 14px; border-radius: 999px; box-shadow: 0 4px 14px rgba(0,0,0,.25);
-  transition: transform .15s ease, background .15s ease;
-}
-.switch-versao:hover { background: #1e293b; transform: translateY(-1px); }
-@media (max-width: 760px) {
-  .switch-versao { top: auto; bottom: 14px; left: 14px; font-size: .72rem; padding: 7px 12px; }
 }

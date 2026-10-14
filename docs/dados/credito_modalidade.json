@@ -10,10 +10,10 @@
     },
     "periodicidade": "mensal",
     "licenca": "Open Database License (ODbL) — Banco Central do Brasil",
-    "gerado_em": "2026-08-15T21:46:53.092497+00:00",
+    "gerado_em": "2026-10-14T11:23:30.646065+00:00",
     "periodo": {
       "inicio": "2011-03",
-      "fim": "2026-06"
+      "fim": "2026-08"
     },
     "series_sgs": 61
   },
@@ -201,7 +201,9 @@
     "2026-03",
     "2026-04",
     "2026-05",
-    "2026-06"
+    "2026-06",
+    "2026-07",
+    "2026-08"
   ],
   "segmentos": [
     "Total",
@@ -427,14 +429,16 @@
           6774436.0,
           6852705.0,
           6923886.0,
-          7003273.0,
-          7136436.0,
-          7130500.0,
-          7156987.0,
-          7240551.0,
-          7259769.0,
-          7303618.0,
-          7355800.0
+          7004223.0,
+          7137252.0,
+          7130762.0,
+          7157783.0,
+          7240557.0,
+          7259766.0,
+          7305322.0,
+          7353302.0,
+          7362305.0,
+          7397669.0
         ],
         "taxa": [
           27.35,
@@ -613,14 +617,16 @@
           31.87,
           31.47,
           32.04,
-          32.32,
-          31.99,
-          32.6,
-          32.78,
-          32.99,
-          33.51,
-          33.22,
-          33.44
+          32.2,
+          31.87,
+          32.45,
+          32.63,
+          32.84,
+          33.36,
+          32.97,
+          32.63,
+          32.06,
+          32.26
         ],
         "spread": [
           17.65,
@@ -799,14 +805,16 @@
           20.77,
           20.53,
           20.9,
-          21.37,
-          21.01,
-          21.59,
-          21.98,
-          21.71,
-          22.24,
-          21.89,
-          21.99
+          21.23,
+          20.87,
+          21.42,
+          21.81,
+          21.54,
+          22.07,
+          21.64,
+          21.16,
+          20.85,
+          21.16
         ]
       }
     },
@@ -989,14 +997,16 @@
           4228171.0,
           4262888.0,
           4326256.0,
-          4387061.0,
-          4435290.0,
-          4476448.0,
-          4501056.0,
-          4553014.0,
-          4574369.0,
-          4595657.0,
-          4606799.0
+          4387321.0,
+          4435517.0,
+          4476542.0,
+          4501299.0,
+          4553022.0,
+          4574368.0,
+          4597168.0,
+          4602668.0,
+          4633143.0,
+          4670170.0
         ],
         "taxa": [
           36.42,
@@ -1175,14 +1185,16 @@
           36.6,
           36.5,
           36.79,
-          37.9,
+          37.89,
           37.73,
           38.03,
           38.34,
           38.45,
           38.93,
-          38.86,
-          39.44
+          38.56,
+          38.34,
+          37.46,
+          38.18
         ],
         "spread": [
           26.06,
@@ -1361,14 +1373,16 @@
           25.98,
           25.93,
           26.2,
-          27.41,
+          27.4,
           27.25,
           27.52,
           28.07,
           27.81,
           28.41,
-          28.2,
-          28.59
+          27.9,
+          27.48,
+          26.67,
+          27.48
         ]
       },
       "Cheque especial": {
@@ -1552,11 +1566,13 @@
           42308.0,
           40651.0,
           44136.0,
-          44554.0,
+          44555.0,
           45377.0,
           44952.0,
-          43801.0,
-          44758.0
+          43816.0,
+          44842.0,
+          44742.0,
+          45450.0
         ],
         "taxa": [
           145.33,
@@ -1742,7 +1758,9 @@
           138.9,
           140.93,
           137.25,
-          139.78
+          139.9,
+          136.97,
+          136.41
         ]
       },
       "Crédito pessoal não consignado": {
@@ -1923,14 +1941,16 @@
           369249.0,
           373360.0,
           382612.0,
-          390071.0,
-          388413.0,
+          390074.0,
+          388418.0,
           395232.0,
-          399858.0,
+          399866.0,
           399151.0,
           400694.0,
-          400664.0,
-          397186.0
+          402004.0,
+          395073.0,
+          398066.0,
+          399765.0
         ],
         "taxa": [
           73.87,
@@ -2109,14 +2129,16 @@
           103.97,
           101.1,
           101.12,
-          111.48,
+          111.43,
           116.59,
           118.02,
           112.15,
           117.05,
-          125.04,
-          120.33,
-          127.3
+          125.03,
+          116.04,
+          112.17,
+          110.97,
+          110.22
         ]
       },
       "Crédito pessoal consignado": {
@@ -2297,14 +2319,16 @@
           714598.0,
           716489.0,
           726471.0,
-          730828.0,
+          730834.0,
           735355.0,
           746898.0,
-          757551.0,
-          770375.0,
+          757554.0,
+          770378.0,
           771241.0,
-          778991.0,
-          785512.0
+          779029.0,
+          785510.0,
+          786582.0,
+          791848.0
         ],
         "taxa": [
           29.21,
@@ -2483,14 +2507,16 @@
           26.67,
           26.79,
           27.19,
-          27.05,
+          27.04,
           27.16,
           27.59,
           28.17,
           27.97,
           28.15,
           27.91,
-          28.26
+          28.26,
+          28.43,
+          29.0
         ]
       },
       "Aquisição de veículos": {
@@ -2677,8 +2703,10 @@
           408416.0,
           411626.0,
           414881.0,
-          412439.0,
-          405593.0
+          412443.0,
+          405632.0,
+          409633.0,
+          415527.0
         ],
         "taxa": [
           27.95,
@@ -2864,7 +2892,9 @@
           26.6,
           26.64,
           26.31,
-          26.44
+          26.44,
+          26.52,
+          26.42
         ]
       },
       "Cartão de crédito rotativo": {
@@ -3052,7 +3082,9 @@
           87107.0,
           90035.0,
           90436.0,
-          92033.0
+          90505.0,
+          91691.0,
+          96113.0
         ],
         "taxa": [
           267.99,
@@ -3237,8 +3269,10 @@
           442.26,
           433.06,
           431.97,
-          439.83,
-          442.44
+          441.06,
+          447.39,
+          436.15,
+          444.89
         ]
       },
       "Cartão de crédito parcelado": {
@@ -3426,7 +3460,9 @@
           93519.0,
           94992.0,
           94419.0,
-          93349.0
+          90997.0,
+          87521.0,
+          88188.0
         ],
         "taxa": [
           123.32,
@@ -3612,7 +3648,9 @@
           192.07,
           188.06,
           189.55,
-          191.42
+          191.42,
+          189.28,
+          192.08
         ]
       },
       "Desconto de cheques": {
@@ -3796,11 +3834,13 @@
           1508.0,
           1506.0,
           1532.0,
-          1496.0,
+          1497.0,
           1440.0,
           1423.0,
-          1406.0,
-          1405.0
+          1407.0,
+          1371.0,
+          1344.0,
+          1343.0
         ],
         "taxa": [
           54.08,
@@ -3986,7 +4026,9 @@
           45.61,
           52.64,
           45.99,
-          51.76
+          51.76,
+          51.18,
+          58.95
         ]
       },
       "Crédito rural": {
@@ -4170,11 +4212,13 @@
           556061.0,
           558348.0,
           568431.0,
-          575459.0,
+          575506.0,
           575781.0,
           574193.0,
-          569819.0,
-          564266.0
+          569859.0,
+          562807.0,
+          558238.0,
+          557777.0
         ],
         "taxa": [
           5.95,
@@ -4353,14 +4397,16 @@
           12.47,
           11.9,
           11.69,
-          11.64,
+          11.66,
           11.63,
           10.91,
           10.6,
           10.43,
           10.32,
           10.45,
-          10.64
+          10.48,
+          11.09,
+          11.12
         ]
       },
       "Financiamento imobiliário": {
@@ -4548,7 +4594,9 @@
           1349026.0,
           1362188.0,
           1378100.0,
-          1395317.0
+          1395366.0,
+          1414668.0,
+          1430825.0
         ],
         "taxa": [
           10.68,
@@ -4727,14 +4775,16 @@
           10.49,
           10.37,
           10.42,
-          10.35,
+          10.34,
           10.78,
           10.97,
           10.68,
           11.56,
           11.12,
           11.23,
-          11.22
+          11.22,
+          11.3,
+          11.28
         ]
       },
       "Microcrédito": {
@@ -4922,7 +4972,9 @@
           9069.0,
           8949.0,
           9033.0,
-          9147.0
+          9147.0,
+          9277.0,
+          9326.0
         ],
         "taxa": [
           27.49,
@@ -5108,7 +5160,9 @@
           53.34,
           50.97,
           49.83,
-          50.04
+          50.04,
+          50.79,
+          50.2
         ]
       }
     },
@@ -5291,14 +5345,16 @@
           2546265.0,
           2589817.0,
           2597630.0,
-          2616213.0,
-          2701146.0,
-          2654052.0,
-          2655931.0,
-          2687537.0,
-          2685400.0,
-          2707962.0,
-          2749001.0
+          2616902.0,
+          2701735.0,
+          2654220.0,
+          2656484.0,
+          2687535.0,
+          2685397.0,
+          2708154.0,
+          2750634.0,
+          2729162.0,
+          2727499.0
         ],
         "taxa": [
           19.33,
@@ -5477,14 +5533,16 @@
           21.5,
           20.55,
           21.66,
-          20.45,
-          19.92,
-          21.11,
-          20.9,
-          21.25,
-          21.84,
-          21.25,
-          20.8
+          20.43,
+          19.9,
+          20.99,
+          20.79,
+          21.12,
+          21.72,
+          21.24,
+          20.74,
+          20.81,
+          19.75
         ],
         "spread": [
           10.22,
@@ -5663,14 +5721,16 @@
           9.33,
           8.8,
           9.32,
-          8.53,
-          7.91,
-          9.02,
-          8.95,
-          8.61,
-          8.98,
-          8.51,
-          8.08
+          8.48,
+          7.85,
+          8.87,
+          8.81,
+          8.45,
+          8.84,
+          8.49,
+          8.0,
+          8.73,
+          7.81
         ]
       },
       "Desconto de duplicatas e recebíveis": {
@@ -5857,8 +5917,10 @@
           170835.0,
           185441.0,
           169830.0,
-          172156.0,
-          192313.0
+          172159.0,
+          192134.0,
+          176190.0,
+          171856.0
         ],
         "taxa": [
           35.76,
@@ -6044,7 +6106,9 @@
           18.37,
           19.25,
           19.62,
-          18.96
+          18.96,
+          19.25,
+          18.6
         ]
       },
       "Capital de giro": {
@@ -6228,11 +6292,13 @@
           499192.0,
           506107.0,
           501046.0,
-          500995.0,
+          500996.0,
           502426.0,
           500430.0,
-          501688.0,
-          506497.0
+          501708.0,
+          505193.0,
+          489636.0,
+          482924.0
         ],
         "taxa": [
           23.39,
@@ -6418,7 +6484,9 @@
           24.86,
           23.18,
           23.1,
-          22.93
+          22.93,
+          24.49,
+          22.89
         ]
       },
       "Conta garantida": {
@@ -6605,8 +6673,10 @@
           48510.0,
           47730.0,
           50132.0,
-          48823.0,
-          48584.0
+          48828.0,
+          48413.0,
+          47069.0,
+          47392.0
         ],
         "taxa": [
           38.81,
@@ -6792,7 +6862,9 @@
           61.2,
           61.29,
           63.35,
-          61.63
+          61.62,
+          57.38,
+          56.15
         ]
       },
       "Cheque especial": {
@@ -6976,11 +7048,13 @@
           19688.0,
           18029.0,
           20583.0,
-          21293.0,
+          21294.0,
           20888.0,
           21533.0,
-          20977.0,
-          21597.0
+          20978.0,
+          21818.0,
+          21143.0,
+          20895.0
         ],
         "taxa": [
           167.39,
@@ -7166,7 +7240,9 @@
           351.6,
           349.75,
           343.35,
-          359.04
+          352.45,
+          336.04,
+          354.78
         ]
       },
       "Aquisição de veículos": {
@@ -7353,8 +7429,10 @@
           141141.0,
           139349.0,
           138722.0,
-          138000.0,
-          136055.0
+          138006.0,
+          135957.0,
+          133874.0,
+          132715.0
         ],
         "taxa": [
           21.13,
@@ -7540,7 +7618,9 @@
           18.54,
           18.5,
           18.7,
-          18.75
+          18.75,
+          18.92,
+          18.82
         ]
       },
       "Vendor": {
@@ -7728,7 +7808,9 @@
           3417.0,
           3113.0,
           2931.0,
-          3398.0
+          3398.0,
+          2854.0,
+          2507.0
         ],
         "taxa": [
           18.21,
@@ -7914,7 +7996,9 @@
           18.79,
           19.5,
           20.31,
-          19.67
+          19.67,
+          17.57,
+          18.39
         ]
       },
       "Compror": {
@@ -8102,7 +8186,9 @@
           15934.0,
           15826.0,
           16246.0,
-          18423.0
+          18423.0,
+          17127.0,
+          17081.0
         ],
         "taxa": [
           17.21,
@@ -8288,7 +8374,9 @@
           17.52,
           17.08,
           16.73,
-          17.11
+          17.11,
+          16.94,
+          17.07
         ]
       },
       "Cartão de crédito rotativo": {
@@ -8476,7 +8564,9 @@
           8943.0,
           7833.0,
           7511.0,
-          11243.0
+          11205.0,
+          8672.0,
+          8692.0
         ],
         "taxa": [
           233.26,
@@ -8662,7 +8752,9 @@
           195.28,
           236.1,
           250.33,
-          146.06
+          146.06,
+          230.36,
+          203.5
         ]
       },
       "Cartão de crédito parcelado": {
@@ -8850,7 +8942,9 @@
           3710.0,
           3831.0,
           3950.0,
-          4051.0
+          3957.0,
+          4076.0,
+          4152.0
         ],
         "taxa": [
           94.66,
@@ -9036,7 +9130,9 @@
           162.74,
           159.61,
           157.93,
-          156.02
+          156.02,
+          158.09,
+          156.43
         ]
       },
       "Adiantamento sobre contratos de câmbio (ACC)": {
@@ -9224,7 +9320,9 @@
           117217.0,
           116283.0,
           117859.0,
-          118892.0
+          118892.0,
+          121782.0,
+          126053.0
         ],
         "taxa": [
           3.09,
@@ -9410,7 +9508,9 @@
           5.43,
           5.77,
           5.62,
-          5.52
+          5.52,
+          5.86,
+          5.44
         ]
       },
       "Financiamento a importações": {
@@ -9598,7 +9698,9 @@
           7335.0,
           7152.0,
           7966.0,
-          8609.0
+          8609.0,
+          8175.0,
+          7941.0
         ],
         "taxa": [
           13.07,
@@ -9784,7 +9886,9 @@
           13.78,
           12.59,
           11.68,
-          10.62
+          10.62,
+          10.31,
+          13.9
         ]
       },
       "Financiamento a exportações": {
@@ -9972,7 +10076,9 @@
           131541.0,
           130059.0,
           129262.0,
-          129922.0
+          130065.0,
+          129425.0,
+          130035.0
         ],
         "taxa": [
           13.51,
@@ -10158,7 +10264,9 @@
           14.67,
           14.29,
           14.39,
-          14.74
+          14.74,
+          13.91,
+          14.3
         ]
       },
       "Repasse externo": {
@@ -10346,7 +10454,9 @@
           30214.0,
           28863.0,
           28324.0,
-          28512.0
+          28513.0,
+          27884.0,
+          28148.0
         ],
         "taxa": [
           17.69,
@@ -10532,7 +10642,9 @@
           13.51,
           14.23,
           13.89,
-          15.51
+          15.51,
+          13.87,
+          14.51
         ]
       },
       "Crédito rural": {
@@ -10719,8 +10831,10 @@
           114863.0,
           120377.0,
           122679.0,
-          125699.0,
-          126616.0
+          125701.0,
+          126946.0,
+          127609.0,
+          127128.0
         ],
         "taxa": [
           8.61,
@@ -10906,7 +11020,9 @@
           12.38,
           13.21,
           12.39,
-          12.62
+          12.55,
+          12.04,
+          11.61
         ]
       },
       "Financiamento imobiliário": {
@@ -11094,7 +11210,9 @@
           73963.0,
           75097.0,
           76247.0,
-          77386.0
+          77415.0,
+          78011.0,
+          78981.0
         ],
         "taxa": [
           11.94,
@@ -11280,7 +11398,9 @@
           12.26,
           11.7,
           12.45,
-          12.22
+          12.22,
+          12.6,
+          12.2
         ]
       },
       "Financiamento com recursos do BNDES": {
@@ -11467,8 +11587,10 @@
           480157.0,
           485435.0,
           486177.0,
-          486885.0,
-          490913.0
+          486887.0,
+          490995.0,
+          494597.0,
+          496536.0
         ],
         "taxa": [
           9.51,
@@ -11654,7 +11776,9 @@
           15.05,
           17.52,
           16.18,
-          14.93
+          14.93,
+          13.24,
+          11.73
         ]
       }
     }
@@ -11838,17 +11962,19 @@
         759369.0,
         764126.0,
         777413.0,
-        795671.0,
-        823945.0,
-        812102.0,
-        791453.0,
-        810543.0,
-        810821.0,
-        816549.0,
-        818233.0
+        795922.0,
+        824167.0,
+        812196.0,
+        791636.0,
+        810548.0,
+        810820.0,
+        816622.0,
+        821418.0,
+        831381.0,
+        834008.0
       ],
-      "saldo_ultimo": 818233.0,
-      "part_saldo_segmento_pct": 17.761421759447288
+      "saldo_ultimo": 834008.0,
+      "part_saldo_segmento_pct": 17.85819359894822
     },
     "PJ": {
       "saldo": [
@@ -12028,17 +12154,19 @@
         723138.0,
         743760.0,
         751326.0,
-        763908.0,
-        786740.0,
-        784673.0,
-        786118.0,
-        793617.0,
-        807840.0,
-        823438.0,
-        825990.0
+        764597.0,
+        787329.0,
+        784841.0,
+        786669.0,
+        793615.0,
+        807837.0,
+        823591.0,
+        828701.0,
+        841038.0,
+        844463.0
       ],
-      "saldo_ultimo": 825990.0,
-      "part_saldo_segmento_pct": 30.04691522483986
+      "saldo_ultimo": 844463.0,
+      "part_saldo_segmento_pct": 30.961074596177667
     }
   },
   "kpis": {
@@ -12046,331 +12174,331 @@
       {
         "segmento": "PF",
         "modalidade": "Financiamento imobiliário",
-        "saldo_ultimo": 1395317.0,
-        "part_saldo_segmento_pct": 30.288210968179857,
-        "taxa_ultima": 11.22,
-        "taxa_media_periodo": 9.17233695652174,
-        "var_taxa_12m_pp": 0.7300000000000004,
-        "yoy_saldo_pct": 13.10587060385624,
-        "cagr_saldo_aa_pct": 16.1403929376563
+        "saldo_ultimo": 1430825.0,
+        "part_saldo_segmento_pct": 30.637535678572732,
+        "taxa_ultima": 11.28,
+        "taxa_media_periodo": 9.19505376344086,
+        "var_taxa_12m_pp": 0.7899999999999991,
+        "yoy_saldo_pct": 13.84921051710255,
+        "cagr_saldo_aa_pct": 16.141834181182023
       },
       {
         "segmento": "PF",
         "modalidade": "Crédito pessoal consignado",
-        "saldo_ultimo": 785512.0,
-        "part_saldo_segmento_pct": 17.05114549169608,
-        "taxa_ultima": 28.26,
-        "taxa_media_periodo": 25.205326086956525,
-        "var_taxa_12m_pp": 1.4500000000000028,
-        "yoy_saldo_pct": 11.43088978795117,
-        "cagr_saldo_aa_pct": 11.846582641827963
+        "saldo_ultimo": 791848.0,
+        "part_saldo_segmento_pct": 16.95544273548929,
+        "taxa_ultima": 29.0,
+        "taxa_media_periodo": 25.24301075268817,
+        "var_taxa_12m_pp": 2.3299999999999983,
+        "yoy_saldo_pct": 10.810273748317245,
+        "cagr_saldo_aa_pct": 11.769518939767586
       },
       {
         "segmento": "PF",
         "modalidade": "Crédito rural",
-        "saldo_ultimo": 564266.0,
-        "part_saldo_segmento_pct": 12.24854828699928,
-        "taxa_ultima": 10.64,
-        "taxa_media_periodo": 7.873097826086956,
-        "var_taxa_12m_pp": -1.7599999999999998,
-        "yoy_saldo_pct": 4.365759013949555,
-        "cagr_saldo_aa_pct": 15.029234359945566
-      },
-      {
-        "segmento": "PJ",
-        "modalidade": "Capital de giro",
-        "saldo_ultimo": 506497.0,
-        "part_saldo_segmento_pct": 18.42476594224593,
-        "taxa_ultima": 22.93,
-        "taxa_media_periodo": 20.669728260869565,
-        "var_taxa_12m_pp": -0.8099999999999987,
-        "yoy_saldo_pct": 1.5868909012505483,
-        "cagr_saldo_aa_pct": 4.712363267341191
+        "saldo_ultimo": 557777.0,
+        "part_saldo_segmento_pct": 11.943398206061023,
+        "taxa_ultima": 11.12,
+        "taxa_media_periodo": 7.9070967741935485,
+        "var_taxa_12m_pp": -1.3500000000000014,
+        "yoy_saldo_pct": 2.8810842615699883,
+        "cagr_saldo_aa_pct": 14.769108578181832
       },
       {
         "segmento": "PJ",
         "modalidade": "Financiamento com recursos do BNDES",
-        "saldo_ultimo": 490913.0,
-        "part_saldo_segmento_pct": 17.857869094991237,
-        "taxa_ultima": 14.93,
-        "taxa_media_periodo": 10.21625,
-        "var_taxa_12m_pp": 1.2199999999999989,
-        "yoy_saldo_pct": 11.363342490489337,
-        "cagr_saldo_aa_pct": 2.4585071558878235
+        "saldo_ultimo": 496536.0,
+        "part_saldo_segmento_pct": 18.204809607629553,
+        "taxa_ultima": 11.73,
+        "taxa_media_periodo": 10.240645161290324,
+        "var_taxa_12m_pp": -2.16,
+        "yoy_saldo_pct": 10.33250673279471,
+        "cagr_saldo_aa_pct": 2.5073074900910486
+      },
+      {
+        "segmento": "PJ",
+        "modalidade": "Capital de giro",
+        "saldo_ultimo": 482924.0,
+        "part_saldo_segmento_pct": 17.70574434674403,
+        "taxa_ultima": 22.89,
+        "taxa_media_periodo": 20.70220430107527,
+        "var_taxa_12m_pp": -3.2300000000000004,
+        "yoy_saldo_pct": -2.440975582163485,
+        "cagr_saldo_aa_pct": 4.337202569519327
       },
       {
         "segmento": "PF",
         "modalidade": "Aquisição de veículos",
-        "saldo_ultimo": 405593.0,
-        "part_saldo_segmento_pct": 8.80422610146438,
-        "taxa_ultima": 26.44,
-        "taxa_media_periodo": 24.11978260869565,
-        "var_taxa_12m_pp": -1.1499999999999986,
-        "yoy_saldo_pct": 10.55134893507994,
-        "cagr_saldo_aa_pct": 6.759124033247899
+        "saldo_ultimo": 415527.0,
+        "part_saldo_segmento_pct": 8.897470541757581,
+        "taxa_ultima": 26.42,
+        "taxa_media_periodo": 24.145053763440856,
+        "var_taxa_12m_pp": -0.9199999999999982,
+        "yoy_saldo_pct": 10.913085025170698,
+        "cagr_saldo_aa_pct": 6.851241441012723
       },
       {
         "segmento": "PF",
         "modalidade": "Crédito pessoal não consignado",
-        "saldo_ultimo": 397186.0,
-        "part_saldo_segmento_pct": 8.621734961738074,
-        "taxa_ultima": 127.3,
-        "taxa_media_periodo": 99.49010869565218,
-        "var_taxa_12m_pp": 18.909999999999997,
-        "yoy_saldo_pct": 10.545622550765943,
-        "cagr_saldo_aa_pct": 12.286178288732042
+        "saldo_ultimo": 399765.0,
+        "part_saldo_segmento_pct": 8.559966767805026,
+        "taxa_ultima": 110.22,
+        "taxa_media_periodo": 99.50478494623655,
+        "var_taxa_12m_pp": 6.25,
+        "yoy_saldo_pct": 8.264341948116316,
+        "cagr_saldo_aa_pct": 12.192688971305321
       },
       {
         "segmento": "PJ",
         "modalidade": "Desconto de duplicatas e recebíveis",
-        "saldo_ultimo": 192313.0,
-        "part_saldo_segmento_pct": 6.995741362043885,
-        "taxa_ultima": 18.96,
-        "taxa_media_periodo": 22.96554347826087,
-        "var_taxa_12m_pp": -2.4800000000000004,
-        "yoy_saldo_pct": -0.46992821691224096,
-        "cagr_saldo_aa_pct": 15.314730836782164
+        "saldo_ultimo": 171856.0,
+        "part_saldo_segmento_pct": 6.300863904991349,
+        "taxa_ultima": 18.6,
+        "taxa_media_periodo": 22.922096774193548,
+        "var_taxa_12m_pp": -1.639999999999997,
+        "yoy_saldo_pct": -2.714942372574325,
+        "cagr_saldo_aa_pct": 14.30033653089906
       },
       {
         "segmento": "PJ",
         "modalidade": "Aquisição de veículos",
-        "saldo_ultimo": 136055.0,
-        "part_saldo_segmento_pct": 4.9492524738987,
-        "taxa_ultima": 18.75,
-        "taxa_media_periodo": 17.60728260869565,
-        "var_taxa_12m_pp": -0.21999999999999886,
-        "yoy_saldo_pct": -3.2532176633719656,
-        "cagr_saldo_aa_pct": 15.87748757010512
+        "saldo_ultimo": 132715.0,
+        "part_saldo_segmento_pct": 4.8658129663842224,
+        "taxa_ultima": 18.82,
+        "taxa_media_periodo": 17.620860215053767,
+        "var_taxa_12m_pp": 0.05999999999999872,
+        "yoy_saldo_pct": -5.205602737084202,
+        "cagr_saldo_aa_pct": 15.506654440877
       },
       {
         "segmento": "PJ",
         "modalidade": "Financiamento a exportações",
-        "saldo_ultimo": 129922.0,
-        "part_saldo_segmento_pct": 4.726153246215626,
-        "taxa_ultima": 14.74,
-        "taxa_media_periodo": 12.746956521739131,
-        "var_taxa_12m_pp": -0.7999999999999989,
-        "yoy_saldo_pct": -2.848255079226203,
-        "cagr_saldo_aa_pct": 8.334986691800527
+        "saldo_ultimo": 130035.0,
+        "part_saldo_segmento_pct": 4.767554451898974,
+        "taxa_ultima": 14.3,
+        "taxa_media_periodo": 12.761559139784946,
+        "var_taxa_12m_pp": -0.23999999999999844,
+        "yoy_saldo_pct": -6.105133944689145,
+        "cagr_saldo_aa_pct": 8.247368337988403
       },
       {
         "segmento": "PJ",
         "modalidade": "Crédito rural",
-        "saldo_ultimo": 126616.0,
-        "part_saldo_segmento_pct": 4.605891376540059,
-        "taxa_ultima": 12.62,
-        "taxa_media_periodo": 9.56288043478261,
-        "var_taxa_12m_pp": -0.8300000000000001,
-        "yoy_saldo_pct": 27.350814197922002,
-        "cagr_saldo_aa_pct": 8.091061080491336
+        "saldo_ultimo": 127128.0,
+        "part_saldo_segmento_pct": 4.660973294582326,
+        "taxa_ultima": 11.61,
+        "taxa_media_periodo": 9.586827956989248,
+        "var_taxa_12m_pp": -1.8600000000000012,
+        "yoy_saldo_pct": 30.612748119837253,
+        "cagr_saldo_aa_pct": 8.028456011888707
       },
       {
         "segmento": "PJ",
         "modalidade": "Adiantamento sobre contratos de câmbio (ACC)",
-        "saldo_ultimo": 118892.0,
-        "part_saldo_segmento_pct": 4.324916578786257,
-        "taxa_ultima": 5.52,
-        "taxa_media_periodo": 4.09516304347826,
-        "var_taxa_12m_pp": -0.33000000000000007,
-        "yoy_saldo_pct": -2.108634615859628,
-        "cagr_saldo_aa_pct": 8.985847206500797
-      },
-      {
-        "segmento": "PF",
-        "modalidade": "Cartão de crédito parcelado",
-        "saldo_ultimo": 93349.0,
-        "part_saldo_segmento_pct": 2.026331081516689,
-        "taxa_ultima": 191.42,
-        "taxa_media_periodo": 153.2608695652174,
-        "var_taxa_12m_pp": 2.3799999999999955,
-        "yoy_saldo_pct": 18.06913474064986,
-        "cagr_saldo_aa_pct": 17.941407208817985
+        "saldo_ultimo": 126053.0,
+        "part_saldo_segmento_pct": 4.621559897913803,
+        "taxa_ultima": 5.44,
+        "taxa_media_periodo": 4.111881720430108,
+        "var_taxa_12m_pp": -0.47999999999999954,
+        "yoy_saldo_pct": 1.1937446815342811,
+        "cagr_saldo_aa_pct": 9.298375448678575
       },
       {
         "segmento": "PF",
         "modalidade": "Cartão de crédito rotativo",
-        "saldo_ultimo": 92033.0,
-        "part_saldo_segmento_pct": 1.9977646083538698,
-        "taxa_ultima": 442.44,
-        "taxa_media_periodo": 360.3258695652174,
-        "var_taxa_12m_pp": -11.75,
-        "yoy_saldo_pct": 19.25852975858806,
-        "cagr_saldo_aa_pct": 9.108404265652181
+        "saldo_ultimo": 96113.0,
+        "part_saldo_segmento_pct": 2.0580193012245807,
+        "taxa_ultima": 444.89,
+        "taxa_media_periodo": 361.22139784946233,
+        "var_taxa_12m_pp": -8.75,
+        "yoy_saldo_pct": 20.9546701568045,
+        "cagr_saldo_aa_pct": 9.312766738034583
+      },
+      {
+        "segmento": "PF",
+        "modalidade": "Cartão de crédito parcelado",
+        "saldo_ultimo": 88188.0,
+        "part_saldo_segmento_pct": 1.8883252643908037,
+        "taxa_ultima": 192.08,
+        "taxa_media_periodo": 153.66322580645163,
+        "var_taxa_12m_pp": 6.940000000000026,
+        "yoy_saldo_pct": 10.426866680857994,
+        "cagr_saldo_aa_pct": 17.297663346710944
       },
       {
         "segmento": "PJ",
         "modalidade": "Financiamento imobiliário",
-        "saldo_ultimo": 77386.0,
-        "part_saldo_segmento_pct": 2.8150589977959264,
-        "taxa_ultima": 12.22,
-        "taxa_media_periodo": 10.785706521739131,
-        "var_taxa_12m_pp": 0.07000000000000028,
-        "yoy_saldo_pct": 14.69010285443282,
-        "cagr_saldo_aa_pct": 7.7301584772870635
+        "saldo_ultimo": 78981.0,
+        "part_saldo_segmento_pct": 2.8957297509549957,
+        "taxa_ultima": 12.2,
+        "taxa_media_periodo": 10.803064516129034,
+        "var_taxa_12m_pp": 0.16000000000000014,
+        "yoy_saldo_pct": 13.146811070998798,
+        "cagr_saldo_aa_pct": 7.786017015244684
       },
       {
         "segmento": "PJ",
         "modalidade": "Conta garantida",
-        "saldo_ultimo": 48584.0,
-        "part_saldo_segmento_pct": 1.767332932945459,
-        "taxa_ultima": 61.63,
-        "taxa_media_periodo": 43.85108695652173,
-        "var_taxa_12m_pp": 1.8400000000000034,
-        "yoy_saldo_pct": 2.560638365244561,
-        "cagr_saldo_aa_pct": 0.8261608097434259
+        "saldo_ultimo": 47392.0,
+        "part_saldo_segmento_pct": 1.7375625068973444,
+        "taxa_ultima": 56.15,
+        "taxa_media_periodo": 43.98989247311828,
+        "var_taxa_12m_pp": -2.8599999999999994,
+        "yoy_saldo_pct": 4.016504982222036,
+        "cagr_saldo_aa_pct": 0.6548773651321005
       },
       {
         "segmento": "PF",
         "modalidade": "Cheque especial",
-        "saldo_ultimo": 44758.0,
-        "part_saldo_segmento_pct": 0.971563986186504,
-        "taxa_ultima": 139.78,
-        "taxa_media_periodo": 174.58375,
-        "var_taxa_12m_pp": 4.039999999999992,
-        "yoy_saldo_pct": 8.567408916703044,
-        "cagr_saldo_aa_pct": 5.020866798630164
+        "saldo_ultimo": 45450.0,
+        "part_saldo_segmento_pct": 0.9731979778038059,
+        "taxa_ultima": 136.41,
+        "taxa_media_periodo": 174.17693548387098,
+        "var_taxa_12m_pp": -1.7800000000000011,
+        "yoy_saldo_pct": 10.422740524781338,
+        "cagr_saldo_aa_pct": 5.0697745928015125
       },
       {
         "segmento": "PJ",
         "modalidade": "Repasse externo",
-        "saldo_ultimo": 28512.0,
-        "part_saldo_segmento_pct": 1.0371767780368213,
-        "taxa_ultima": 15.51,
-        "taxa_media_periodo": 12.75282608695652,
-        "var_taxa_12m_pp": 1.25,
-        "yoy_saldo_pct": -13.18698048290351,
-        "cagr_saldo_aa_pct": 8.469079978797467
+        "saldo_ultimo": 28148.0,
+        "part_saldo_segmento_pct": 1.0320077110935697,
+        "taxa_ultima": 14.51,
+        "taxa_media_periodo": 12.76827956989247,
+        "var_taxa_12m_pp": 0.7999999999999989,
+        "yoy_saldo_pct": -13.79658836860319,
+        "cagr_saldo_aa_pct": 8.283507645005761
       },
       {
         "segmento": "PJ",
         "modalidade": "Cheque especial",
-        "saldo_ultimo": 21597.0,
-        "part_saldo_segmento_pct": 0.7856308528079836,
-        "taxa_ultima": 359.04,
-        "taxa_media_periodo": 281.2960869565218,
-        "var_taxa_12m_pp": 5.990000000000009,
-        "yoy_saldo_pct": 12.666284104543802,
-        "cagr_saldo_aa_pct": 2.627455153916758
+        "saldo_ultimo": 20895.0,
+        "part_saldo_segmento_pct": 0.7660864403616647,
+        "taxa_ultima": 354.78,
+        "taxa_media_periodo": 281.95005376344085,
+        "var_taxa_12m_pp": 5.029999999999973,
+        "yoy_saldo_pct": 13.646252583487438,
+        "cagr_saldo_aa_pct": 2.3790069173860173
       },
       {
         "segmento": "PJ",
         "modalidade": "Compror",
-        "saldo_ultimo": 18423.0,
-        "part_saldo_segmento_pct": 0.670170727475181,
-        "taxa_ultima": 17.11,
-        "taxa_media_periodo": 16.339673913043477,
-        "var_taxa_12m_pp": -3.1900000000000013,
-        "yoy_saldo_pct": 16.72685801178484,
-        "cagr_saldo_aa_pct": 3.2847710679126063
-      },
-      {
-        "segmento": "PJ",
-        "modalidade": "Cartão de crédito rotativo",
-        "saldo_ultimo": 11243.0,
-        "part_saldo_segmento_pct": 0.4089849367097356,
-        "taxa_ultima": 146.06,
-        "taxa_media_periodo": 217.78097826086955,
-        "var_taxa_12m_pp": -5.939999999999998,
-        "yoy_saldo_pct": 27.703316674238977,
-        "cagr_saldo_aa_pct": 17.614571303973612
+        "saldo_ultimo": 17081.0,
+        "part_saldo_segmento_pct": 0.6262513753442256,
+        "taxa_ultima": 17.07,
+        "taxa_media_periodo": 16.346827956989248,
+        "var_taxa_12m_pp": -1.2300000000000004,
+        "yoy_saldo_pct": 5.444780542008765,
+        "cagr_saldo_aa_pct": 2.7433986061647486
       },
       {
         "segmento": "PF",
         "modalidade": "Microcrédito",
-        "saldo_ultimo": 9147.0,
-        "part_saldo_segmento_pct": 0.19855435411877098,
-        "taxa_ultima": 50.04,
-        "taxa_media_periodo": 32.72891304347826,
-        "var_taxa_12m_pp": -2.9399999999999977,
-        "yoy_saldo_pct": -4.04909262561628,
-        "cagr_saldo_aa_pct": 9.128237692902319
+        "saldo_ultimo": 9326.0,
+        "part_saldo_segmento_pct": 0.1996929447964421,
+        "taxa_ultima": 50.2,
+        "taxa_media_periodo": 32.91994623655914,
+        "var_taxa_12m_pp": -4.599999999999994,
+        "yoy_saldo_pct": -0.490823730260348,
+        "cagr_saldo_aa_pct": 9.162371208656083
+      },
+      {
+        "segmento": "PJ",
+        "modalidade": "Cartão de crédito rotativo",
+        "saldo_ultimo": 8692.0,
+        "part_saldo_segmento_pct": 0.31868022683051395,
+        "taxa_ultima": 203.5,
+        "taxa_media_periodo": 217.77182795698923,
+        "var_taxa_12m_pp": -70.19999999999999,
+        "yoy_saldo_pct": 45.30257438983618,
+        "cagr_saldo_aa_pct": 15.464885436898435
       },
       {
         "segmento": "PJ",
         "modalidade": "Financiamento a importações",
-        "saldo_ultimo": 8609.0,
-        "part_saldo_segmento_pct": 0.3131683109609636,
-        "taxa_ultima": 10.62,
-        "taxa_media_periodo": 10.751902173913043,
-        "var_taxa_12m_pp": 0.4599999999999991,
-        "yoy_saldo_pct": 33.92968263845675,
-        "cagr_saldo_aa_pct": 4.612750317263692
+        "saldo_ultimo": 7941.0,
+        "part_saldo_segmento_pct": 0.2911458445997597,
+        "taxa_ultima": 13.9,
+        "taxa_media_periodo": 10.766451612903225,
+        "var_taxa_12m_pp": 3.3499999999999996,
+        "yoy_saldo_pct": 24.642913200439498,
+        "cagr_saldo_aa_pct": 4.01538870354976
       },
       {
         "segmento": "PJ",
         "modalidade": "Cartão de crédito parcelado",
-        "saldo_ultimo": 4051.0,
-        "part_saldo_segmento_pct": 0.14736262373131184,
-        "taxa_ultima": 156.02,
-        "taxa_media_periodo": 105.54972826086956,
-        "var_taxa_12m_pp": 8.01000000000002,
-        "yoy_saldo_pct": 27.430009436929858,
-        "cagr_saldo_aa_pct": 30.129677353479977
+        "saldo_ultimo": 4152.0,
+        "part_saldo_segmento_pct": 0.15222737020251886,
+        "taxa_ultima": 156.43,
+        "taxa_media_periodo": 106.10575268817203,
+        "var_taxa_12m_pp": 10.050000000000011,
+        "yoy_saldo_pct": 27.401043264805146,
+        "cagr_saldo_aa_pct": 29.967147795644866
       },
       {
         "segmento": "PJ",
         "modalidade": "Vendor",
-        "saldo_ultimo": 3398.0,
-        "part_saldo_segmento_pct": 0.12360853997506732,
-        "taxa_ultima": 19.67,
-        "taxa_media_periodo": 14.94195652173913,
-        "var_taxa_12m_pp": 1.2900000000000027,
-        "yoy_saldo_pct": -5.715871254162042,
-        "cagr_saldo_aa_pct": -3.5362855318381237
+        "saldo_ultimo": 2507.0,
+        "part_saldo_segmento_pct": 0.09191570739347658,
+        "taxa_ultima": 18.39,
+        "taxa_media_periodo": 14.974623655913977,
+        "var_taxa_12m_pp": 2.880000000000001,
+        "yoy_saldo_pct": -11.256637168141593,
+        "cagr_saldo_aa_pct": -5.383608984758325
       },
       {
         "segmento": "PF",
         "modalidade": "Desconto de cheques",
-        "saldo_ultimo": 1405.0,
-        "part_saldo_segmento_pct": 0.03049840029920993,
-        "taxa_ultima": 51.76,
-        "taxa_media_periodo": 47.35657608695652,
-        "var_taxa_12m_pp": 9.309999999999995,
-        "yoy_saldo_pct": -7.7478660538411015,
-        "cagr_saldo_aa_pct": 0.04214854194071194
+        "saldo_ultimo": 1343.0,
+        "part_saldo_segmento_pct": 0.028756983150506298,
+        "taxa_ultima": 58.95,
+        "taxa_media_periodo": 47.4394623655914,
+        "var_taxa_12m_pp": 17.550000000000004,
+        "yoy_saldo_pct": -12.164813603662527,
+        "cagr_saldo_aa_pct": -0.25074513038392254
       }
     ],
     "totais": {
-      "mes_ref": "2026-06",
-      "meses_cobertos": 184,
-      "saldo_total": 7355800.0,
-      "taxa_media_aa": 33.44,
-      "spread_medio_pp": 21.99,
-      "saldo_pf": 4606799.0,
-      "saldo_pj": 2749001.0,
-      "yoy_saldo_total_pct": 9.72806956435608,
+      "mes_ref": "2026-08",
+      "meses_cobertos": 186,
+      "saldo_total": 7397669.0,
+      "taxa_media_aa": 32.26,
+      "spread_medio_pp": 21.16,
+      "saldo_pf": 4670170.0,
+      "saldo_pj": 2727499.0,
+      "yoy_saldo_total_pct": 9.199776926079162,
       "maior_saldo": {
         "segmento": "PF",
         "modalidade": "Financiamento imobiliário",
-        "saldo_ultimo": 1395317.0,
-        "part_saldo_segmento_pct": 30.288210968179857,
-        "taxa_ultima": 11.22,
-        "taxa_media_periodo": 9.17233695652174,
-        "var_taxa_12m_pp": 0.7300000000000004,
-        "yoy_saldo_pct": 13.10587060385624,
-        "cagr_saldo_aa_pct": 16.1403929376563
+        "saldo_ultimo": 1430825.0,
+        "part_saldo_segmento_pct": 30.637535678572732,
+        "taxa_ultima": 11.28,
+        "taxa_media_periodo": 9.19505376344086,
+        "var_taxa_12m_pp": 0.7899999999999991,
+        "yoy_saldo_pct": 13.84921051710255,
+        "cagr_saldo_aa_pct": 16.141834181182023
       },
       "mais_cara": {
         "segmento": "PF",
         "modalidade": "Cartão de crédito rotativo",
-        "saldo_ultimo": 92033.0,
-        "part_saldo_segmento_pct": 1.9977646083538698,
-        "taxa_ultima": 442.44,
-        "taxa_media_periodo": 360.3258695652174,
-        "var_taxa_12m_pp": -11.75,
-        "yoy_saldo_pct": 19.25852975858806,
-        "cagr_saldo_aa_pct": 9.108404265652181
+        "saldo_ultimo": 96113.0,
+        "part_saldo_segmento_pct": 2.0580193012245807,
+        "taxa_ultima": 444.89,
+        "taxa_media_periodo": 361.22139784946233,
+        "var_taxa_12m_pp": -8.75,
+        "yoy_saldo_pct": 20.9546701568045,
+        "cagr_saldo_aa_pct": 9.312766738034583
       },
       "mais_barata": {
         "segmento": "PJ",
         "modalidade": "Adiantamento sobre contratos de câmbio (ACC)",
-        "saldo_ultimo": 118892.0,
-        "part_saldo_segmento_pct": 4.324916578786257,
-        "taxa_ultima": 5.52,
-        "taxa_media_periodo": 4.09516304347826,
-        "var_taxa_12m_pp": -0.33000000000000007,
-        "yoy_saldo_pct": -2.108634615859628,
-        "cagr_saldo_aa_pct": 8.985847206500797
+        "saldo_ultimo": 126053.0,
+        "part_saldo_segmento_pct": 4.621559897913803,
+        "taxa_ultima": 5.44,
+        "taxa_media_periodo": 4.111881720430108,
+        "var_taxa_12m_pp": -0.47999999999999954,
+        "yoy_saldo_pct": 1.1937446815342811,
+        "cagr_saldo_aa_pct": 9.298375448678575
       }
     }
   },
@@ -12378,218 +12506,218 @@
     "Total": {
       "Total": {
         "saldo": {
-          "media": 3906769.788043478,
-          "mediana": 3219605.0,
-          "desvio_padrao": 1512159.4033666847,
-          "coef_variacao_pct": 38.70613026635436,
+          "media": 3944127.139784946,
+          "mediana": 3232070.0,
+          "desvio_padrao": 1546281.4818793144,
+          "coef_variacao_pct": 39.204656114701855,
           "minimo": 1759678.0,
-          "maximo": 7355800.0
+          "maximo": 7397669.0
         },
         "taxa": {
-          "media": 26.379184782608696,
-          "mediana": 26.7,
-          "desvio_padrao": 4.071806555008048,
-          "coef_variacao_pct": 15.43568002030341,
+          "media": 26.431129032258067,
+          "mediana": 26.77,
+          "desvio_padrao": 4.077439089576523,
+          "coef_variacao_pct": 15.426655004408559,
           "minimo": 17.91,
-          "maximo": 33.51
+          "maximo": 33.36
         }
       }
     },
     "PF": {
       "Total": {
         "saldo": {
-          "media": 2184927.3641304346,
-          "mediana": 1769308.5,
-          "desvio_padrao": 1074158.3030645414,
-          "coef_variacao_pct": 49.16219736632018,
+          "media": 2211441.7150537632,
+          "mediana": 1792541.5,
+          "desvio_padrao": 1098349.6743525614,
+          "coef_variacao_pct": 49.66667974452399,
           "minimo": 800794.0,
-          "maximo": 4606799.0
+          "maximo": 4670170.0
         },
         "taxa": {
-          "media": 32.63510869565218,
-          "mediana": 32.5,
-          "desvio_padrao": 4.66804109219209,
-          "coef_variacao_pct": 14.303739986666542,
+          "media": 32.68327956989248,
+          "mediana": 32.519999999999996,
+          "desvio_padrao": 4.663697697461756,
+          "coef_variacao_pct": 14.269368799078258,
           "minimo": 22.65,
           "maximo": 42.29
         }
       },
       "Cheque especial": {
         "saldo": {
-          "media": 27523.706521739132,
-          "mediana": 25621.0,
-          "desvio_padrao": 6257.710166300586,
-          "coef_variacao_pct": 22.735710255295885,
+          "media": 27713.1935483871,
+          "mediana": 25676.0,
+          "desvio_padrao": 6485.182130027948,
+          "coef_variacao_pct": 23.40106389653308,
           "minimo": 17819.0,
-          "maximo": 45377.0
+          "maximo": 45450.0
         },
         "taxa": {
-          "media": 174.58375,
-          "mediana": 139.22000000000003,
-          "desvio_padrao": 61.38568123531777,
-          "coef_variacao_pct": 35.1611654780687,
+          "media": 174.17693548387098,
+          "mediana": 139.005,
+          "desvio_padrao": 61.1782441790237,
+          "coef_variacao_pct": 35.12419368791162,
           "minimo": 111.73,
           "maximo": 285.17
         }
       },
       "Crédito pessoal não consignado": {
         "saldo": {
-          "media": 168185.40760869565,
-          "mediana": 111875.5,
-          "desvio_padrao": 95576.4482620319,
-          "coef_variacao_pct": 56.82802665282498,
+          "media": 170662.3064516129,
+          "mediana": 112872.0,
+          "desvio_padrao": 97998.36682984258,
+          "coef_variacao_pct": 57.42238509921205,
           "minimo": 67845.0,
-          "maximo": 400694.0
+          "maximo": 402004.0
         },
         "taxa": {
-          "media": 99.49010869565218,
-          "mediana": 96.25,
-          "desvio_padrao": 20.26618845574174,
-          "coef_variacao_pct": 20.370053587676292,
+          "media": 99.50478494623655,
+          "mediana": 96.735,
+          "desvio_padrao": 20.08544244127099,
+          "coef_variacao_pct": 20.18540359855394,
           "minimo": 66.3,
           "maximo": 141.86
         }
       },
       "Crédito pessoal consignado": {
         "saldo": {
-          "media": 396643.52173913043,
-          "mediana": 333670.5,
-          "desvio_padrao": 185527.70183867557,
-          "coef_variacao_pct": 46.77441875899231,
+          "media": 400864.9784946237,
+          "mediana": 335119.5,
+          "desvio_padrao": 188936.08987579978,
+          "coef_variacao_pct": 47.13210183272065,
           "minimo": 142448.0,
-          "maximo": 785512.0
+          "maximo": 791848.0
         },
         "taxa": {
-          "media": 25.205326086956525,
-          "mediana": 25.365000000000002,
-          "desvio_padrao": 3.0024257774046554,
-          "coef_variacao_pct": 11.911870400115067,
+          "media": 25.24301075268817,
+          "mediana": 25.435000000000002,
+          "desvio_padrao": 3.0082424733159616,
+          "coef_variacao_pct": 11.917130261474886,
           "minimo": 18.45,
           "maximo": 29.97
         }
       },
       "Aquisição de veículos": {
         "saldo": {
-          "media": 219986.29347826086,
-          "mediana": 193019.5,
-          "desvio_padrao": 71829.50197844043,
-          "coef_variacao_pct": 32.65180791163184,
+          "media": 222057.4247311828,
+          "mediana": 193053.0,
+          "desvio_padrao": 74165.79501555214,
+          "coef_variacao_pct": 33.39937635741539,
           "minimo": 142535.0,
-          "maximo": 414881.0
+          "maximo": 415527.0
         },
         "taxa": {
-          "media": 24.11978260869565,
-          "mediana": 24.755000000000003,
-          "desvio_padrao": 2.9515758422379688,
-          "coef_variacao_pct": 12.237157731155786,
+          "media": 24.145053763440856,
+          "mediana": 24.775,
+          "desvio_padrao": 2.9456267625279504,
+          "coef_variacao_pct": 12.199710927908805,
           "minimo": 18.56,
           "maximo": 29.52
         }
       },
       "Cartão de crédito rotativo": {
         "saldo": {
-          "media": 43519.29891304348,
-          "mediana": 36030.0,
-          "desvio_padrao": 18510.307064163368,
-          "coef_variacao_pct": 42.53355988374048,
+          "media": 44052.833333333336,
+          "mediana": 36232.5,
+          "desvio_padrao": 19114.067141249147,
+          "coef_variacao_pct": 43.388962059759635,
           "minimo": 23842.0,
-          "maximo": 92033.0
+          "maximo": 96113.0
         },
         "taxa": {
-          "media": 360.3258695652174,
-          "mediana": 342.01,
-          "desvio_padrao": 71.49492085826337,
-          "coef_variacao_pct": 19.841739629888856,
+          "media": 361.22139784946233,
+          "mediana": 342.96500000000003,
+          "desvio_padrao": 71.62947409493201,
+          "coef_variacao_pct": 19.829798157412405,
           "minimo": 250.18,
           "maximo": 497.73
         }
       },
       "Cartão de crédito parcelado": {
         "saldo": {
-          "media": 31360.54891304348,
-          "mediana": 19933.5,
-          "desvio_padrao": 25702.503003450915,
-          "coef_variacao_pct": 81.95807756655921,
+          "media": 31955.36559139785,
+          "mediana": 20162.0,
+          "desvio_padrao": 26193.118604365864,
+          "coef_variacao_pct": 81.96782643418375,
           "minimo": 7404.0,
           "maximo": 94992.0
         },
         "taxa": {
-          "media": 153.2608695652174,
-          "mediana": 163.64499999999998,
-          "desvio_padrao": 31.785635606885595,
-          "coef_variacao_pct": 20.739563658393436,
+          "media": 153.66322580645163,
+          "mediana": 164.055,
+          "desvio_padrao": 31.849643764354784,
+          "coef_variacao_pct": 20.726913415491737,
           "minimo": 100.13,
           "maximo": 200.54
         }
       },
       "Desconto de cheques": {
         "saldo": {
-          "media": 1332.5326086956522,
-          "mediana": 1440.0,
-          "desvio_padrao": 269.508861177637,
-          "coef_variacao_pct": 20.225310766799577,
+          "media": 1332.478494623656,
+          "mediana": 1438.0,
+          "desvio_padrao": 268.0172888128422,
+          "coef_variacao_pct": 20.114192453705662,
           "minimo": 787.0,
           "maximo": 1694.0
         },
         "taxa": {
-          "media": 47.35657608695652,
-          "mediana": 47.385,
-          "desvio_padrao": 7.632663323830297,
-          "coef_variacao_pct": 16.117430681253516,
+          "media": 47.4394623655914,
+          "mediana": 47.55,
+          "desvio_padrao": 7.643714869530659,
+          "coef_variacao_pct": 16.11256639171941,
           "minimo": 29.54,
           "maximo": 60.95
         }
       },
       "Crédito rural": {
         "saldo": {
-          "media": 250869.9347826087,
-          "mediana": 187522.0,
-          "desvio_padrao": 157826.3097825941,
-          "coef_variacao_pct": 62.911607929167936,
+          "media": 254165.11290322582,
+          "mediana": 189112.5,
+          "desvio_padrao": 160137.85416363343,
+          "coef_variacao_pct": 63.00544253868801,
           "minimo": 66705.0,
           "maximo": 575781.0
         },
         "taxa": {
-          "media": 7.873097826086956,
-          "mediana": 7.390000000000001,
-          "desvio_padrao": 2.3373207937957514,
-          "coef_variacao_pct": 29.68743492620152,
+          "media": 7.9070967741935485,
+          "mediana": 7.484999999999999,
+          "desvio_padrao": 2.347751808165909,
+          "coef_variacao_pct": 29.691704492959847,
           "minimo": 4.68,
           "maximo": 13.22
         }
       },
       "Financiamento imobiliário": {
         "saldo": {
-          "media": 661601.3260869565,
-          "mediana": 593996.5,
-          "desvio_padrao": 325675.5191562384,
-          "coef_variacao_pct": 49.225342561274395,
+          "media": 669785.9462365592,
+          "mediana": 596856.5,
+          "desvio_padrao": 333338.8676295305,
+          "coef_variacao_pct": 49.76796982715427,
           "minimo": 142455.0,
-          "maximo": 1395317.0
+          "maximo": 1430825.0
         },
         "taxa": {
-          "media": 9.17233695652174,
-          "mediana": 9.355,
-          "desvio_padrao": 1.3394340520641312,
-          "coef_variacao_pct": 14.602974775275381,
+          "media": 9.19505376344086,
+          "mediana": 9.37,
+          "desvio_padrao": 1.3500091080020395,
+          "coef_variacao_pct": 14.681905541103173,
           "minimo": 6.64,
           "maximo": 11.56
         }
       },
       "Microcrédito": {
         "saldo": {
-          "media": 6199.440217391304,
-          "mediana": 5379.5,
-          "desvio_padrao": 2547.451448340559,
-          "coef_variacao_pct": 41.091636648002314,
+          "media": 6232.795698924731,
+          "mediana": 5391.0,
+          "desvio_padrao": 2553.873511901522,
+          "coef_variacao_pct": 40.97476694675089,
           "minimo": 2388.0,
           "maximo": 11719.0
         },
         "taxa": {
-          "media": 32.72891304347826,
-          "mediana": 33.385,
-          "desvio_padrao": 13.46193609412232,
-          "coef_variacao_pct": 41.131632071737315,
+          "media": 32.91994623655914,
+          "mediana": 33.575,
+          "desvio_padrao": 13.514475782388658,
+          "coef_variacao_pct": 41.052545120441906,
           "minimo": 8.75,
           "maximo": 56.97
         }
@@ -12598,306 +12726,306 @@
     "PJ": {
       "Total": {
         "saldo": {
-          "media": 1721842.4293478262,
-          "mediana": 1585846.5,
-          "desvio_padrao": 447570.065169989,
-          "coef_variacao_pct": 25.993671519612448,
+          "media": 1732685.4139784947,
+          "mediana": 1590446.5,
+          "desvio_padrao": 457194.73656013055,
+          "coef_variacao_pct": 26.386482674333,
           "minimo": 958884.0,
-          "maximo": 2749001.0
+          "maximo": 2750634.0
         },
         "taxa": {
-          "media": 17.70445652173913,
-          "mediana": 18.134999999999998,
-          "desvio_padrao": 2.9508012671675963,
-          "coef_variacao_pct": 16.666997168449292,
+          "media": 17.728978494623657,
+          "mediana": 18.17,
+          "desvio_padrao": 2.94373021853821,
+          "coef_variacao_pct": 16.60405995433353,
           "minimo": 9.98,
           "maximo": 22.74
         }
       },
       "Desconto de duplicatas e recebíveis": {
         "saldo": {
-          "media": 94658.82608695653,
-          "mediana": 72360.0,
-          "desvio_padrao": 62564.61106581406,
-          "coef_variacao_pct": 66.0948520620151,
+          "media": 95511.25806451614,
+          "mediana": 72462.0,
+          "desvio_padrao": 62763.374145238595,
+          "coef_variacao_pct": 65.71306400638453,
           "minimo": 21785.0,
           "maximo": 226474.0
         },
         "taxa": {
-          "media": 22.96554347826087,
-          "mediana": 20.744999999999997,
-          "desvio_padrao": 7.183753963944809,
-          "coef_variacao_pct": 31.280574617121225,
+          "media": 22.922096774193548,
+          "mediana": 20.625,
+          "desvio_padrao": 7.1571052891734,
+          "coef_variacao_pct": 31.223606460082244,
           "minimo": 9.4,
           "maximo": 38.17
         }
       },
       "Capital de giro": {
         "saldo": {
-          "media": 382164.0869565217,
-          "mediana": 362404.5,
-          "desvio_padrao": 79153.00716167116,
-          "coef_variacao_pct": 20.711785817456022,
+          "media": 383276.7150537634,
+          "mediana": 363057.0,
+          "desvio_padrao": 79446.95009232526,
+          "coef_variacao_pct": 20.728352903249288,
           "minimo": 250962.0,
-          "maximo": 506497.0
+          "maximo": 506107.0
         },
         "taxa": {
-          "media": 20.669728260869565,
-          "mediana": 21.625,
-          "desvio_padrao": 4.026984584498322,
-          "coef_variacao_pct": 19.482523106614412,
+          "media": 20.70220430107527,
+          "mediana": 21.63,
+          "desvio_padrao": 4.018179361982549,
+          "coef_variacao_pct": 19.409427631693525,
           "minimo": 10.76,
           "maximo": 29.86
         }
       },
       "Conta garantida": {
         "saldo": {
-          "media": 38240.72282608696,
-          "mediana": 39323.5,
-          "desvio_padrao": 6978.516992496192,
-          "coef_variacao_pct": 18.248914970131278,
+          "media": 38336.49462365591,
+          "mediana": 39465.5,
+          "desvio_padrao": 7001.397928558624,
+          "coef_variacao_pct": 18.263010213349926,
           "minimo": 21481.0,
           "maximo": 50132.0
         },
         "taxa": {
-          "media": 43.85108695652173,
-          "mediana": 40.935,
-          "desvio_padrao": 8.090061359541126,
-          "coef_variacao_pct": 18.44894145397674,
+          "media": 43.98989247311828,
+          "mediana": 41.0,
+          "desvio_padrao": 8.156423301267324,
+          "coef_variacao_pct": 18.541584993079084,
           "minimo": 26.36,
           "maximo": 63.35
         }
       },
       "Cheque especial": {
         "saldo": {
-          "media": 13518.298913043478,
-          "mediana": 14413.0,
-          "desvio_padrao": 3344.1946881646318,
-          "coef_variacao_pct": 24.738280383324707,
+          "media": 13600.150537634408,
+          "mediana": 14439.0,
+          "desvio_padrao": 3418.2036643139686,
+          "coef_variacao_pct": 25.13357227080022,
           "minimo": 5972.0,
-          "maximo": 21597.0
+          "maximo": 21818.0
         },
         "taxa": {
-          "media": 281.2960869565218,
-          "mediana": 319.96000000000004,
-          "desvio_padrao": 75.86818499863386,
-          "coef_variacao_pct": 26.970935081070056,
+          "media": 281.95005376344085,
+          "mediana": 320.235,
+          "desvio_padrao": 75.71927568147244,
+          "coef_variacao_pct": 26.85556348395015,
           "minimo": 143.66,
           "maximo": 365.83
         }
       },
       "Aquisição de veículos": {
         "saldo": {
-          "media": 57283.60326086957,
-          "mediana": 26011.5,
-          "desvio_padrao": 47572.29763603806,
-          "coef_variacao_pct": 83.04697143333283,
+          "media": 58100.43010752688,
+          "mediana": 27265.0,
+          "desvio_padrao": 47962.20494726235,
+          "coef_variacao_pct": 82.55051616399113,
           "minimo": 14379.0,
           "maximo": 142795.0
         },
         "taxa": {
-          "media": 17.60728260869565,
-          "mediana": 18.215,
-          "desvio_padrao": 2.9583787109312962,
-          "coef_variacao_pct": 16.802017532621708,
+          "media": 17.620860215053767,
+          "mediana": 18.33,
+          "desvio_padrao": 2.945244873374425,
+          "coef_variacao_pct": 16.714535144307302,
           "minimo": 11.19,
           "maximo": 23.01
         }
       },
       "Vendor": {
         "saldo": {
-          "media": 4126.820652173913,
-          "mediana": 3760.0,
-          "desvio_padrao": 1210.1731328096967,
-          "coef_variacao_pct": 29.32458749260658,
+          "media": 4111.268817204301,
+          "mediana": 3746.0,
+          "desvio_padrao": 1213.0058366632595,
+          "coef_variacao_pct": 29.504415561133612,
           "minimo": 2079.0,
           "maximo": 7298.0
         },
         "taxa": {
-          "media": 14.94195652173913,
-          "mediana": 15.075,
-          "desvio_padrao": 3.3234984658856273,
-          "coef_variacao_pct": 22.24272611856588,
+          "media": 14.974623655913977,
+          "mediana": 15.149999999999999,
+          "desvio_padrao": 3.320655766932851,
+          "coef_variacao_pct": 22.175220180718288,
           "minimo": 5.6,
           "maximo": 20.31
         }
       },
       "Compror": {
         "saldo": {
-          "media": 14616.847826086956,
-          "mediana": 14333.0,
-          "desvio_padrao": 3425.7982163781203,
-          "coef_variacao_pct": 23.4373255926222,
+          "media": 14643.591397849463,
+          "mediana": 14407.5,
+          "desvio_padrao": 3416.925261540356,
+          "coef_variacao_pct": 23.333929284875847,
           "minimo": 9131.0,
           "maximo": 24789.0
         },
         "taxa": {
-          "media": 16.339673913043477,
-          "mediana": 16.5,
-          "desvio_padrao": 3.8695768540886046,
-          "coef_variacao_pct": 23.68209350248805,
+          "media": 16.346827956989248,
+          "mediana": 16.535,
+          "desvio_padrao": 3.8492243012836442,
+          "coef_variacao_pct": 23.54722464450891,
           "minimo": 6.87,
           "maximo": 23.71
         }
       },
       "Cartão de crédito rotativo": {
         "saldo": {
-          "media": 3173.3478260869565,
-          "mediana": 2053.0,
-          "desvio_padrao": 2551.9264572834436,
-          "coef_variacao_pct": 80.41748327444505,
+          "media": 3232.3763440860216,
+          "mediana": 2054.5,
+          "desvio_padrao": 2600.610009163561,
+          "coef_variacao_pct": 80.45505016523386,
           "minimo": 947.0,
           "maximo": 12481.0
         },
         "taxa": {
-          "media": 217.78097826086955,
+          "media": 217.77182795698923,
           "mediana": 214.485,
-          "desvio_padrao": 65.49086187554498,
-          "coef_variacao_pct": 30.071892595273663,
+          "desvio_padrao": 65.15092082394598,
+          "coef_variacao_pct": 29.9170565059561,
           "minimo": 67.05,
           "maximo": 391.2
         }
       },
       "Cartão de crédito parcelado": {
         "saldo": {
-          "media": 1150.5869565217392,
-          "mediana": 784.5,
-          "desvio_padrao": 1005.0660218335105,
-          "coef_variacao_pct": 87.35246094496472,
+          "media": 1181.9462365591398,
+          "mediana": 793.5,
+          "desvio_padrao": 1044.175680212828,
+          "coef_variacao_pct": 88.34375438705344,
           "minimo": 73.0,
-          "maximo": 4051.0
+          "maximo": 4152.0
         },
         "taxa": {
-          "media": 105.54972826086956,
-          "mediana": 129.6,
-          "desvio_padrao": 47.05523158004259,
-          "coef_variacao_pct": 44.58110158630069,
+          "media": 106.10575268817203,
+          "mediana": 130.465,
+          "desvio_padrao": 47.104795747390426,
+          "coef_variacao_pct": 44.394195935656704,
           "minimo": 16.08,
           "maximo": 162.74
         }
       },
       "Adiantamento sobre contratos de câmbio (ACC)": {
         "saldo": {
-          "media": 74487.72826086957,
-          "mediana": 68469.5,
-          "desvio_padrao": 25298.473787354647,
-          "coef_variacao_pct": 33.96327741229373,
+          "media": 75019.2311827957,
+          "mediana": 68511.0,
+          "desvio_padrao": 25676.313540973395,
+          "coef_variacao_pct": 34.22630855601436,
           "minimo": 32008.0,
-          "maximo": 124566.0
+          "maximo": 126053.0
         },
         "taxa": {
-          "media": 4.09516304347826,
-          "mediana": 3.78,
-          "desvio_padrao": 1.3066571772029731,
-          "coef_variacao_pct": 31.907329777354924,
+          "media": 4.111881720430108,
+          "mediana": 3.8099999999999996,
+          "desvio_padrao": 1.309666434523732,
+          "coef_variacao_pct": 31.850780824180404,
           "minimo": 2.08,
           "maximo": 6.84
         }
       },
       "Financiamento a importações": {
         "saldo": {
-          "media": 5068.125,
-          "mediana": 5152.0,
-          "desvio_padrao": 1465.5150274784041,
-          "coef_variacao_pct": 28.916315747508282,
+          "media": 5100.274193548387,
+          "mediana": 5170.5,
+          "desvio_padrao": 1490.0557127551342,
+          "coef_variacao_pct": 29.215207971367228,
           "minimo": 2511.0,
           "maximo": 8609.0
         },
         "taxa": {
-          "media": 10.751902173913043,
+          "media": 10.766451612903225,
           "mediana": 10.915,
-          "desvio_padrao": 3.7554881037598276,
-          "coef_variacao_pct": 34.928592569151476,
+          "desvio_padrao": 3.7424098740268414,
+          "coef_variacao_pct": 34.75991913196072,
           "minimo": 1.3,
           "maximo": 18.94
         }
       },
       "Financiamento a exportações": {
         "saldo": {
-          "media": 102878.90217391304,
-          "mediana": 105421.0,
-          "desvio_padrao": 26874.238569692727,
-          "coef_variacao_pct": 26.122205818509613,
+          "media": 103168.39247311828,
+          "mediana": 105695.5,
+          "desvio_padrao": 26873.219456727857,
+          "coef_variacao_pct": 26.04791914706821,
           "minimo": 38323.0,
           "maximo": 142477.0
         },
         "taxa": {
-          "media": 12.746956521739131,
-          "mediana": 13.51,
-          "desvio_padrao": 2.9071952341125717,
-          "coef_variacao_pct": 22.80697536823424,
+          "media": 12.761559139784946,
+          "mediana": 13.55,
+          "desvio_padrao": 2.894917678752515,
+          "coef_variacao_pct": 22.68467079173289,
           "minimo": 6.51,
           "maximo": 18.21
         }
       },
       "Repasse externo": {
         "saldo": {
-          "media": 31687.853260869564,
-          "mediana": 34308.0,
-          "desvio_padrao": 10688.708770243078,
-          "coef_variacao_pct": 33.73124926528949,
+          "media": 31648.37634408602,
+          "mediana": 34199.5,
+          "desvio_padrao": 10637.56176585896,
+          "coef_variacao_pct": 33.611714074067336,
           "minimo": 7972.0,
           "maximo": 52064.0
         },
         "taxa": {
-          "media": 12.75282608695652,
-          "mediana": 13.085,
-          "desvio_padrao": 3.045112118885528,
-          "coef_variacao_pct": 23.877939667036173,
+          "media": 12.76827956989247,
+          "mediana": 13.094999999999999,
+          "desvio_padrao": 3.032434442117837,
+          "coef_variacao_pct": 23.74974972562709,
           "minimo": 3.37,
           "maximo": 22.93
         }
       },
       "Crédito rural": {
         "saldo": {
-          "media": 69314.875,
-          "mediana": 70210.5,
-          "desvio_padrao": 17768.54503579873,
-          "coef_variacao_pct": 25.63453376464825,
+          "media": 69940.89247311828,
+          "mediana": 70447.0,
+          "desvio_padrao": 18669.64596312355,
+          "coef_variacao_pct": 26.693462583851375,
           "minimo": 38654.0,
-          "maximo": 126616.0
+          "maximo": 127609.0
         },
         "taxa": {
-          "media": 9.56288043478261,
-          "mediana": 8.870000000000001,
-          "desvio_padrao": 2.4953517151590776,
-          "coef_variacao_pct": 26.09414320483244,
+          "media": 9.586827956989248,
+          "mediana": 8.885000000000002,
+          "desvio_padrao": 2.492472807186777,
+          "coef_variacao_pct": 25.99893122489642,
           "minimo": 4.7,
           "maximo": 16.95
         }
       },
       "Financiamento imobiliário": {
         "saldo": {
-          "media": 50061.135869565216,
-          "mediana": 50191.0,
-          "desvio_padrao": 15721.711488890405,
-          "coef_variacao_pct": 31.40502350936159,
+          "media": 50367.04301075269,
+          "mediana": 50410.5,
+          "desvio_padrao": 15910.942728394448,
+          "coef_variacao_pct": 31.589987772356764,
           "minimo": 24861.0,
-          "maximo": 77386.0
+          "maximo": 78981.0
         },
         "taxa": {
-          "media": 10.785706521739131,
-          "mediana": 10.905000000000001,
-          "desvio_padrao": 1.3198979678900542,
-          "coef_variacao_pct": 12.237473411961783,
+          "media": 10.803064516129034,
+          "mediana": 10.934999999999999,
+          "desvio_padrao": 1.3234797565831675,
+          "coef_variacao_pct": 12.250965960697588,
           "minimo": 6.27,
           "maximo": 13.4
         }
       },
       "Financiamento com recursos do BNDES": {
         "saldo": {
-          "media": 454963.39130434784,
-          "mediana": 434900.5,
-          "desvio_padrao": 78344.76990609133,
-          "coef_variacao_pct": 17.22001624822657,
+          "media": 455400.43548387097,
+          "mediana": 435207.0,
+          "desvio_padrao": 78033.4596035997,
+          "coef_variacao_pct": 17.135130650608136,
           "minimo": 338959.0,
           "maximo": 633368.0
         },
         "taxa": {
-          "media": 10.21625,
-          "mediana": 10.06,
-          "desvio_padrao": 2.4118402294409402,
-          "coef_variacao_pct": 23.607881849415786,
+          "media": 10.240645161290324,
+          "mediana": 10.08,
+          "desvio_padrao": 2.4114926661332183,
+          "coef_variacao_pct": 23.548249433040308,
           "minimo": 6.19,
           "maximo": 18.74
         }

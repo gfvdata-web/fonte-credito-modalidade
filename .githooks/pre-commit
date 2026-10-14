@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Trava de commit: roda os testes completos (scripts/check, sem rede e sem tokens).
+# Para pular numa emergência: git commit --no-verify (evitar).
+raiz="$(git rev-parse --show-toplevel)"
+[ -f "$raiz/scripts/check" ] || exit 0
+if ! saida="$(bash "$raiz/scripts/check" 2>&1)"; then
+  echo "Commit bloqueado: scripts/check falhou." >&2
+  printf '%s\n' "$saida" | head -30 >&2
+  exit 1
+fi

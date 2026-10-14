@@ -1,4 +1,4 @@
-/* ===== Crédito por modalidade — v2 (experimental) =====
+/* ===== Crédito por modalidade — painel =====
    Mesmo tema editorial da v2 de fonte-meios-pagamento: header verde-bandeira,
    fundo branco, serifada nos títulos/narrativa, sans nos números/UI. A paleta
    categórica por modalidade (--s1..--s6, --s-outras) vive só aqui, já que é
@@ -92,12 +92,6 @@ h1, h2, .fonte-editorial { font-family: "Source Serif 4", Georgia, "Times New Ro
   padding: 44px 0 36px;
   border-bottom: 4px solid var(--verde-escuro);
 }
-.selo-v2 {
-  display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .06em;
-  text-transform: uppercase; background: rgba(255,255,255,.16);
-  border: 1px solid rgba(255,255,255,.4); border-radius: 999px;
-  padding: 3px 10px; margin: 0 0 14px;
-}
 .cabecalho-v2 .sobrelinha {
   text-transform: uppercase; letter-spacing: .1em; font-size: .76rem;
   opacity: .88; margin: 0 0 8px; font-weight: 600;
@@ -179,7 +173,7 @@ main { padding: 40px 0 56px; }
 .pilula-btn-forma { display: inline-flex; align-items: center; gap: 6px; }
 .pilula-btn-forma .ponto-v2 { width: 8px; height: 8px; }
 
-/* ---------- Contexto externo ---------- */
+/* ---------- Eventos da linha do tempo ---------- */
 .eventos-linha-tempo { margin-top: 18px; }
 .eventos-linha-tempo:empty { margin-top: 0; }
 .eventos-titulo { font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--verde-escuro); margin: 0 0 10px; }
@@ -224,16 +218,6 @@ main { padding: 40px 0 56px; }
 .rodape-v2 { border-top: 1px solid var(--borda); padding: 26px 0; color: var(--texto-suave); font-size: .82rem; margin-top: 12px; }
 .rodape-v2 p { margin: 4px 0; }
 
-/* ---------- Switch temporário v1/v2 ---------- */
-.switch-versao {
-  position: fixed; top: 14px; left: 14px; z-index: 50;
-  background: #0f172a; color: #fff; text-decoration: none;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: .78rem; font-weight: 600; letter-spacing: .01em;
-  padding: 8px 14px; border-radius: 999px; box-shadow: 0 4px 14px rgba(0,0,0,.25);
-  transition: transform .15s ease, background .15s ease;
-}
-.switch-versao:hover { background: #1e293b; transform: translateY(-1px); }
 
 /* ---------- Switch de tema (claro/escuro) ---------- */
 .tema-switch-v2 {
@@ -249,10 +233,39 @@ main { padding: 40px 0 56px; }
 .tema-switch-v2__btn + .tema-switch-v2__btn { border-left: 1px solid var(--borda); }
 .tema-switch-v2__btn--ativo { background: var(--verde); color: #fff; }
 
+/* ---------- Kit para IA (skill do Claude) ---------- */
+.cartao-ia { border-left: 4px solid var(--verde); }
+.cartao-ia a { color: var(--verde-escuro); font-weight: 600; }
+.cartao-ia code { font-size: .85em; background: var(--verde-suave); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+.passos-ia { margin: 16px 0 12px; padding-left: 1.3rem; max-width: 64ch; line-height: 1.6; }
+.passos-ia li + li { margin-top: 6px; }
+
+/* ---------- Página da skill ---------- */
+.passos-skill { list-style: none; counter-reset: passo; margin: 22px 0 0; padding: 0; max-width: 68ch; }
+.passos-skill > li {
+  counter-increment: passo; position: relative; padding: 0 0 22px 52px;
+}
+.passos-skill > li + li { border-top: 1px solid var(--borda); padding-top: 20px; }
+.passos-skill > li::before {
+  content: counter(passo); position: absolute; left: 0; top: 0;
+  width: 34px; height: 34px; border-radius: 50%; background: var(--verde); color: #fff;
+  display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .95rem;
+}
+.passos-skill > li + li::before { top: 20px; }
+.passos-skill h3 { margin: 4px 0 6px; font-size: 1.05rem; font-weight: 600; }
+.passos-skill p { margin: 0 0 8px; line-height: 1.6; }
+.cartao-ia a.botao-download {
+  display: inline-block; margin-top: 6px; padding: 10px 18px; border-radius: 999px;
+  background: var(--verde); color: #fff; text-decoration: none; font-weight: 600; font-size: .9rem;
+  transition: background .15s ease;
+}
+.cartao-ia a.botao-download:hover { background: var(--verde-escuro); }
+.exemplos-skill { margin: 6px 0 0; padding-left: 1.2rem; color: var(--texto-suave); font-style: italic; }
+.exemplos-skill li + li { margin-top: 4px; }
+
 @media (max-width: 760px) {
   .cartao-v2-cabecalho { flex-direction: column; }
   .filtros-v2 { align-items: flex-start; width: 100%; }
-  .switch-versao { top: auto; bottom: 14px; left: 14px; font-size: .72rem; padding: 7px 12px; }
   .tema-switch-v2 { top: auto; bottom: 14px; right: 14px; }
   .tema-switch-v2__label { display: none; }
   .tema-switch-v2__btn { padding: 8px 11px; }

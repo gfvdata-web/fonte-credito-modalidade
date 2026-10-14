@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+# Checagem do repo. Sem argumento: tudo. Com um arquivo: só o que vale para ele.
+# Silencioso quando passa; sai com 1 e uma mensagem curta quando falha.
+# Sem rede, sem tokens, sem navegador: a API do SGS é substituída por tests/fixtures/.
+# Chamado pelo hook global (~/.claude/hooks/run-check.sh) depois de cada edição e
+# pelo .githooks/pre-commit (modo completo) antes de cada commit.
+#
+# Cobertura (cada linha tem teste; "(sem teste: motivo)" onde não dá sem rede/navegador):
+#   Pipeline (run_pipeline.py, src/)                                   tests/test_pipeline.py
+#     Etapa 2 coleta  (SGS mockado: 1 requisição por série, retry de bloqueio HTML, erro não apaga o bruto)
+#     Etapa 3 tratamento (pivot das 3 medidas, texto/nulo, ordem do config, spread só nos Total)
+#     Etapa 4 análise (YoY, CAGR, variação de taxa, resíduo "Outras modalidades", rankings, estatística)
+#     Etapa 5 publicação (JSON do painel) e run_pipeline ponta a ponta + flags --sem-coleta/--sem-perfil
+#     Etapa E perfil (4 tabelas, chaves, joins sem órfãos, cobertura temporal)
+#   Contrato página <-> dados publicados em docs/dados/               tests/test_contrato_dados.py
+#     credito_modalidade.json (campos de app.js/app-v2.js, labels mensais sem buraco),
+#     perfil_*.json e notas_*.json (campos do explorar.js, selos do CSS, filtros da pauta)
+#   Sintaxe: .py, JSON, CSV, node --check (docs/js, tests/js, <script> inline)   tests/test_sintaxe.py
+#   Catálogo de séries: src/config.py x catalogo/fonte.md x DECLARACAO do perfil tests/test_catalogo.py
+#   Páginas: index.html (painel), explorar.html, skill.html           tests/test_paginas.py
+#     links locais, ids x JS, abas/períodos, nav (Painel + Skill Claude, aria-current), tema claro/escuro,
+#     GoatCounter, sem URL antiga do GitHub Pages, instalação da skill (3 passos, zip, tamanho anunciado, CSV)
+#   Eventos (eventos_credito_modalidade.json) e CSV público              tests/test_contrato_dados.py
+#     6 chaves, segmentos/modalidades válidos, ordem, dentro da série; CSV == JSON == processado
+#   JS do painel (app-v2.js) e da exploração (explorar.js) com DOM falso   tests/js/paginas.test.js
+#     formatação, períodos, granularidade, participação 100%, CAGR = Python, narrativas, filtro de eventos
+#   Skill do Claude (SKILL.md, carregar_dados.py offline/mockado, zip e eventos.md em dia)  tests/test_skill.py
+#   Etapa 7: workflow atualizacao-mensal.yml, descartar_mudancas_cosmeticas.py, requirements  tests/test_automacao.py
+#   (sem teste: chamada real à API do SGS, CDN do Chart.js, GitHub Pages/Cloudflare, desenho dos
+#    gráficos e CSS/responsivo — exigem rede ou navegador)
+cd "$(dirname "$0")/.." || exit 1
+alvo="$(printf '%s' "${1:-}" | sed 's#\\#/#g')";alvo="${alvo#"$(pwd -W 2>/dev/null || pwd)/"}"; alvo="${alvo#"$(pwd)/"}"
+falhas=0
+export PYTHONDONTWRITEBYTECODE=1 PYTHONIOENCODING=utf-8
+
+# Roda um comando; só mostra a saída (cortada) se falhar.
+rodar() {
+  local saida
+  if ! saida="$("$@" 2>&1)"; then
+    printf '%s\n' "$saida" | tail -40
+    falhas=1
+  fi
+}
+testes_py() { rodar python -m unittest -q "$@"; }
+testes_js() { if compgen -G "tests/js/*.test.js" >/dev/null; then rodar node --test tests/js/*.test.js; fi; }
+
+case "$alvo" in
+  "")
+    rodar python -m unittest discover -q -s tests -t .
+    testes_js
+    ;;
+  src/*.py|run_pipeline.py) testes_py tests.test_pipeline tests.test_catalogo tests.test_sintaxe ;;
+  tests/js/*.js)            testes_js; rodar node --check "$alvo" ;;
+  tests/fixtures/*)         testes_py tests.test_pipeline tests.test_skill tests.test_sintaxe ;;
+  tests/test_*.py)          m="${alvo%.py}"; testes_py "${m//\//.}" ;;
+  tests/*.py)               testes_py tests.test_sintaxe ;;
+  catalogo/*)               testes_py tests.test_catalogo ;;
+  skill/*)                  testes_py tests.test_skill tests.test_sintaxe ;;
+  .github/*)                testes_py tests.test_automacao tests.test_sintaxe ;;
+  requirements.txt)         testes_py tests.test_automacao ;;
+  docs/skill/*)             testes_py tests.test_skill tests.test_paginas ;;
+  docs/dados/eventos*)      testes_py tests.test_contrato_dados tests.test_skill; testes_js ;;
+  docs/js/*.js)             rodar node --check "$alvo"; testes_js; testes_py tests.test_paginas tests.test_contrato_dados ;;
+  docs/dados/*)             testes_py tests.test_contrato_dados tests.test_sintaxe tests.test_skill tests.test_pipeline.TestPipelineCompleto; testes_js ;;
+  docs/*.html|docs/css/*)   testes_py tests.test_paginas tests.test_sintaxe tests.test_contrato_dados ;;
+  *)                        : ;;
+esac
+exit $falhas

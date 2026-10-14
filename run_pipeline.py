@@ -13,6 +13,7 @@ from src.coleta import credito_modalidade as coleta
 from src.tratamento import credito_modalidade as tratamento
 from src.perfil import credito_modalidade as perfil
 from src.publicacao import credito_modalidade as publicacao
+from src.publicacao import skill
 
 
 def rodar(sem_coleta: bool = False, sem_perfil: bool = False) -> None:
@@ -33,6 +34,7 @@ def rodar(sem_coleta: bool = False, sem_perfil: bool = False) -> None:
         perfil.perfilar(config.SLUG)
 
     publicacao.publicar(config.SLUG)
+    skill.empacotar()
     print("=== Pipeline concluído com sucesso ===")
 
 

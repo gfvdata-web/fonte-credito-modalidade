@@ -17,7 +17,11 @@ Nacional, por modalidade e por segmento (PF/PJ), de mar/2011 em diante.
 
 - **Fonte:** Banco Central do Brasil, API SGS (Sistema Gerenciador de Séries Temporais).
   Dicionário completo em [`catalogo/fonte.md`](catalogo/fonte.md).
-- **Entrega:** dashboard estático em `docs/`, publicado via GitHub Pages.
+- **Entrega:** dashboard estático em `docs/`, publicado no Cloudflare Pages (projeto
+  `credito-modalidade`, integração Git, deploy a cada push na `main`) em
+  https://creditomodalidade.gfvdata.com/. O GitHub Pages foi desligado na migração.
+- **Skill do Claude:** `skill/credito-modalidade-bcb/`, empacotada em
+  `docs/skill/credito-modalidade-bcb.zip` e apresentada em `docs/skill.html`.
 - **Escopo:** uma fonte só. Nada aqui depende de outro repositório do projeto.
 
 **Duas particularidades desta fonte:**
@@ -42,7 +46,9 @@ Nacional, por modalidade e por segmento (PF/PJ), de mar/2011 em diante.
 | Coleta / tratamento / análise | Python 3.13 (`requests`, `pandas`) |
 | Publicação de dados | JSON estático gerado pelo Python |
 | Front-end / dashboard | HTML + CSS + JavaScript com Chart.js (via CDN) |
-| Hospedagem | GitHub Pages (pasta `/docs`) |
+| Hospedagem | Cloudflare Pages (pasta `docs/`, sem build; domínio `creditomodalidade.gfvdata.com`) |
+| Automação | GitHub Actions — `atualizacao-mensal.yml` (Etapa 7) |
+| Testes | `bash scripts/check` (unittest + `node --test`, sem rede; pre-commit em `.githooks/`) |
 
 ## 4. Estrutura de pastas
 
@@ -51,25 +57,33 @@ fonte-credito-modalidade/
 ├── CONTEXTO.md                 # este arquivo
 ├── README.md
 ├── requirements.txt
-├── run_pipeline.py             # orquestra as Etapas 2→5
+├── run_pipeline.py             # orquestra as Etapas 2→5 (+ empacota a skill)
+├── skill/credito-modalidade-bcb/  # skill do Claude (SKILL.md, references/, scripts/)
+├── scripts/check, tests/       # testes sem rede (hook + pre-commit)
+├── .github/workflows/atualizacao-mensal.yml  # Etapa 7
 ├── src/
 │   ├── config.py               # caminhos + registro da fonte (mapa dos 61 códigos SGS)
 │   ├── coleta/credito_modalidade.py       # Etapa 2 (uma requisição por série)
 │   ├── tratamento/credito_modalidade.py   # Etapa 3
 │   ├── analise/credito_modalidade.py      # Etapa 4
 │   ├── perfil/credito_modalidade.py       # Etapa E (+ perfil/nucleo.py)
-│   └── publicacao/credito_modalidade.py   # Etapa 5
+│   ├── publicacao/credito_modalidade.py   # Etapa 5 (JSON + CSV público)
+│   └── publicacao/skill.py                # Etapa 5 — gera eventos.md e o zip da skill
 ├── dados/
 │   ├── brutos/                 # respostas cruas do SGS (regeneráveis; fora do git)
 │   └── processados/            # CSV tidy
 ├── docs/                       # Etapas 6 e E — site publicado
-│   ├── explorar.html                   # Etapa E — perfil + pauta analitica
+│   ├── explorar.html                   # Etapa E — perfil + pauta (no ar, fora do menu)
 │   ├── js/explorar.js
 │   ├── dados/perfil_credito_modalidade.json  # Etapa E (gerado)
 │   ├── dados/notas_credito_modalidade.json   # Etapa E (a mao, nunca sobrescrito)
-│   ├── index.html
-│   ├── css/estilo.css
-│   ├── js/app.js
+│   ├── dados/eventos_credito_modalidade.json # marcos/notícias (a mão, nunca sobrescrito)
+│   ├── index.html                      # painel narrativo (ex-v2; a v1 só existe no histórico do git)
+│   ├── skill.html                      # como baixar e usar a skill
+│   ├── css/estilo-v2.css, css/estilo.css
+│   ├── js/app-v2.js
+│   ├── skill/credito-modalidade-bcb.zip   # gerado
+│   ├── dados/credito_modalidade.csv    # gerado (CSV tidy público)
 │   └── dados/credito_modalidade.json
 ├── catalogo/fonte.md           # Etapa 1 — dicionário de dados
 └── prompts/                    # prompt de abertura de sessão desta fonte
@@ -97,7 +111,7 @@ fonte-credito-modalidade/
 | E | Exploração & pauta | `src/perfil/`, `docs/explorar.html` | bruto + tidy + auxiliares → perfil + pauta | ✅ |
 | 5 | Publicação de dados | `src/publicacao/` | tidy + métricas → JSON do front | ✅ |
 | 6 | Dashboard | `docs/` | JSON → site interativo | ✅ |
-| 7 | Documentação & deploy | `README.md`, GitHub Pages | — → site no ar | 🟡 |
+| 7 | Documentação, automação & deploy | `README.md`, `.github/workflows/`, Cloudflare Pages | — → site no ar, atualizado todo mês | ✅ |
 
 **Formato tidy (saída da Etapa 3):** `ano_mes`, `segmento`, `modalidade_credito`, `saldo`,
 `taxa_juros_aa`, `spread_pp`. Segue a anatomia comum do projeto — **dimensões em linha,
@@ -127,7 +141,8 @@ duas (`segmento` + `modalidade_credito`).
       incremental para não rebaixar as 61 séries inteiras a cada execução.
 - [ ] Etapa 4: sazonalidade, médias móveis, correlação entre saldo e taxa.
 - [ ] Etapa 6: comparação lado a lado PF × PJ na mesma modalidade.
-- [ ] Etapa 7: automação de atualização agendada e melhorias de acessibilidade.
+- [x] Etapa 7: atualização mensal agendada (dia 5) e deploy no Cloudflare Pages.
+- [ ] Etapa 7: melhorias de acessibilidade.
 
 ## Etapa E — exploração
 
@@ -137,5 +152,17 @@ Segue a regra da especificacao para fontes multi-serie: perfilar as 61 series in
 nao acrescentaria nada (todas tem a mesma forma), entao o que se perfila e o **inventario**.
 
 Especificacao completa no repositorio `controle-global`, em
-`prompts/modelo-pagina-exploracao.md`. **A Etapa E so adiciona:** a unica alteracao em arquivo
-existente foi o link "Explorar dados" na navegacao do `index.html`.
+`prompts/modelo-pagina-exploracao.md`. Desde out/2026 a pagina `explorar.html` segue publicada, mas saiu do menu
+(o header mostra so Painel e Skill Claude, como no `fonte-meios-pagamento`).
+
+
+## Eventos e skill
+
+`docs/dados/eventos_credito_modalidade.json` é **escrito à mão** (array de
+`{data, titulo, descricao, segmentos, modalidades, fonte}`) e alimenta as anotações do gráfico de
+trajetória e a lista "O que pode explicar a trajetória". `src/publicacao/skill.py` o converte
+em `skill/credito-modalidade-bcb/references/eventos.md` e zipa a skill. O workflow mensal nunca
+commita `notas_*.json` nem `eventos_*.json`.
+
+Toda funcionalidade nova ou alterada entra com teste e uma linha no inventário "Cobertura:"
+de `scripts/check`, no mesmo commit.

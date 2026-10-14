@@ -265,7 +265,12 @@
 
   function renderCruzamentos(notas) {
     if (!notas?.cruzamentos?.length) return;
-    const url = (f) => `https://gfvdata-web.github.io/fonte-${f.replace(/_/g, "-").replace("-mensal", "")}/`;
+    // Fontes que já migraram para domínio próprio; as demais seguem no GitHub Pages.
+    const DOMINIOS = { meios_pagamento: "https://meiospagamento.gfvdata.com/" };
+    const url = (f) => {
+      const slug = f.replace("_mensal", "");
+      return DOMINIOS[slug] || `https://gfvdata-web.github.io/fonte-${slug.replace(/_/g, "-")}/`;
+    };
     $("cruzamentos").innerHTML = notas.cruzamentos.map((c) => `
       <div class="mini-cartao">
         ${selo(`chave: ${c.chave}`, "chave")}

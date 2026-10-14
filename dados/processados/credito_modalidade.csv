@@ -5103,19 +5103,19 @@ ano_mes,segmento,modalidade_credito,saldo,taxa_juros_aa,spread_pp
 2025-10,PJ,Crédito rural,102122.0,13.61,
 2025-10,PJ,Financiamento imobiliário,71886.0,12.02,
 2025-10,PJ,Financiamento com recursos do BNDES,461836.0,14.31,
-2025-11,Total,Total,7003273.0,32.32,21.37
-2025-11,PF,Total,4387061.0,37.9,27.41
+2025-11,Total,Total,7004223.0,32.2,21.23
+2025-11,PF,Total,4387321.0,37.89,27.4
 2025-11,PF,Cheque especial,42308.0,140.58,
-2025-11,PF,Crédito pessoal não consignado,390071.0,111.48,
-2025-11,PF,Crédito pessoal consignado,730828.0,27.05,
+2025-11,PF,Crédito pessoal não consignado,390074.0,111.43,
+2025-11,PF,Crédito pessoal consignado,730834.0,27.04,
 2025-11,PF,Aquisição de veículos,394415.0,27.02,
 2025-11,PF,Cartão de crédito rotativo,83567.0,448.37,
 2025-11,PF,Cartão de crédito parcelado,85715.0,190.63,
 2025-11,PF,Desconto de cheques,1508.0,39.07,
-2025-11,PF,Crédito rural,556061.0,11.64,
-2025-11,PF,Financiamento imobiliário,1297715.0,10.35,
+2025-11,PF,Crédito rural,556061.0,11.66,
+2025-11,PF,Financiamento imobiliário,1297715.0,10.34,
 2025-11,PF,Microcrédito,9202.0,54.3,
-2025-11,PJ,Total,2616213.0,20.45,8.53
+2025-11,PJ,Total,2616902.0,20.43,8.48
 2025-11,PJ,Desconto de duplicatas e recebíveis,173714.0,19.29,
 2025-11,PJ,Capital de giro,499192.0,24.73,
 2025-11,PJ,Conta garantida,45534.0,61.05,
@@ -5132,10 +5132,10 @@ ano_mes,segmento,modalidade_credito,saldo,taxa_juros_aa,spread_pp
 2025-11,PJ,Crédito rural,104091.0,12.99,
 2025-11,PJ,Financiamento imobiliário,72508.0,11.85,
 2025-11,PJ,Financiamento com recursos do BNDES,466976.0,11.56,
-2025-12,Total,Total,7136436.0,31.99,21.01
-2025-12,PF,Total,4435290.0,37.73,27.25
+2025-12,Total,Total,7137252.0,31.87,20.87
+2025-12,PF,Total,4435517.0,37.73,27.25
 2025-12,PF,Cheque especial,40651.0,138.89,
-2025-12,PF,Crédito pessoal não consignado,388413.0,116.59,
+2025-12,PF,Crédito pessoal não consignado,388418.0,116.59,
 2025-12,PF,Crédito pessoal consignado,735355.0,27.16,
 2025-12,PF,Aquisição de veículos,397953.0,26.44,
 2025-12,PF,Cartão de crédito rotativo,81523.0,442.41,
@@ -5144,7 +5144,7 @@ ano_mes,segmento,modalidade_credito,saldo,taxa_juros_aa,spread_pp
 2025-12,PF,Crédito rural,558348.0,11.63,
 2025-12,PF,Financiamento imobiliário,1311347.0,10.78,
 2025-12,PF,Microcrédito,9443.0,48.82,
-2025-12,PJ,Total,2701146.0,19.92,7.91
+2025-12,PJ,Total,2701735.0,19.9,7.85
 2025-12,PJ,Desconto de duplicatas e recebíveis,209453.0,18.35,
 2025-12,PJ,Capital de giro,506107.0,23.43,
 2025-12,PJ,Conta garantida,44721.0,61.24,
@@ -5161,8 +5161,8 @@ ano_mes,segmento,modalidade_credito,saldo,taxa_juros_aa,spread_pp
 2025-12,PJ,Crédito rural,109880.0,12.52,
 2025-12,PJ,Financiamento imobiliário,72292.0,12.66,
 2025-12,PJ,Financiamento com recursos do BNDES,482112.0,12.06,
-2026-01,Total,Total,7130500.0,32.6,21.59
-2026-01,PF,Total,4476448.0,38.03,27.52
+2026-01,Total,Total,7130762.0,32.45,21.42
+2026-01,PF,Total,4476542.0,38.03,27.52
 2026-01,PF,Cheque especial,44136.0,137.44,
 2026-01,PF,Crédito pessoal não consignado,395232.0,118.02,
 2026-01,PF,Crédito pessoal consignado,746898.0,27.59,
@@ -5173,7 +5173,7 @@ ano_mes,segmento,modalidade_credito,saldo,taxa_juros_aa,spread_pp
 2026-01,PF,Crédito rural,568431.0,10.91,
 2026-01,PF,Financiamento imobiliário,1321809.0,10.97,
 2026-01,PF,Microcrédito,9256.0,55.56,
-2026-01,PJ,Total,2654052.0,21.11,9.02
+2026-01,PJ,Total,2654220.0,20.99,8.87
 2026-01,PJ,Desconto de duplicatas e recebíveis,174438.0,19.38,
 2026-01,PJ,Capital de giro,501046.0,24.56,
 2026-01,PJ,Conta garantida,46722.0,61.87,
@@ -5190,23 +5190,23 @@ ano_mes,segmento,modalidade_credito,saldo,taxa_juros_aa,spread_pp
 2026-01,PJ,Crédito rural,112042.0,12.14,
 2026-01,PJ,Financiamento imobiliário,72772.0,11.72,
 2026-01,PJ,Financiamento com recursos do BNDES,480278.0,13.46,
-2026-02,Total,Total,7156987.0,32.78,21.98
-2026-02,PF,Total,4501056.0,38.34,28.07
-2026-02,PF,Cheque especial,44554.0,146.3,
-2026-02,PF,Crédito pessoal não consignado,399858.0,112.15,
-2026-02,PF,Crédito pessoal consignado,757551.0,28.17,
+2026-02,Total,Total,7157783.0,32.63,21.81
+2026-02,PF,Total,4501299.0,38.34,28.07
+2026-02,PF,Cheque especial,44555.0,146.3,
+2026-02,PF,Crédito pessoal não consignado,399866.0,112.15,
+2026-02,PF,Crédito pessoal consignado,757554.0,28.17,
 2026-02,PF,Aquisição de veículos,408416.0,27.28,
 2026-02,PF,Cartão de crédito rotativo,88489.0,442.26,
 2026-02,PF,Cartão de crédito parcelado,91800.0,196.5,
-2026-02,PF,Desconto de cheques,1496.0,45.93,
-2026-02,PF,Crédito rural,575459.0,10.6,
+2026-02,PF,Desconto de cheques,1497.0,45.93,
+2026-02,PF,Crédito rural,575506.0,10.6,
 2026-02,PF,Financiamento imobiliário,1332870.0,10.68,
 2026-02,PF,Microcrédito,9110.0,56.97,
-2026-02,PJ,Total,2655931.0,20.9,8.95
+2026-02,PJ,Total,2656484.0,20.79,8.81
 2026-02,PJ,Desconto de duplicatas e recebíveis,170835.0,18.99,
-2026-02,PJ,Capital de giro,500995.0,24.07,
+2026-02,PJ,Capital de giro,500996.0,24.07,
 2026-02,PJ,Conta garantida,48510.0,58.96,
-2026-02,PJ,Cheque especial,21293.0,342.68,
+2026-02,PJ,Cheque especial,21294.0,342.68,
 2026-02,PJ,Aquisição de veículos,141141.0,19.03,
 2026-02,PJ,Vendor,3259.0,19.05,
 2026-02,PJ,Compror,16293.0,19.19,
@@ -5219,11 +5219,11 @@ ano_mes,segmento,modalidade_credito,saldo,taxa_juros_aa,spread_pp
 2026-02,PJ,Crédito rural,114863.0,13.43,
 2026-02,PJ,Financiamento imobiliário,73150.0,11.53,
 2026-02,PJ,Financiamento com recursos do BNDES,480157.0,13.48,
-2026-03,Total,Total,7240551.0,32.99,21.71
-2026-03,PF,Total,4553014.0,38.45,27.81
+2026-03,Total,Total,7240557.0,32.84,21.54
+2026-03,PF,Total,4553022.0,38.45,27.81
 2026-03,PF,Cheque especial,45377.0,138.9,
 2026-03,PF,Crédito pessoal não consignado,399151.0,117.05,
-2026-03,PF,Crédito pessoal consignado,770375.0,27.97,
+2026-03,PF,Crédito pessoal consignado,770378.0,27.97,
 2026-03,PF,Aquisição de veículos,411626.0,26.6,
 2026-03,PF,Cartão de crédito rotativo,87107.0,433.06,
 2026-03,PF,Cartão de crédito parcelado,93519.0,192.07,
@@ -5231,7 +5231,7 @@ ano_mes,segmento,modalidade_credito,saldo,taxa_juros_aa,spread_pp
 2026-03,PF,Crédito rural,575781.0,10.43,
 2026-03,PF,Financiamento imobiliário,1349026.0,11.56,
 2026-03,PF,Microcrédito,9069.0,53.34,
-2026-03,PJ,Total,2687537.0,21.25,8.61
+2026-03,PJ,Total,2687535.0,21.12,8.45
 2026-03,PJ,Desconto de duplicatas e recebíveis,185441.0,18.37,
 2026-03,PJ,Capital de giro,502426.0,24.86,
 2026-03,PJ,Conta garantida,47730.0,61.2,
@@ -5248,10 +5248,10 @@ ano_mes,segmento,modalidade_credito,saldo,taxa_juros_aa,spread_pp
 2026-03,PJ,Crédito rural,120377.0,12.38,
 2026-03,PJ,Financiamento imobiliário,73963.0,12.26,
 2026-03,PJ,Financiamento com recursos do BNDES,485435.0,15.05,
-2026-04,Total,Total,7259769.0,33.51,22.24
-2026-04,PF,Total,4574369.0,38.93,28.41
+2026-04,Total,Total,7259766.0,33.36,22.07
+2026-04,PF,Total,4574368.0,38.93,28.41
 2026-04,PF,Cheque especial,44952.0,140.93,
-2026-04,PF,Crédito pessoal não consignado,400694.0,125.04,
+2026-04,PF,Crédito pessoal não consignado,400694.0,125.03,
 2026-04,PF,Crédito pessoal consignado,771241.0,28.15,
 2026-04,PF,Aquisição de veículos,414881.0,26.64,
 2026-04,PF,Cartão de crédito rotativo,90035.0,431.97,
@@ -5260,7 +5260,7 @@ ano_mes,segmento,modalidade_credito,saldo,taxa_juros_aa,spread_pp
 2026-04,PF,Crédito rural,574193.0,10.32,
 2026-04,PF,Financiamento imobiliário,1362188.0,11.12,
 2026-04,PF,Microcrédito,8949.0,50.97,
-2026-04,PJ,Total,2685400.0,21.84,8.98
+2026-04,PJ,Total,2685397.0,21.72,8.84
 2026-04,PJ,Desconto de duplicatas e recebíveis,169830.0,19.25,
 2026-04,PJ,Capital de giro,500430.0,23.18,
 2026-04,PJ,Conta garantida,50132.0,61.29,
@@ -5277,24 +5277,24 @@ ano_mes,segmento,modalidade_credito,saldo,taxa_juros_aa,spread_pp
 2026-04,PJ,Crédito rural,122679.0,13.21,
 2026-04,PJ,Financiamento imobiliário,75097.0,11.7,
 2026-04,PJ,Financiamento com recursos do BNDES,486177.0,17.52,
-2026-05,Total,Total,7303618.0,33.22,21.89
-2026-05,PF,Total,4595657.0,38.86,28.2
-2026-05,PF,Cheque especial,43801.0,137.25,
-2026-05,PF,Crédito pessoal não consignado,400664.0,120.33,
-2026-05,PF,Crédito pessoal consignado,778991.0,27.91,
-2026-05,PF,Aquisição de veículos,412439.0,26.31,
-2026-05,PF,Cartão de crédito rotativo,90436.0,439.83,
+2026-05,Total,Total,7305322.0,32.97,21.64
+2026-05,PF,Total,4597168.0,38.56,27.9
+2026-05,PF,Cheque especial,43816.0,137.25,
+2026-05,PF,Crédito pessoal não consignado,402004.0,116.04,
+2026-05,PF,Crédito pessoal consignado,779029.0,27.91,
+2026-05,PF,Aquisição de veículos,412443.0,26.31,
+2026-05,PF,Cartão de crédito rotativo,90436.0,441.06,
 2026-05,PF,Cartão de crédito parcelado,94419.0,189.55,
-2026-05,PF,Desconto de cheques,1406.0,45.99,
-2026-05,PF,Crédito rural,569819.0,10.45,
+2026-05,PF,Desconto de cheques,1407.0,45.99,
+2026-05,PF,Crédito rural,569859.0,10.45,
 2026-05,PF,Financiamento imobiliário,1378100.0,11.23,
 2026-05,PF,Microcrédito,9033.0,49.83,
-2026-05,PJ,Total,2707962.0,21.25,8.51
-2026-05,PJ,Desconto de duplicatas e recebíveis,172156.0,19.62,
-2026-05,PJ,Capital de giro,501688.0,23.1,
-2026-05,PJ,Conta garantida,48823.0,63.35,
-2026-05,PJ,Cheque especial,20977.0,343.35,
-2026-05,PJ,Aquisição de veículos,138000.0,18.7,
+2026-05,PJ,Total,2708154.0,21.24,8.49
+2026-05,PJ,Desconto de duplicatas e recebíveis,172159.0,19.62,
+2026-05,PJ,Capital de giro,501708.0,23.1,
+2026-05,PJ,Conta garantida,48828.0,63.35,
+2026-05,PJ,Cheque especial,20978.0,343.35,
+2026-05,PJ,Aquisição de veículos,138006.0,18.7,
 2026-05,PJ,Vendor,2931.0,20.31,
 2026-05,PJ,Compror,16246.0,16.73,
 2026-05,PJ,Cartão de crédito rotativo,7511.0,250.33,
@@ -5303,35 +5303,93 @@ ano_mes,segmento,modalidade_credito,saldo,taxa_juros_aa,spread_pp
 2026-05,PJ,Financiamento a importações,7966.0,11.68,
 2026-05,PJ,Financiamento a exportações,129262.0,14.39,
 2026-05,PJ,Repasse externo,28324.0,13.89,
-2026-05,PJ,Crédito rural,125699.0,12.39,
+2026-05,PJ,Crédito rural,125701.0,12.39,
 2026-05,PJ,Financiamento imobiliário,76247.0,12.45,
-2026-05,PJ,Financiamento com recursos do BNDES,486885.0,16.18,
-2026-06,Total,Total,7355800.0,33.44,21.99
-2026-06,PF,Total,4606799.0,39.44,28.59
-2026-06,PF,Cheque especial,44758.0,139.78,
-2026-06,PF,Crédito pessoal não consignado,397186.0,127.3,
-2026-06,PF,Crédito pessoal consignado,785512.0,28.26,
-2026-06,PF,Aquisição de veículos,405593.0,26.44,
-2026-06,PF,Cartão de crédito rotativo,92033.0,442.44,
-2026-06,PF,Cartão de crédito parcelado,93349.0,191.42,
-2026-06,PF,Desconto de cheques,1405.0,51.76,
-2026-06,PF,Crédito rural,564266.0,10.64,
-2026-06,PF,Financiamento imobiliário,1395317.0,11.22,
+2026-05,PJ,Financiamento com recursos do BNDES,486887.0,16.18,
+2026-06,Total,Total,7353302.0,32.63,21.16
+2026-06,PF,Total,4602668.0,38.34,27.48
+2026-06,PF,Cheque especial,44842.0,139.9,
+2026-06,PF,Crédito pessoal não consignado,395073.0,112.17,
+2026-06,PF,Crédito pessoal consignado,785510.0,28.26,
+2026-06,PF,Aquisição de veículos,405632.0,26.44,
+2026-06,PF,Cartão de crédito rotativo,90505.0,447.39,
+2026-06,PF,Cartão de crédito parcelado,90997.0,191.42,
+2026-06,PF,Desconto de cheques,1371.0,51.76,
+2026-06,PF,Crédito rural,562807.0,10.48,
+2026-06,PF,Financiamento imobiliário,1395366.0,11.22,
 2026-06,PF,Microcrédito,9147.0,50.04,
-2026-06,PJ,Total,2749001.0,20.8,8.08
-2026-06,PJ,Desconto de duplicatas e recebíveis,192313.0,18.96,
-2026-06,PJ,Capital de giro,506497.0,22.93,
-2026-06,PJ,Conta garantida,48584.0,61.63,
-2026-06,PJ,Cheque especial,21597.0,359.04,
-2026-06,PJ,Aquisição de veículos,136055.0,18.75,
+2026-06,PJ,Total,2750634.0,20.74,8.0
+2026-06,PJ,Desconto de duplicatas e recebíveis,192134.0,18.96,
+2026-06,PJ,Capital de giro,505193.0,22.93,
+2026-06,PJ,Conta garantida,48413.0,61.62,
+2026-06,PJ,Cheque especial,21818.0,352.45,
+2026-06,PJ,Aquisição de veículos,135957.0,18.75,
 2026-06,PJ,Vendor,3398.0,19.67,
 2026-06,PJ,Compror,18423.0,17.11,
-2026-06,PJ,Cartão de crédito rotativo,11243.0,146.06,
-2026-06,PJ,Cartão de crédito parcelado,4051.0,156.02,
+2026-06,PJ,Cartão de crédito rotativo,11205.0,146.06,
+2026-06,PJ,Cartão de crédito parcelado,3957.0,156.02,
 2026-06,PJ,Adiantamento sobre contratos de câmbio (ACC),118892.0,5.52,
 2026-06,PJ,Financiamento a importações,8609.0,10.62,
-2026-06,PJ,Financiamento a exportações,129922.0,14.74,
-2026-06,PJ,Repasse externo,28512.0,15.51,
-2026-06,PJ,Crédito rural,126616.0,12.62,
-2026-06,PJ,Financiamento imobiliário,77386.0,12.22,
-2026-06,PJ,Financiamento com recursos do BNDES,490913.0,14.93,
+2026-06,PJ,Financiamento a exportações,130065.0,14.74,
+2026-06,PJ,Repasse externo,28513.0,15.51,
+2026-06,PJ,Crédito rural,126946.0,12.55,
+2026-06,PJ,Financiamento imobiliário,77415.0,12.22,
+2026-06,PJ,Financiamento com recursos do BNDES,490995.0,14.93,
+2026-07,Total,Total,7362305.0,32.06,20.85
+2026-07,PF,Total,4633143.0,37.46,26.67
+2026-07,PF,Cheque especial,44742.0,136.97,
+2026-07,PF,Crédito pessoal não consignado,398066.0,110.97,
+2026-07,PF,Crédito pessoal consignado,786582.0,28.43,
+2026-07,PF,Aquisição de veículos,409633.0,26.52,
+2026-07,PF,Cartão de crédito rotativo,91691.0,436.15,
+2026-07,PF,Cartão de crédito parcelado,87521.0,189.28,
+2026-07,PF,Desconto de cheques,1344.0,51.18,
+2026-07,PF,Crédito rural,558238.0,11.09,
+2026-07,PF,Financiamento imobiliário,1414668.0,11.3,
+2026-07,PF,Microcrédito,9277.0,50.79,
+2026-07,PJ,Total,2729162.0,20.81,8.73
+2026-07,PJ,Desconto de duplicatas e recebíveis,176190.0,19.25,
+2026-07,PJ,Capital de giro,489636.0,24.49,
+2026-07,PJ,Conta garantida,47069.0,57.38,
+2026-07,PJ,Cheque especial,21143.0,336.04,
+2026-07,PJ,Aquisição de veículos,133874.0,18.92,
+2026-07,PJ,Vendor,2854.0,17.57,
+2026-07,PJ,Compror,17127.0,16.94,
+2026-07,PJ,Cartão de crédito rotativo,8672.0,230.36,
+2026-07,PJ,Cartão de crédito parcelado,4076.0,158.09,
+2026-07,PJ,Adiantamento sobre contratos de câmbio (ACC),121782.0,5.86,
+2026-07,PJ,Financiamento a importações,8175.0,10.31,
+2026-07,PJ,Financiamento a exportações,129425.0,13.91,
+2026-07,PJ,Repasse externo,27884.0,13.87,
+2026-07,PJ,Crédito rural,127609.0,12.04,
+2026-07,PJ,Financiamento imobiliário,78011.0,12.6,
+2026-07,PJ,Financiamento com recursos do BNDES,494597.0,13.24,
+2026-08,Total,Total,7397669.0,32.26,21.16
+2026-08,PF,Total,4670170.0,38.18,27.48
+2026-08,PF,Cheque especial,45450.0,136.41,
+2026-08,PF,Crédito pessoal não consignado,399765.0,110.22,
+2026-08,PF,Crédito pessoal consignado,791848.0,29.0,
+2026-08,PF,Aquisição de veículos,415527.0,26.42,
+2026-08,PF,Cartão de crédito rotativo,96113.0,444.89,
+2026-08,PF,Cartão de crédito parcelado,88188.0,192.08,
+2026-08,PF,Desconto de cheques,1343.0,58.95,
+2026-08,PF,Crédito rural,557777.0,11.12,
+2026-08,PF,Financiamento imobiliário,1430825.0,11.28,
+2026-08,PF,Microcrédito,9326.0,50.2,
+2026-08,PJ,Total,2727499.0,19.75,7.81
+2026-08,PJ,Desconto de duplicatas e recebíveis,171856.0,18.6,
+2026-08,PJ,Capital de giro,482924.0,22.89,
+2026-08,PJ,Conta garantida,47392.0,56.15,
+2026-08,PJ,Cheque especial,20895.0,354.78,
+2026-08,PJ,Aquisição de veículos,132715.0,18.82,
+2026-08,PJ,Vendor,2507.0,18.39,
+2026-08,PJ,Compror,17081.0,17.07,
+2026-08,PJ,Cartão de crédito rotativo,8692.0,203.5,
+2026-08,PJ,Cartão de crédito parcelado,4152.0,156.43,
+2026-08,PJ,Adiantamento sobre contratos de câmbio (ACC),126053.0,5.44,
+2026-08,PJ,Financiamento a importações,7941.0,13.9,
+2026-08,PJ,Financiamento a exportações,130035.0,14.3,
+2026-08,PJ,Repasse externo,28148.0,14.51,
+2026-08,PJ,Crédito rural,127128.0,11.61,
+2026-08,PJ,Financiamento imobiliário,78981.0,12.2,
+2026-08,PJ,Financiamento com recursos do BNDES,496536.0,11.73,

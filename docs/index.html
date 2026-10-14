@@ -3,154 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crédito por modalidade — Painel Analítico</title>
-  <link rel="stylesheet" href="css/estilo.css" />
+  <title>Crédito por modalidade no Brasil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/estilo-v2.css" />
+  <script>try{var t=localStorage.getItem("tema-v2");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
   <script data-goatcounter="https://gfvdata.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
-  <a class="switch-versao" href="index-v2.html">Testar nova versão (v2) →</a>
+  <div class="tema-switch-v2" id="tema-switch-v2" role="group" aria-label="Tema da página">
+    <button type="button" class="tema-switch-v2__btn" data-tema="light" aria-pressed="false">
+      <span aria-hidden="true">☀️</span><span class="tema-switch-v2__label">Claro</span>
+    </button>
+    <button type="button" class="tema-switch-v2__btn" data-tema="dark" aria-pressed="false">
+      <span aria-hidden="true">🌙</span><span class="tema-switch-v2__label">Escuro</span>
+    </button>
+  </div>
 
-  <header class="cabecalho">
+  <header class="cabecalho-v2">
     <div class="conteiner">
       <p class="sobrelinha">Banco Central do Brasil · SGS — Dados Abertos</p>
-      <h1>Crédito por modalidade</h1>
-      <p class="subtitulo" id="descricao-fonte">Saldo, taxa média de juros e spread das operações de crédito.</p>
-      <p class="meta-info" id="meta-info">Carregando…</p>
+      <h1>O preço do crédito no Brasil</h1>
+      <p class="subtitulo">Quanto custa tomar dinheiro emprestado varia dezenas de vezes dentro do mesmo sistema financeiro — e mudou muito nos últimos 15 anos.</p>
       <nav class="nav-paineis" aria-label="Painéis do projeto">
         <a href="index.html" aria-current="page">Painel</a>
-        <a href="explorar.html">Explorar dados</a>
-        <span class="nav-sep"></span>
-        <a href="https://meiospagamento.gfvdata.com/">Meios de pagamento</a>
-        <a href="https://gfvdata-web.github.io/fonte-arrecadacao-federal/">Arrecadação federal</a>
+        <a href="skill.html">Skill Claude</a>
       </nav>
     </div>
   </header>
 
   <main class="conteiner">
-    <!-- Controles -->
-    <section class="controles" aria-label="Seleção de segmento e métrica">
-      <span class="controles-rotulo">Segmento:</span>
-      <div class="alternador" id="alt-segmento" role="tablist">
-        <button class="alt-btn ativo" data-segmento="PF" role="tab">Pessoas físicas</button>
-        <button class="alt-btn" data-segmento="PJ" role="tab">Pessoas jurídicas</button>
-      </div>
-      <span class="controles-rotulo">Métrica:</span>
-      <div class="alternador" id="alt-metrica" role="tablist">
-        <button class="alt-btn ativo" data-metrica="saldo" role="tab">Saldo (R$)</button>
-        <button class="alt-btn" data-metrica="taxa" role="tab">Taxa de juros (% a.a.)</button>
-      </div>
+
+    <!-- Abertura narrativa -->
+    <section class="narrativa narrativa-abertura">
+      <p id="txt-abertura">Carregando…</p>
     </section>
 
-    <!-- KPIs -->
-    <section class="kpis" id="kpis" aria-label="Indicadores-chave"></section>
-
-    <!-- Gráficos -->
-    <section class="graficos">
-      <article class="cartao grafico-grande">
-        <h2>Evolução mensal</h2>
-        <p class="cartao-desc" id="titulo-evolucao">Por modalidade ao longo do tempo.</p>
-        <div class="canvas-wrap"><canvas id="gEvolucao"></canvas></div>
-      </article>
-      <article class="cartao">
-        <h2>Participação no saldo</h2>
-        <p class="cartao-desc" id="titulo-participacao">Fatia de cada modalidade no saldo do segmento.</p>
-        <div class="canvas-wrap"><canvas id="gParticipacao"></canvas></div>
-      </article>
+    <!-- Segmento (controle global: afeta os dois gráficos) -->
+    <section class="controles-v2" aria-label="Seleção de segmento">
+      <span class="controles-v2-rotulo">Segmento:</span>
+      <div class="pilulas" role="tablist" aria-label="Segmento" id="seletor-segmento"></div>
     </section>
 
-    <!-- Custo por modalidade -->
-    <section class="cartao">
-      <h2>Custo do crédito por modalidade</h2>
-      <p class="cartao-desc" id="titulo-taxas">Taxa média de juros no mês de referência.</p>
-      <div class="canvas-wrap canvas-alto"><canvas id="gTaxas"></canvas></div>
-    </section>
-
-    <!-- Juros e spread -->
-    <section class="cartao">
-      <h2>Taxa média e spread do segmento</h2>
-      <p class="cartao-desc" id="titulo-spread">Séries agregadas publicadas pelo BCB.</p>
-      <div class="canvas-wrap"><canvas id="gSpread"></canvas></div>
-    </section>
-
-    <!-- Ranking / métricas -->
-    <section class="cartao">
-      <div class="cartao-cabecalho">
-        <div class="cartao-titulo">
-          <h2>Ranking e métricas por modalidade</h2>
-          <p class="cartao-desc" id="desc-ranking">Saldo, participação, crescimento e custo.</p>
+    <!-- Gráfico 1: participação por período, granularidade automática (colunas empilhadas) -->
+    <article class="cartao-v2">
+      <div class="cartao-v2-cabecalho">
+        <div>
+          <p class="rotulo-secao">Participação por período</p>
+          <h2>Quem domina a carteira de crédito</h2>
+          <p class="cartao-v2-desc" id="desc-participacao">Fatia de cada modalidade no saldo do segmento.</p>
         </div>
-        <div class="filtro-periodo" role="group" aria-label="Filtro de período do ranking">
-          <label class="filtro-campo">De
-            <select id="ranking-inicio" class="sel-mes" aria-label="Mês inicial do ranking"></select>
-          </label>
-          <label class="filtro-campo">Até
-            <select id="ranking-fim" class="sel-mes" aria-label="Mês final do ranking"></select>
-          </label>
+        <div class="filtros-v2">
+          <div class="pilulas" role="tablist" aria-label="Período do gráfico de participação" id="periodo-participacao"></div>
         </div>
       </div>
-      <div class="tabela-wrap">
-        <table class="tabela" id="tabela-ranking">
-          <thead>
-            <tr>
-              <th>Modalidade</th>
-              <th class="num">Saldo (mês final)</th>
-              <th class="num">Part. no segmento</th>
-              <th class="num">Var. saldo no período</th>
-              <th class="num">CAGR a.a.</th>
-              <th class="num">Taxa (mês final)</th>
-              <th class="num">Var. taxa no período</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
+      <div class="canvas-wrap-v2 canvas-participacao"><div class="canvas-scroll-inner" id="participacaoScrollInner"><canvas id="gParticipacaoAno"></canvas></div></div>
+      <p class="legenda-nota">Cada coluna soma 100% e usa o saldo do último mês do período (saldo é estoque — somar meses distintos não faz sentido). A granularidade do eixo (mês/trimestre/semestre/ano) se ajusta automaticamente ao intervalo e ao tamanho da tela. As cinco maiores modalidades do segmento aparecem nomeadas; o restante — inclusive o resíduo que o próprio BCB não decompõe — vira "Outras modalidades".</p>
+      <details class="tabela-expansivel">
+        <summary>Ver tabela de participação por período (%)</summary>
+        <div class="tabela-wrap"><table class="tabela tabela-densa" id="tabela-participacao"><thead></thead><tbody></tbody></table></div>
+      </details>
+    </article>
+
+    <!-- Narrativa intermediária -->
+    <section class="narrativa">
+      <p id="txt-meio">Carregando…</p>
     </section>
 
-    <!-- Estatística descritiva -->
-    <section class="cartao">
-      <div class="cartao-cabecalho">
-        <div class="cartao-titulo">
-          <h2>Estatística descritiva</h2>
-          <p class="cartao-desc" id="titulo-estatistica">Sobre a série mensal de cada modalidade.</p>
+    <!-- Gráfico 2: linha do tempo -->
+    <article class="cartao-v2">
+      <div class="cartao-v2-cabecalho">
+        <div>
+          <p class="rotulo-secao">Linha do tempo</p>
+          <h2>A trajetória de cada modalidade</h2>
+          <p class="cartao-v2-desc" id="desc-evolucao">Série mensal por modalidade.</p>
         </div>
-        <div class="filtro-periodo" role="group" aria-label="Filtro de período da estatística">
-          <label class="filtro-campo">De
-            <select id="est-inicio" class="sel-mes" aria-label="Mês inicial da estatística"></select>
-          </label>
-          <label class="filtro-campo">Até
-            <select id="est-fim" class="sel-mes" aria-label="Mês final da estatística"></select>
-          </label>
+        <div class="filtros-v2">
+          <div class="pilulas" role="tablist" aria-label="Métrica da linha do tempo">
+            <button class="pilula-btn ativo" data-metrica-evo="taxa" role="tab">Taxa de juros</button>
+            <button class="pilula-btn" data-metrica-evo="saldo" role="tab">Saldo</button>
+          </div>
+          <div class="pilulas" role="tablist" aria-label="Período da linha do tempo" id="periodo-evolucao"></div>
         </div>
       </div>
-      <div class="tabela-wrap">
-        <table class="tabela" id="tabela-estatistica">
-          <thead>
-            <tr>
-              <th>Modalidade</th>
-              <th class="num">Média</th>
-              <th class="num">Mediana</th>
-              <th class="num">Desvio-padrão</th>
-              <th class="num">Coef. variação</th>
-              <th class="num">Mínimo</th>
-              <th class="num">Máximo</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+      <div class="foco-forma">
+        <span class="foco-forma-rotulo">Contar a história de:</span>
+        <div class="pilulas" role="tablist" aria-label="Modalidade em foco" id="foco-forma"></div>
       </div>
+      <div class="canvas-wrap-v2"><canvas id="gEvolucaoV2"></canvas></div>
+      <details class="tabela-expansivel">
+        <summary>Ver tabela da série selecionada (média por ano)</summary>
+        <div class="tabela-wrap"><table class="tabela tabela-densa" id="tabela-evolucao"><thead></thead><tbody></tbody></table></div>
+      </details>
+      <div class="eventos-linha-tempo" id="eventos-linha-tempo"></div>
+    </article>
+
+    <!-- Narrativa de fechamento -->
+    <section class="narrativa narrativa-fechamento">
+      <p id="txt-fechamento">Carregando…</p>
     </section>
+
+    <!-- Kit para IA: skill do Claude + dados prontos -->
+    <article class="cartao-v2 cartao-ia" id="usar-com-ia">
+      <p class="rotulo-secao">Use estes dados com IA</p>
+      <h2>Faça suas próprias perguntas ao Claude</h2>
+      <p class="cartao-v2-desc">Esta página foi construída com a ajuda do Claude. A mesma preparação está empacotada numa <strong>skill</strong>: um pacote de instruções que ensina o Claude a baixar a série atualizada do Banco Central, a evitar as armadilhas da fonte (unidades, spread que só existe nos agregados, saldo que é estoque e taxa que é fluxo, valores sem correção pela inflação) e a situar os números nos marcos históricos.</p>
+      <p class="legenda-nota"><a href="skill.html">Veja como instalar a skill em três passos →</a></p>
+      <p class="legenda-nota">Prefere outra ferramenta? Os dados tratados estão em <a href="dados/credito_modalidade.csv" download>credito_modalidade.csv</a> (saldo em R$ milhões, taxa e spread em % ao ano, nominal).</p>
+    </article>
+
   </main>
 
-  <footer class="rodape">
+  <footer class="rodape-v2">
     <div class="conteiner">
-      <p id="rodape-fonte"></p>
-      <p class="rodape-obs">Unidades: saldo em R$ milhões; taxa de juros em % ao ano; spread em pontos
-        percentuais ao ano. Dados nacionais — o SGS não publica crédito por modalidade com recorte por UF.
+      <p id="rodape-fonte-v2"></p>
+      <p class="rodape-obs">Unidades: saldo em R$ milhões; taxa de juros em % ao ano. Dados nacionais — o SGS não publica crédito por modalidade com recorte por UF.
         Projeto de estudo — dados abertos do Banco Central do Brasil.</p>
     </div>
   </footer>
 
-  <script src="js/app.js"></script>
+  <script src="js/app-v2.js"></script>
 </body>
 </html>
