@@ -19,7 +19,7 @@
 #   Catálogo de séries: src/config.py x catalogo/fonte.md x DECLARACAO do perfil tests/test_catalogo.py
 #   Páginas: index.html (painel), explorar.html, skill.html           tests/test_paginas.py
 #     links locais, ids x JS, abas/períodos, nav (Painel + Skill Claude, aria-current), tema claro/escuro,
-#     GoatCounter, sem URL antiga do GitHub Pages, instalação da skill (3 passos, zip, tamanho anunciado, CSV)
+#     GoatCounter (com prefixo /fonte-credito-modalidade), sem URL antiga do GitHub Pages, instalação da skill (3 passos, zip, tamanho anunciado, CSV)
 #   Eventos (eventos_credito_modalidade.json) e CSV público              tests/test_contrato_dados.py
 #     6 chaves, segmentos/modalidades válidos, ordem, dentro da série; CSV == JSON == processado
 #   JS do painel (app-v2.js) e da exploração (explorar.js) com DOM falso   tests/js/paginas.test.js

@@ -113,6 +113,19 @@ class TestRastreioEUrls(unittest.TestCase):
             self.assertEqual(tags[0]["data-goatcounter"], "https://gfvdata.goatcounter.com/count", nome)
             self.assertEqual(tags[0].get("src"), "//gc.zgo.at/count.js", nome)
 
+    def test_goatcounter_com_prefixo_do_repo_antes_do_snippet(self):
+        # Domínio próprio: sem o prefixo, o GoatCounter registra o caminho sem /fonte-credito-modalidade/
+        # e o painel-status não conta as visitas.
+        prefixo = 'window.goatcounter = { path: (p) => "/fonte-credito-modalidade" + p };'
+        for html in sorted(DOCS.rglob("*.html")):
+            texto = html.read_text(encoding="utf-8")
+            nome = str(html.relative_to(DOCS))
+            self.assertEqual(texto.count("data-goatcounter="), 1, nome)
+            self.assertEqual(texto.count("window.goatcounter"), 1, nome)
+            self.assertIn(prefixo, texto, f"{nome}: falta o prefixo /fonte-credito-modalidade do GoatCounter")
+            self.assertLess(texto.index("window.goatcounter"), texto.index("data-goatcounter="), nome)
+            self.assertLess(texto.index("data-goatcounter="), texto.index("</head>"), nome)
+
     def test_nenhuma_url_do_github_pages_deste_repo_no_site(self):
         achados = [str(p.relative_to(DOCS)) for p in DOCS.rglob("*")
                    if p.is_file() and p.suffix in {".html", ".js", ".css", ".json", ".csv"}
