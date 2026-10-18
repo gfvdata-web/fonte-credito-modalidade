@@ -46,7 +46,7 @@ Nacional, por modalidade e por segmento (PF/PJ), de mar/2011 em diante.
 | Coleta / tratamento / análise | Python 3.13 (`requests`, `pandas`) |
 | Publicação de dados | JSON estático gerado pelo Python |
 | Front-end / dashboard | HTML + CSS + JavaScript com Chart.js (via CDN) |
-| Hospedagem | Cloudflare Pages (pasta `docs/`, sem build; domínio `creditomodalidade.gfvdata.com`) |
+| Hospedagem | Cloudflare Pages (pasta `docs/`, sem build; domínio `creditomodalidade.gfvdata.com`); contador de downloads em `functions/` + `cloudflare/` (D1 `downloads`, `/contagem.json`) |
 | Automação | GitHub Actions — `atualizacao-mensal.yml` (Etapa 7) |
 | Testes | `bash scripts/check` (unittest + `node --test`, sem rede; pre-commit em `.githooks/`) |
 
@@ -72,6 +72,9 @@ fonte-credito-modalidade/
 ├── dados/
 │   ├── brutos/                 # respostas cruas do SGS (regeneráveis; fora do git)
 │   └── processados/            # CSV tidy
+├── cloudflare/contagem.mjs     # contador de downloads (igual nos 3 repos de fontes)
+├── functions/_middleware.js    # Pages Function que liga o contador (rotas em docs/_routes.json)
+├── wrangler.toml               # config do Pages: D1 `downloads` + SITE
 ├── docs/                       # Etapas 6 e E — site publicado
 │   ├── explorar.html                   # Etapa E — perfil + pauta (no ar, fora do menu)
 │   ├── js/explorar.js
@@ -142,6 +145,13 @@ duas (`segmento` + `modalidade_credito`).
 - [ ] Etapa 4: sazonalidade, médias móveis, correlação entre saldo e taxa.
 - [ ] Etapa 6: comparação lado a lado PF × PJ na mesma modalidade.
 - [x] Etapa 7: atualização mensal agendada (dia 5) e deploy no Cloudflare Pages.
+
+**Contagem de downloads.** O código (Pages Function `functions/_middleware.js`) só roda em `/contagem.json`,
+`/skill/*` e `/dados/*` (`docs/_routes.json`; o resto sai direto dos estáticos). Cada GET 200 inteiro do zip da
+skill ou do CSV soma 1 no D1 `downloads` (binding em `wrangler.toml`, compartilhado com os outros dois sites de
+dados abertos), por arquivo, dia (Brasília) e tipo (navegador, script — a skill baixa o CSV em Python — ou
+robô). Nada de IP nem cookie. `/contagem.json` publica o resumo, lido pelo painel-status.
+`cloudflare/contagem.mjs` é igual nos 3 repos.
 - [ ] Etapa 7: melhorias de acessibilidade.
 
 ## Etapa E — exploração

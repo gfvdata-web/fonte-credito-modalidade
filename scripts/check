@@ -26,6 +26,9 @@
 #     formatação, períodos, granularidade, participação 100%, CAGR = Python, narrativas, filtro de eventos
 #   Skill do Claude (SKILL.md, carregar_dados.py offline/mockado, zip e eventos.md em dia)  tests/test_skill.py
 #   Etapa 7: workflow atualizacao-mensal.yml, descartar_mudancas_cosmeticas.py, requirements  tests/test_automacao.py
+#   Contador de downloads (cloudflare/contagem.mjs + functions/_middleware.js) com D1 falso  tests/js/contagem.test.js
+#     zip/CSV contam (GET 200 sem Range), navegador/script/robô, /contagem.json, D1 fora do ar;
+#     wrangler.toml, docs/_routes.json e cópia idêntica ao arrecadacao em tests/test_automacao.py
 #   (sem teste: chamada real à API do SGS, CDN do Chart.js, GitHub Pages/Cloudflare, desenho dos
 #    gráficos e CSS/responsivo — exigem rede ou navegador)
 cd "$(dirname "$0")/.." || exit 1
@@ -54,6 +57,7 @@ case "$alvo" in
   tests/fixtures/*)         testes_py tests.test_pipeline tests.test_skill tests.test_sintaxe ;;
   tests/test_*.py)          m="${alvo%.py}"; testes_py "${m//\//.}" ;;
   tests/*.py)               testes_py tests.test_sintaxe ;;
+  cloudflare/*|functions/*|wrangler.toml|docs/_routes.json) testes_js; testes_py tests.test_automacao ;;
   catalogo/*)               testes_py tests.test_catalogo ;;
   skill/*)                  testes_py tests.test_skill tests.test_sintaxe ;;
   .github/*)                testes_py tests.test_automacao tests.test_sintaxe ;;

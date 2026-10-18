@@ -19,3 +19,6 @@ Thumbs.db
 
 # Claude Code (config local da máquina)
 .claude/settings.local.json
+
+# Wrangler (estado local do D1/pages dev)
+.wrangler/

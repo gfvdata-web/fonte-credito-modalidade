@@ -80,9 +80,17 @@ bash scripts/check
 | `docs/skill.html` | 6 | Como baixar e usar a skill do Claude |
 | `docs/explorar.html` | E | Perfil das tabelas + pauta analítica (fora do menu) |
 | `skill/` | 5 | Skill do Claude (empacotada em `docs/skill/`) |
+| `cloudflare/`, `functions/`, `wrangler.toml` | 7 | Contador de downloads (Pages Function + D1 `downloads`); `docs/_routes.json` limita as rotas |
 | `scripts/`, `tests/` | — | `scripts/check` e testes sem rede |
 | `.github/workflows/` | 7 | Atualização mensal |
 | `prompts/` | — | Prompt de abertura de sessão desta fonte |
+
+**Contagem de downloads.** O código (Pages Function `functions/_middleware.js`) só roda em `/contagem.json`,
+`/skill/*` e `/dados/*` (`docs/_routes.json`; o resto sai direto dos estáticos). Cada GET 200 inteiro do zip da
+skill ou do CSV soma 1 no D1 `downloads` (binding em `wrangler.toml`, compartilhado com os outros dois sites de
+dados abertos), por arquivo, dia (Brasília) e tipo (navegador, script — a skill baixa o CSV em Python — ou
+robô). Nada de IP nem cookie. `/contagem.json` publica o resumo, lido pelo painel-status.
+`cloudflare/contagem.mjs` é igual nos 3 repos.
 
 ## Licença dos dados
 

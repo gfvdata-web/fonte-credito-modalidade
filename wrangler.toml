@@ -1,0 +1,14 @@
+# Config do Cloudflare Pages (projeto `credito-modalidade`, integração Git): lê docs/ como saída do build e liga ao
+# Function (functions/_middleware.js) o D1 `downloads` (contador de downloads, compartilhado com os
+# outros sites de dados abertos) e a variável SITE. Sem R2 nem recurso pago.
+name = "credito-modalidade"
+pages_build_output_dir = "docs"
+compatibility_date = "2026-10-01"
+
+[vars]
+SITE = "fonte-credito-modalidade"
+
+[[d1_databases]]
+binding = "DOWNLOADS"
+database_name = "downloads"
+database_id = "843b0381-682b-42da-accc-2530895fbb1d"
