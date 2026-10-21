@@ -101,7 +101,8 @@ export async function atender(pedido, { db, site, servirArquivo, adiar }) {
     return Response.json(corpo, { headers: CABECALHOS_JSON });
   }
   const resposta = await servirArquivo();
-  if (tipoDeArquivo(caminho) && deveContar(pedido, resposta)) {
+  if (!tipoDeArquivo(caminho)) return resposta;
+  if (deveContar(pedido, resposta)) {
     const tipo = classificar(pedido.headers.get("user-agent"));
     adiar(
       registrar(db, site, caminho, tipo, diaBrasilia()).catch((erro) =>
@@ -109,7 +110,17 @@ export async function atender(pedido, { db, site, servirArquivo, adiar }) {
       )
     );
   }
-  return resposta;
+  return semCache(resposta);
+}
+
+/**
+ * Arquivo contado sai com no-store: sem isso o cache da Cloudflare guarda o zip/CSV (4 h no Pages) e
+ * só pergunta "mudou?" ao site, que responde 304 e o download some da contagem.
+ */
+function semCache(resposta) {
+  const nova = new Response(resposta.body, resposta);
+  nova.headers.set("Cache-Control", "no-store");
+  return nova;
 }
 
 const CABECALHOS_JSON = {

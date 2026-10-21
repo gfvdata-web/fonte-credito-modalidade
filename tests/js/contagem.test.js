@@ -94,6 +94,9 @@ test("download conta uma vez por pedido e devolve o arquivo intacto", async () =
   await chamar(contagem, db, pedido("/skill/credito-modalidade-bcb.zip"));
   await chamar(contagem, db, pedido("/dados/credito_modalidade.csv", { ua: "Python-urllib/3.12" }));
   assert.equal(await r1.text(), "conteudo");
+  assert.equal(r1.headers.get("cache-control"), "no-store", "sem cache na Cloudflare: todo download passa pelo contador");
+  const pagina = await chamar(contagem, db, pedido("/index.html"));
+  assert.equal(pagina.headers.get("cache-control"), null, "páginas comuns seguem com o cache de sempre");
   const dia = contagem.diaBrasilia();
   assert.equal(db.linhas.get(`${SITE}|/skill/credito-modalidade-bcb.zip|${dia}|navegador`), 2);
   assert.equal(db.linhas.get(`${SITE}|/dados/credito_modalidade.csv|${dia}|script`), 1);
