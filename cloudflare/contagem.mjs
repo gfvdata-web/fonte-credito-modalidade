@@ -10,7 +10,8 @@
 export const ROTA_CONTAGEM = "/contagem.json";
 const DIAS_SERIE = 30;
 
-const ROBO = /bot|crawl|spider|slurp|facebookexternalhit|whatsapp|telegram|preview|uptime|monitor|headless|lighthouse/i;
+// Nossas próprias conferências (agente site-checker e afins) mandam User-Agent com "gfvdata-verificacao": contam como robô.
+const ROBO = /gfvdata-verificacao|bot|crawl|spider|slurp|facebookexternalhit|whatsapp|telegram|preview|uptime|monitor|headless|lighthouse/i;
 const SCRIPT = /python|curl|wget|httpx|aiohttp|requests|node|undici|go-http|java|okhttp|axios|libwww|powershell|r-curl|httr/i;
 
 /** "robo", "script" (uso por código, como a skill do Claude) ou "navegador". */

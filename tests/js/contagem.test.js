@@ -69,6 +69,7 @@ test("classifica navegador, script (skill em Python) e robô", async () => {
   assert.equal(classificar(undefined), "script");
   assert.equal(classificar("Mozilla/5.0 (compatible; Googlebot/2.1)"), "robo");
   assert.equal(classificar("facebookexternalhit/1.1"), "robo");
+  assert.equal(classificar("curl/8.5.0 gfvdata-verificacao (site-checker)"), "robo");
 });
 
 test("só o zip da skill e os CSV de dados contam", async () => {
